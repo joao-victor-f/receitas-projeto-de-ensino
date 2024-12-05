@@ -1,0 +1,17 @@
+#BotaoSobrePI {
+    background: black;
+    color: white;
+    padding: 20px;
+    border: 0;
+    border-radius: 6px;
+    font-size: medium;  
+  }
+
+  #ImagemPI {
+    border-radius: 10px;
+  }
+
+  #BodyPI {
+    margin: 50px;
+    padding: 50px;
+  }
