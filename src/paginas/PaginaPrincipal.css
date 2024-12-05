@@ -11,6 +11,18 @@
     border-radius: 10px;
   }
 
+  #ImagemPI2 {
+    border-radius: 10px;
+    display: flex;
+  }
+
+  #ContS2  {
+    display: flex;
+    margin: 50px;
+    padding: 50px;
+  }
+
+
   #BodyPI {
     margin: 50px;
     padding: 50px;
