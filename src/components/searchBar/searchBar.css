@@ -1,0 +1,21 @@
+#searchBar {
+    padding: 6px 18px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+}
+input {
+    border: none;
+    background-color: inherit;
+    margin-right: 36px;
+    padding: 8px;
+    font-size: medium;
+}
+
+textarea:focus, input:focus {
+    outline: none;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
