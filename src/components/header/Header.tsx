@@ -18,7 +18,7 @@ export default function Header() {
           <li>
             <a>Contacto</a>
           </li>
-          <li>
+          <li id="menu-mobile">
             <button id="menu-button">Menú</button>
           </li>
         </ul>
