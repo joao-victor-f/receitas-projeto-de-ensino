@@ -1,12 +1,12 @@
 header {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  max-width: 100vw;
   align-items: center;
   margin: 20px;
 }
 
-div {
+header div {
   display: flex;
   align-items: center;
 }
