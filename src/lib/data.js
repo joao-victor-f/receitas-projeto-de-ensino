@@ -2,35 +2,48 @@ export const data = {
     "categorias": [
       {
         "titulo": "Acompañamiento",
-        "imagemURL": `/categorias/acompanhamento.png`,
+        "imagemURL": "/categorias/acompanhamento.png",
+        "descricao": "Opciones como puré de papas, papas el horno, ensaladas mixtas, arroz pilaf y verduras grilladas.",
       },
       {
         "titulo": "Bebidas",
-        "imagemURL": `/categorias/bebidas.png`,
+        "imagemURL": "/categorias/bebidas.png",
+        "descricao": "Clásicos como el mate, tereré, clericó y licuados de frutas frescas.",
       },
       {
         "titulo": "Carnes",
-        "imagemURL": `/categorias/carnes.png`,
+        "imagemURL": "/categorias/carnes.png",
+        "descricao": "Delicias como asado, churrasco, vacío, entraña, bondiola y matambre a la pizza.",
       },
       {
         "titulo": "Entradas",
-        "imagemURL": `/categorias/entradas.png`,
+        "imagemURL": "/categorias/entradas.png",
+        "descricao": "Picadas y aperitivos tradicionales como provoleta, empanadas, croquetas, bruschettas y fiambre variados.",
       },
       {
         "titulo": "Galletas y Dulces",
-        "imagemURL": `/categorias/doces.png`,
+        "imagemURL": "/categorias/doces.png",
+        "descricao": "Postres típicos como alfajores, facturas, churros, pasta frolla y tortas.",
       },
       {
         "titulo": "Panes y Empanadas",
-        "imagemURL": `/categorias/empanadas.png`,
+        "imagemURL": "/categorias/empanadas.png",
+        "descricao": "Una sección dedicada a panes caseros como pan de campo, chipá, medialunas y empanadas de carne, pollo o queso.",
       },
       {
         "titulo": "Platos Principales",
-        "imagemURL": `/categorias/pratos_principais.png`,
+        "imagemURL": "/categorias/pratos_principais.png",
+        "descricao": "Favoritos como milanesa, locro, guiso de lentejas, carbonada y cazuela de mariscos.",
       },
       {
         "titulo": "Salsas y Aderezos",
-        "imagemURL": `/categorias/molhos.png`,
+        "imagemURL": "/categorias/molhos.png",
+        "descricao": "Chimichurri, salsa criolla, alioli, mayonesa casera y vinagretas aromáticas.",
+      },
+      {
+        "titulo": "Vegetariano",
+        "imagemURL": "/categorias/vegetariano.png",
+        "descricao": "Platos como empanadas de humita, milanesas de berenjena, guiso de quinoa, tartas de verduras y ensaladas frescas.",
       }
     ],
     "receitas": [
