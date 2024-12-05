@@ -7,6 +7,9 @@ export default function App() {
   return (
     <Router>
       <Header></Header> 
+      <Routes>
+        <Route path="/" element={<PaginaPrincipal />} />
+      </Routes>
       <Footer></Footer>
     </Router>
   )
