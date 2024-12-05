@@ -1,0 +1,15 @@
+.pagina {
+    display: flex;
+    margin-top: 50px;
+}
+
+.secaoUm {
+    width: 470px;
+    height: 281px;
+    text-align: justify;
+    margin: 0 100px 0 50px;
+}
+
+.secaoUm h1 {
+    font-size: 50px;
+}
