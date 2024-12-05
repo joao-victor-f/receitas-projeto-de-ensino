@@ -1,8 +1,13 @@
 import Header from './components/header/Header.tsx';
+import Footer from './components/footer/Footer.tsx';
 import './App.css'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 export default function App() {
   return (
-    <Header></Header>
+    <Router>
+      <Header></Header> 
+      <Footer></Footer>
+    </Router>
   )
 }
