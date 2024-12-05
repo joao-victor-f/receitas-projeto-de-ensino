@@ -7,6 +7,9 @@ export default function App() {
   return (
     <Router>
       <Header></Header> 
+      <Routes>
+        <Route path="/sobre" element={<Sobre />} />
+      </Routes>
       <Footer></Footer>
     </Router>
   )
