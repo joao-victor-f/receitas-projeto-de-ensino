@@ -4,6 +4,7 @@ header {
   max-width: 100vw;
   align-items: center;
   margin: 20px;
+  flex-shrink: 0;
 }
 
 header div {
