@@ -3,13 +3,28 @@
     margin-top: 50px;
 }
 
+.formularioSecaoUm form input {
+    border: 1px solid black;
+    display: block;
+}
+
 .secaoUm {
-    width: 470px;
-    height: 281px;
-    text-align: justify;
     margin: 0 100px 0 50px;
 }
 
-.secaoUm h1 {
+.textoSecaoUm {
+    width: 500px;
+    height: 281px;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.titulo-sobre {
     font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.titulo-contato {
+    font-size: 25px;
+    margin-bottom: 15px;
 }
