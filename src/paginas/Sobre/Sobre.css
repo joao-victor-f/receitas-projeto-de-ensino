@@ -1,12 +1,37 @@
-.pagina {
-    display: flex;
-    margin-top: 50px;
+body {
+    font-family: 'Inter';
+    width: 1200px;
+    margin: 0 auto;
 }
 
-.formularioSecaoUm form input {
-    border: 1px solid black;
-    display: block;
+.pagina {
+    display: flex;
+    margin: 50px 0 80px 0;
 }
+
+form {
+    font-family: 'Inter';
+}
+
+form input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 7px;
+}
+
+textarea {
+    padding: 10px;
+    font-family: 'Inter';
+    font-size: 16px;
+    max-width: 100%;
+    width: 500px;
+    height: 170px;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: none;
+    margin-bottom: 15px;
+  }
 
 .secaoUm {
     margin: 0 100px 0 50px;
@@ -14,7 +39,7 @@
 
 .textoSecaoUm {
     width: 500px;
-    height: 281px;
+    height: 400px;
     text-align: justify;
     line-height: 1.5;
 }
@@ -26,5 +51,44 @@
 
 .titulo-contato {
     font-size: 25px;
-    margin-bottom: 15px;
+    margin-bottom: 35px;
+}
+
+form label {
+    padding-bottom: 7px;
+    font-weight: bold;
+    display: block;
+}
+
+form input::placeholder {
+    font-family: 'Inter';
+}
+
+.campos-de-nome {
+    display: flex;
+}
+
+.nome, .apelido {
+    width: 250px;
+}
+
+.nome {
+    margin-right: 20px
+}
+
+.nome input, .apelido input {
+    width: 230px;
+}
+
+.email input {
+    width: 500px;
+}
+
+#botao {
+    font-family: 'Inter';
+    width: 500px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    border-radius: 6px;
 }

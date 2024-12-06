@@ -14,19 +14,28 @@ export default function Sobre() {
                             Nuestro objetivo es inspirarte a explorar nuevos sabores y disfrutar del arte de cocinar.</p>
                         <p>¡Descubre, cocina y comparte con nosotros!</p>
                     </div>
-                    <div className="formularioSecaoUm">
-                        <form>
-                            <h1 className="titulo-contato">Contáctanos</h1>
-                            <label for="nome">Nombre de pila</label>
-                            <input type="text" id="nome" placeholder="Ana"/>
-                            <label for="apelido">Apellido</label>
-                            <input type="text" id="apelido" placeholder="Ramirez"/>
-                            <label for="email">Email</label>
-                            <input type="text" id="email" placeholder="email@delacocina.net"/>
-                            <label for="mensagem">Tu mensaje</label>
-                            <input type="text" id="mensagem" placeholder="Ingresa tu pregunta o mensaje"/>
-                        </form>
-                    </div>
+                    <form className="formularioSecaoUm">
+                        <h1 className="titulo-contato">Contáctanos</h1>
+                            <div className="campos-de-nome">
+                                <div className="nome">
+                                    <label for="nome">Nombre de pila</label>
+                                    <input type="text" id="nome" placeholder="Ana"/>
+                                </div>
+                                <div className="apelido">
+                                    <label for="apelido">Apellido</label>
+                                    <input type="text" id="apelido" placeholder="Ramírez"/>
+                                </div>
+                            </div>
+                            <div className="email">
+                                <label for="email">Email</label>
+                                <input type="text" id="email" placeholder="email@delacocina.net"/>
+                            </div>
+                            <div className="mensagem">
+                                <label for="mensagem">Tu mensaje</label>
+                                <textarea rows="20" id="mensagem" placeholder="Ingresa tu pregunta o mensaje"></textarea>
+                            </div>
+                            <input type="button" value="Enviar" id="botao"/>
+                    </form>
                 </div>
                 <div className="secaoDois">
                     <img src={imagem} alt="" />
