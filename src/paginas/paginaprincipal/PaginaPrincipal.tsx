@@ -2,6 +2,7 @@ import React from "react";
 import imagem from "../../assets/mesadecomidasPG.png";
 import imagem2 from "../../assets/comidasdaPI.png";
 import styles from "./paginaPrincipal.module.css";
+import { Link } from "react-router-dom";
 
 export default function PaginaPrincipal () { 
   return (
@@ -11,7 +12,9 @@ export default function PaginaPrincipal () {
       <br />
       <p>Descubre el rincón donde la pasión por la cocina argentina cobra vida:recetas fáciles, auténticas y llenas de sabor para transformar cada plato en una</p><p> celebración.</p>  
       <br />
-      <button id={styles.BotaoSobrePI}>Sobre nosotros</button> 
+      <Link to="/sobre">
+        <button id={styles.BotaoSobrePI}>Sobre nosotros</button> 
+      </Link>
       <br />
       <br />
       <img id={styles.ImagemPI} src={imagem} alt="Imagem da mesa de comidas" />

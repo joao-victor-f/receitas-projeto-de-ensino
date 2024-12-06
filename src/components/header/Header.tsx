@@ -2,6 +2,7 @@ import SearchBar from "../searchBar/SearchBar.tsx";
 import logo from "../../assets/logo.png";
 import styles from "./header.module.css";
 import React from 'react';
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -11,16 +12,29 @@ export default function Header() {
         <SearchBar />
         <ul className={styles.ul}>
           <li className={styles.li}>
-            <a href="#">Pagina de inicio</a>
+            <Link to="/">
+              <a>Pagina de inicio</a>
+            </Link>
           </li>
           <li className={styles.li}>
-            <a href="#">Recetas</a>
+            <Link to="/receitas">
+              <a>Recetas</a>
+            </Link>
           </li>
           <li className={styles.li}>
-            <a href="#">Contacto</a>
+            <Link to="/sobre">
+              <a href="#">Contacto</a>
+            </Link>
           </li>
           <li className={styles.li}>
-            <a href="#">Ingredientes</a>
+            <Link to="/ingredientes">
+              <a href="#">Ingredientes</a>
+            </Link>
+          </li>
+          <li className={styles.li}>
+            <Link to="/categorias">
+              <a href="#">Categorias</a>
+            </Link>
           </li>
           <li id={styles.menu_mobile}>
             <button id={styles.menu_button}>Menú</button>
