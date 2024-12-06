@@ -10,15 +10,18 @@ export default function Header() {
         <SearchBar />
         <ul>
           <li>
-            <a>Pagina de inicio</a>
+            <a href="#">Pagina de inicio</a>
           </li>
           <li>
-            <a>Recetas</a>
+            <a href="#">Recetas</a>
           </li>
           <li>
-            <a>Contacto</a>
+            <a href="#">Contacto</a>
           </li>
           <li>
+            <a href="#">Ingredientes</a>
+          </li>
+          <li id="menu-mobile">
             <button id="menu-button">Menú</button>
           </li>
         </ul>

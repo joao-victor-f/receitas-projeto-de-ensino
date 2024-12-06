@@ -4,6 +4,7 @@ footer {
     align-items: center;
     margin: 24px;
     font-size: medium;
+    padding: 12px;
     border-top: 1px solid black;
 }
 
@@ -28,4 +29,8 @@ footer img {
 
 .main-reference {
     font-weight: bold;
+}
+
+#menu-mobile {
+    display: none;
 }
