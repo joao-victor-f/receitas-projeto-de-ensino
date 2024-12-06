@@ -60,10 +60,6 @@ form label {
     display: block;
 }
 
-form input::placeholder {
-    font-family: 'Inter';
-}
-
 .campos-de-nome {
     display: flex;
 }
@@ -85,7 +81,6 @@ form input::placeholder {
 }
 
 #botao {
-    font-family: 'Inter';
     width: 500px;
     height: 50px;
     background-color: black;
