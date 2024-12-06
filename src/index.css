@@ -12,3 +12,7 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+main {
+  margin: 56px;
+}

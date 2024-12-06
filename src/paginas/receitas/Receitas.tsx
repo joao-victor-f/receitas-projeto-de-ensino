@@ -1,7 +1,6 @@
 import React from 'react';
-
-export default function Receitas() {
+export default function Categorias () {
     return (
-        <h1>Receitas</h1>
-    )
+        <h1>Categorias</h1>
+    );
 }

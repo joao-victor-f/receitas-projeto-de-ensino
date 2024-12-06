@@ -1,0 +1,73 @@
+#intro-receitas {
+    display: flex;
+    justify-content: space-between;
+}
+
+#intro-receitas span {
+    color: rgba(0, 0, 0, 0.75);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 75%; /* 36px */
+    margin-top: 10000px;
+}
+
+#intro-receitas h1 {
+    margin-bottom: 12px;
+    font-size: 48px;
+}
+
+#intro-receitas a {
+    color: #1D1D1D;
+    text-align: right;
+    font-family: Poppins;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+#images-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+#images-container img {
+    border-radius: 10px;
+}
+
+#historia-cozinha h1 {
+    color: #000;
+    /* Heading */
+    font-family: Inter;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 110%; /* 44px */
+    margin: 18px 0;
+}
+
+#historia-cozinha p {
+    color: #000;
+    text-align: justify;
+    /* Body text */
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 30px */
+    margin: 12px 0;
+}
+
+#recomendacao-receitas h1 {
+    margin: 32px 0;
+    font-size: 32px;
+}
+
+.receitas-container {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
