@@ -1,25 +1,20 @@
-body {
-    font-family: 'Inter';
-    width: 1200px;
-    margin: 0 auto;
-}
-
 .pagina {
     display: flex;
-    margin: 50px 0 80px 0;
+    margin: 50px auto 80px auto;
+    width: 1200px;
 }
 
-form {
+.form {
     font-family: 'Inter';
 }
 
-form input {
+.form input {
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 7px;
 }
 
-textarea {
+.textarea {
     padding: 10px;
     font-family: 'Inter';
     font-size: 16px;
@@ -44,23 +39,23 @@ textarea {
     line-height: 1.5;
 }
 
-.titulo-sobre {
+.titulo_sobre {
     font-size: 50px;
     margin-bottom: 15px;
 }
 
-.titulo-contato {
+.titulo_contato {
     font-size: 25px;
     margin-bottom: 35px;
 }
 
-form label {
+.form label {
     padding-bottom: 7px;
     font-weight: bold;
     display: block;
 }
 
-.campos-de-nome {
+.campos_de_nome {
     display: flex;
 }
 
@@ -86,4 +81,5 @@ form label {
     background-color: black;
     color: white;
     border-radius: 6px;
+    cursor: pointer;
 }

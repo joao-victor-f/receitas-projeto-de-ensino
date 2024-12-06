@@ -1,13 +1,4 @@
-#listagem-receitas {
-    margin: 28px 0;
-}
-
-#listagem-receitas h1 {
-    font-size: 36px;
-    margin-bottom: 32px;
-}
-
-.categoria-container {
+.categoria_container {
     display: flex;
     border-radius: 12px;
     background: #F5F5F5;
@@ -18,10 +9,10 @@
     transition: 250ms ease-out;
 }
 
-.details-container {
+.details_container {
     padding: 8px;
 }
 
-.categoria-container:hover {
+.categoria_container:hover {
     transform: scale(1.03);
 }

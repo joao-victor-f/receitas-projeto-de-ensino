@@ -27,10 +27,6 @@ footer img {
     margin: 8px 0px;
 }
 
-.main-reference {
+.main_reference {
     font-weight: bold;
-}
-
-#menu-mobile {
-    display: none;
 }

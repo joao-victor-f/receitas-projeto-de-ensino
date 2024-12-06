@@ -1,8 +1,8 @@
 import React from 'react';
-import "./receita.css";
+import styles from "./receita.module.css";
 export default function Receita(props) {
     return (
-        <article className="receita">
+        <article className={styles.receita}>
             <img src={props.receita.imagemURL}/>
             <span>{props.receita.nome}</span>
         </article>
