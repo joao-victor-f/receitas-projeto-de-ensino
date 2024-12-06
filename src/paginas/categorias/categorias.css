@@ -60,3 +60,14 @@
     line-height: 150%; /* 30px */
     margin: 12px 0;
 }
+
+#recomendacao-receitas h1 {
+    margin: 32px 0;
+    font-size: 32px;
+}
+
+.receitas-container {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
