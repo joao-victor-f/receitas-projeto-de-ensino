@@ -47,7 +47,7 @@ export const data = {
         "imagemURL": "/categorias/pratos_principais.png",
         "descricao": "Favoritos como milanesa, locro, guiso de lentejas, carbonada y cazuela de mariscos.",
         "path": "/receitas/pratosprincipais",
-        "fullImagemURL": "/receitas/pratos_principais.jpeg",
+        "fullImagemURL": "/receitas/pratos_principais.jpg",
       },
       {
         "titulo": "Salsas y Aderezos",
