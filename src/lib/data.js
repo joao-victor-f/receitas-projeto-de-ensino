@@ -91,7 +91,7 @@ export const data = {
           "Añadir la carne, el chorizo y la cebolla picada.",
           "Cocinar a fuego lento hasta que los ingredientes estén tiernos."
         ],
-        "path": "/receitas/locro_criollo",
+        "path": "/receita/locro_criollo",
       },
       {
         "nome": "Empanadas",
@@ -119,7 +119,7 @@ export const data = {
           "Rellenar las tapas para empanadas con la mezcla de carne.",
           "Cerrar las empanadas y hornear a 180°C durante 20 minutos."
         ],
-        "path": "/receitas/empanadas",
+        "path": "/receita/empanadas",
       },
       {
         "nome": "Parrilla",
@@ -146,7 +146,7 @@ export const data = {
           "Asar a fuego lento, dando vuelta los cortes hasta el término deseado.",
           "Servir acompañado de chimichurri."
         ],
-        "path": "/receitas/parrila",
+        "path": "/receita/parrila",
       }
     ]
 }
