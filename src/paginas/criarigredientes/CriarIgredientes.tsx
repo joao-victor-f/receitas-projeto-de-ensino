@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./criar-igredientes.module.css";
-import imagem from "../../assets/alfajor.jpg";
+import imagem from "../../assets/comidasdaPI.png";
 
 export default function CriarIgredientes() {
     return (
@@ -15,11 +15,13 @@ export default function CriarIgredientes() {
                     */}
                     <img src={imagem} width="1140px" height="200px" alt="Criar igredientes" id={styles.imagemCriarIgredientes} />
                     <div id={styles.moduloInputNomeIngrediente}>
-                        <label for="">Nombre del Ingrediente</label>
-                        <input type="text" id={styles.nomeIngrediente} placeholder="Introduce el título de tu receta"/>
+                            <label id={styles.labelNomeIngrediente} className={styles.required}>Nombre del Ingrediente</label>
+                        <input type="text" id={styles.inputNomeIngrediente} placeholder="Introduce el título de tu receta"/>
                     </div>
-                    <button>Cancelar</button>
-                    <button>Agregar Ingrediente</button>
+                    <div id={styles.botoes}>
+                        <button id={styles.botaoCancelar}>Cancelar</button>
+                        <button id={styles.botaoAgregarIngredientes}>Agregar Ingrediente</button>
+                    </div>
                 </div>
             </div>
         </>
