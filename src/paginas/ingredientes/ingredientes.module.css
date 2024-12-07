@@ -1,0 +1,18 @@
+body {
+    margin: 0 auto;
+    width: 1442px;
+}
+
+#receitaUm, #receitaDois {
+    margin-right: 31px;
+}
+
+.receita {
+    display: inline-block;
+    width: 403px;
+    border: 1px solid black;
+}
+
+.fileiraDeReceitas {
+    width: 1281px;
+}
