@@ -7,18 +7,15 @@ import { Link } from "react-router-dom";
 export default function Header() {
   return (
     <header className={styles.header}>
-      <img src={logo}/>
+      <Link to="/">
+        <img src={logo}/>
+      </Link>
       <div>
         <SearchBar />
         <ul className={styles.ul}>
           <li className={styles.li}>
             <Link to="/">
               <a>Pagina de inicio</a>
-            </Link>
-          </li>
-          <li className={styles.li}>
-            <Link to="/receitas">
-              <a>Recetas</a>
             </Link>
           </li>
           <li className={styles.li}>
