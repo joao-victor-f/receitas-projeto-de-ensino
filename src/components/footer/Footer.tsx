@@ -5,40 +5,42 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
     return (
-        <footer>
-            <img src={logo}/>
-            <div id={styles.links_footer}>
-                <div className={styles.references}>
-
+        <footer className={styles.footer}>
+            <div className={styles.container}>
+                <div className={styles.intro_container}>
                     <Link to="/">
-                        <a className={styles.main_reference}>Pagina de inicio</a>
+                        <img src={logo} />
                     </Link>
-                    <Link to="/#recetas">
-                        <a>Recetas</a>
-                    </Link>
-                    <Link to="/#feedbacks">
-                        <a>Feedbacks</a>
-                    </Link>
+                    <div className={styles.social_container}>
+                        <a href="">
+                            <img src="/icons/facebook-icon.svg" alt="ícone do facebook" />
+                        </a>
+                        <a href="">
+                            <img src="/icons/instagram-icon.png" alt="ícone do instagram" />
+                        </a>
+                        <a href="">
+                            <img src="/icons/tiktok-icon.png" alt="ícone do tiktok" />
+                        </a>
+                        <a href="">
+                            <img src="/icons/twitter-icon.png" alt="ícone do X" />
+                        </a>
+                    </div>
                 </div>
-                <div className={styles.references}>
-                    <Link to="/categorias">
-                        <a className={styles.main_reference}>Categorias</a>
-                    </Link>
-                    <Link to="/categorias#historia_cozinha">
-                        <a>Historia de la cocina argentina</a>
-                    </Link>
-                    <Link to="/categorias#recomendaciones">
-                        <a>Recomendaciones de recetas</a>
-                    </Link>
-                </div>
-                <div className={styles.references}>
-                    <Link to="/sobre">
-                        <a className={styles.main_reference}>Sobre nosotros</a>
-                    </Link>
-                    <Link to="/sobre#contacto">
-                        <a>Contacto</a>
-                    </Link>
-                </div>
+                <p>De La Cocina es el sitio donde la pasión por la gastronomía argentina cobra vida. Descubre recetas auténticas, consejos prácticos y sabores que llevan la esencia de Argentina a tu mesa. ¡Aprovecha!</p>
+            </div>
+            <div className={styles.topics_container}>
+                <Link to="/">
+                    <a>Pagina de inicio</a>
+                </Link>
+                <Link to="/sobre">
+                    <a>Contacto</a>
+                </Link>
+                <Link to="/ingredientes">
+                    <a>Ingredientes</a>
+                </Link>
+                <Link to="/categorias">
+                    <a>Categorias</a>
+                </Link>
             </div>
         </footer>
     );

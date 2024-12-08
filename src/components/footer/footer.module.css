@@ -1,4 +1,4 @@
-footer {
+.footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -8,25 +8,42 @@ footer {
     border-top: 1px solid black;
 }
 
-footer img {
+.footer img {
     object-fit: contain;
 }
 
-#links_footer {
+.container {
     display: flex;
-    flex-direction: row;
+    align-items: center
 }
 
-.references {
+.container p {
+    margin-left: 12px;
+    text-wrap: wrap;
+    max-width: 60%;
+    text-justify: justify;
+}
+
+.intro_container {
     display: flex;
     flex-direction: column;
-    margin: 0px 18px;
+    align-items: center;
+    border-right: 1px solid #454545;
 }
 
-.references a {
-    margin: 8px 0px;
+.social_container {
+    display: flex;
+    gap: 16px;
 }
 
-.main_reference {
-    font-weight: bold;
+.topics_container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.topics_container a {
+    font-weight: 500;
+    text-wrap: nowrap;
+    flex-shrink: 0;
 }
