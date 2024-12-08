@@ -4,227 +4,127 @@ export const data = {
         "titulo": "Acompañamiento",
         "imagemURL": "/categorias/acompanhamento.png",
         "descricao": "Opciones como puré de papas, papas el horno, ensaladas mixtas, arroz pilaf y verduras grilladas.",
+        "path": "/categorias/acompanhamento",
       },
       {
         "titulo": "Bebidas",
         "imagemURL": "/categorias/bebidas.png",
         "descricao": "Clásicos como el mate, tereré, clericó y licuados de frutas frescas.",
+        "path": "/categorias/bebidas",
       },
       {
         "titulo": "Carnes",
         "imagemURL": "/categorias/carnes.png",
         "descricao": "Delicias como asado, churrasco, vacío, entraña, bondiola y matambre a la pizza.",
+        "path": "/categorias/carnes",
       },
       {
         "titulo": "Entradas",
         "imagemURL": "/categorias/entradas.png",
         "descricao": "Picadas y aperitivos tradicionales como provoleta, empanadas, croquetas, bruschettas y fiambre variados.",
+        "path": "/categorias/entradas",
       },
       {
         "titulo": "Galletas y Dulces",
         "imagemURL": "/categorias/doces.png",
         "descricao": "Postres típicos como alfajores, facturas, churros, pasta frolla y tortas.",
+        "path": "/categorias/doces",
       },
       {
         "titulo": "Panes y Empanadas",
         "imagemURL": "/categorias/empanadas.png",
         "descricao": "Una sección dedicada a panes caseros como pan de campo, chipá, medialunas y empanadas de carne, pollo o queso.",
+        "path": "/categorias/empanadas",
       },
       {
         "titulo": "Platos Principales",
         "imagemURL": "/categorias/pratos_principais.png",
         "descricao": "Favoritos como milanesa, locro, guiso de lentejas, carbonada y cazuela de mariscos.",
+        "path": "/categorias/pratosprincipais",
       },
       {
         "titulo": "Salsas y Aderezos",
         "imagemURL": "/categorias/molhos.png",
         "descricao": "Chimichurri, salsa criolla, alioli, mayonesa casera y vinagretas aromáticas.",
+        "path": "/categorias/molhos",
       },
       {
         "titulo": "Vegetariano",
         "imagemURL": "/categorias/vegetariano.png",
         "descricao": "Platos como empanadas de humita, milanesas de berenjena, guiso de quinoa, tartas de verduras y ensaladas frescas.",
+        "path": "/categorias/molhos",
       }
     ],
     "receitas": [
       {
-        "nome": "Arroz con Verduras",
+        "nome": "Locro Criollo",
         "categoria": {
-          "titulo": "Acompañamiento",
-          "imagemURL": "https://example.com/arroz_legumes.jpg"
+          "titulo": "Platos Principales",
+          "imagemURL": "/categorias/pratos_principais.png"
         },
-        "descricao": "Arroz suelto acompañado de verduras frescas, perfecto para acompañar carnes.",
+        "descricao": "Un guiso tradicional argentino a base de maíz blanco, zapallo y carne, perfecto para días fríos.",
         "ingredientes": [
-          {
-            "nome": "Arroz",
-            "quantidade": 1,
-            "medicao": {
-              "nome": "taza"
-            }
-          },
-          {
-            "nome": "Agua",
-            "quantidade": 2,
-            "medicao": {
-              "nome": "taza"
-            }
-          },
-          {
-            "nome": "Zanahoria",
-            "quantidade": 1,
-            "medicao": {
-              "nome": "unidad"
-            }
-          },
-          {
-            "nome": "Guisante",
-            "quantidade": 0.5,
-            "medicao": {
-              "nome": "taza"
-            }
-          }
+          { "nome": "Maíz blanco", "quantidade": 1, "medicao": { "nome": "taza" } },
+          { "nome": "Zapallo", "quantidade": 500, "medicao": { "nome": "gramo" } },
+          { "nome": "Carne de cerdo", "quantidade": 300, "medicao": { "nome": "gramo" } },
+          { "nome": "Chorizo colorado", "quantidade": 2, "medicao": { "nome": "unidad" } },
+          { "nome": "Cebolla", "quantidade": 1, "medicao": { "nome": "unidad" } }
         ],
-        "imagemURL": "https://example.com/arroz_legumes_final.jpg",
-        "tempoDePreparacao": "00:30:00",
+        "imagemURL": "/receitas/locro-criollo.png",
+        "tempoDePreparacao": "02:00:00",
         "passos": [
-          "Lavar el arroz hasta que el agua salga limpia.",
-          "Cortar la zanahoria en cubos pequeños.",
-          "En una olla, agregar el agua y dejar hervir.",
-          "Agregar el arroz y la zanahoria, cocinar hasta que el arroz esté listo.",
-          "Agregar los guisantes en los últimos minutos de cocción."
+          "Dejar el maíz en remojo durante 12 horas.",
+          "Cortar el zapallo y la carne en trozos pequeños.",
+          "En una olla grande, cocinar el maíz y el zapallo con agua.",
+          "Añadir la carne, el chorizo y la cebolla picada.",
+          "Cocinar a fuego lento hasta que los ingredientes estén tiernos."
         ]
       },
       {
-        "nome": "Jugo Natural de Naranja",
+        "nome": "Empanadas",
         "categoria": {
-          "titulo": "Bebidas",
-          "imagemURL": "https://example.com/suco_laranja.jpg"
+          "titulo": "Panes y Empanadas",
+          "imagemURL": "/categorias/empanadas.png"
         },
-        "descricao": "Jugo refrescante de naranja natural, ideal para cualquier momento del día.",
+        "descricao": "Empanadas argentinas clásicas con relleno de carne y condimentos tradicionales.",
         "ingredientes": [
-          {
-            "nome": "Naranja",
-            "quantidade": 4,
-            "medicao": {
-              "nome": "unidad"
-            }
-          },
-          {
-            "nome": "Azúcar",
-            "quantidade": 2,
-            "medicao": {
-              "nome": "cucharada"
-            }
-          },
-          {
-            "nome": "Agua",
-            "quantidade": 1,
-            "medicao": {
-              "nome": "taza"
-            }
-          }
+          { "nome": "Carne molida", "quantidade": 500, "medicao": { "nome": "gramo" } },
+          { "nome": "Cebolla", "quantidade": 2, "medicao": { "nome": "unidad" } },
+          { "nome": "Aceitunas verdes", "quantidade": 100, "medicao": { "nome": "gramo" } },
+          { "nome": "Tapas para empanadas", "quantidade": 12, "medicao": { "nome": "unidad" } },
+          { "nome": "Comino", "quantidade": 1, "medicao": { "nome": "cucharadita" } }
         ],
-        "imagemURL": "https://example.com/suco_laranja_final.jpg",
-        "tempoDePreparacao": "00:10:00",
+        "imagemURL": "/receitas/empanadas.png",
+        "tempoDePreparacao": "01:00:00",
         "passos": [
-          "Exprimir las naranjas para obtener el jugo.",
-          "Agregar el azúcar y mezclar bien.",
-          "Diluir con el agua hasta obtener la consistencia deseada.",
-          "Servir frío."
+          "Cortar la cebolla en cubos pequeños y saltear en aceite.",
+          "Añadir la carne molida y cocinar hasta que esté dorada.",
+          "Agregar las aceitunas picadas y el comino, mezclar bien.",
+          "Rellenar las tapas para empanadas con la mezcla de carne.",
+          "Cerrar las empanadas y hornear a 180°C durante 20 minutos."
         ]
       },
       {
-        "nome": "Bife a la Parrilla",
+        "nome": "Parrilla",
         "categoria": {
           "titulo": "Carnes",
-          "imagemURL": "https://example.com/bife_parmegiana.jpg"
+          "imagemURL": "/categorias/carnes.png"
         },
-        "descricao": "Plato clásico de carne asada a la parrilla, acompañado de una salsa especial.",
+        "descricao": "Una selección de cortes de carne asados a la perfección en la parrilla.",
         "ingredientes": [
-          {
-            "nome": "Bife de carne vacuna",
-            "quantidade": 2,
-            "medicao": {
-              "nome": "unidad"
-            }
-          },
-          {
-            "nome": "Sal",
-            "quantidade": 1,
-            "medicao": {
-              "nome": "cucharadita"
-            }
-          },
-          {
-            "nome": "Pimienta",
-            "quantidade": 0.5,
-            "medicao": {
-              "nome": "cucharadita"
-            }
-          },
-          {
-            "nome": "Aceite de oliva",
-            "quantidade": 2,
-            "medicao": {
-              "nome": "cucharada"
-            }
-          }
+          { "nome": "Costilla de res", "quantidade": 1, "medicao": { "nome": "kg" } },
+          { "nome": "Chorizo", "quantidade": 4, "medicao": { "nome": "unidad" } },
+          { "nome": "Morcilla", "quantidade": 2, "medicao": { "nome": "unidad" } },
+          { "nome": "Sal gruesa", "quantidade": 2, "medicao": { "nome": "cucharada" } }
         ],
-        "imagemURL": "https://example.com/bife_parmegiana_final.jpg",
-        "tempoDePreparacao": "00:20:00",
+        "imagemURL": "/receitas/parrila.png",
+        "tempoDePreparacao": "01:30:00",
         "passos": [
-          "Sazonar los bifes con sal y pimienta.",
-          "Calentar el aceite de oliva en una parrilla o sartén.",
-          "Asar los bifes hasta el término deseado.",
-          "Servir acompañado de salsa y ensalada."
-        ]
-      },
-      {
-        "nome": "Galletas de Chocolate",
-        "categoria": {
-          "titulo": "Galletas y Dulces",
-          "imagemURL": "https://example.com/biscoitos_chocolate.jpg"
-        },
-        "descricao": "Galletas crujientes con trozos de chocolate, perfectas para una merienda dulce.",
-        "ingredientes": [
-          {
-            "nome": "Harina de trigo",
-            "quantidade": 1.5,
-            "medicao": {
-              "nome": "taza"
-            }
-          },
-          {
-            "nome": "Mantequilla",
-            "quantidade": 0.5,
-            "medicao": {
-              "nome": "taza"
-            }
-          },
-          {
-            "nome": "Azúcar",
-            "quantidade": 0.75,
-            "medicao": {
-              "nome": "taza"
-            }
-          },
-          {
-            "nome": "Chocolate amargo",
-            "quantidade": 100,
-            "medicao": {
-              "nome": "gramo"
-            }
-          }
-        ],
-        "imagemURL": "https://example.com/biscoitos_chocolate_final.jpg",
-        "tempoDePreparacao": "00:40:00",
-        "passos": [
-          "Precalentar el horno a 180°C.",
-          "Mezclar la mantequilla con el azúcar hasta obtener una crema suave.",
-          "Añadir la harina de trigo y mezclar hasta formar una masa.",
-          "Incorporar el chocolate picado.",
-          "Formar bolitas con la masa y colocar en una bandeja para hornear.",
-          "Hornear durante 12-15 minutos."
+          "Preparar el fuego en la parrilla hasta obtener brasas.",
+          "Sazonar los cortes de carne con sal gruesa.",
+          "Colocar la carne, el chorizo y la morcilla en la parrilla.",
+          "Asar a fuego lento, dando vuelta los cortes hasta el término deseado.",
+          "Servir acompañado de chimichurri."
         ]
       }
     ]

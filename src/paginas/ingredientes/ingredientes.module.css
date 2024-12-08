@@ -1,0 +1,41 @@
+body {
+    margin: 0 auto;
+    width: 1442px;
+}
+
+#receitaUm, #receitaDois, #receitaQuatro, #receitaCinco, #receitaSete, #receitaOito {
+    margin-right: 31px;
+}
+
+#fileiraDeReceitasUm, #fileiraDeReceitasDois {
+    margin-bottom: 40px;
+}
+
+#grupoReceitas {
+    margin: 0 auto;
+    width: 1281px;
+}
+
+.receita {
+    display: inline-block;
+    width: 403px;
+    height: 286px;
+    border-radius: 10px;
+    box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.486);
+}
+
+.fileiraDeReceitas {
+    width: 1281px;
+}
+
+.imagemReceita {
+    padding: 20px 12px 0 12px;
+}
+
+.nomeReceita {
+    text-align: center;
+    padding-top: 18px;
+    font-size: 23px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.884);
+}
