@@ -10,7 +10,7 @@ export default function Header() {
         <SearchBar />
         <ul>
           <li>
-            <a href="#">Pagina de inicio</a>
+            <a  href="#">Pagina de inicio</a>
           </li>
           <li>
             <a href="#">Recetas</a>
