@@ -1,7 +1,4 @@
 .footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin: 24px;
     font-size: medium;
     padding: 12px;
@@ -12,12 +9,12 @@
     object-fit: contain;
 }
 
-.container {
+.inner_container {
     display: flex;
     align-items: center
 }
 
-.container p {
+.inner_container p {
     margin-left: 12px;
     text-wrap: wrap;
     max-width: 60%;
@@ -46,4 +43,15 @@
     font-weight: 500;
     text-wrap: nowrap;
     flex-shrink: 0;
+}
+
+.outer_container {
+    display: flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer p {
+    text-align: center;
 }
