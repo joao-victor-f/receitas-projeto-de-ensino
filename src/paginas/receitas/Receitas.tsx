@@ -29,16 +29,42 @@ export default function Receitas() {
         console.log(receitasEncontradas);
     }, [setCategoria, setReceitas])
     return (
-        <section className={styles.section}>
-            {(receitas && receitas.length > 0) && 
-                receitas.map(receita => {
-                    return (
-                        <Link to={receita.path}>
-                            <Receita receita={receita}></Receita>
-                        </Link>
-                    )
-                })
-            }
-        </section>
+        <>
+            <section>
+                {categoria ? (
+                    <div className={styles.image_container} style={{backgroundImage: `url(${categoria.fullImagemURL})`}}>
+                        <h1>{categoria.titulo}</h1>
+                        <p>{categoria.descricao}</p>
+                    </div>
+                ) : (
+                    <div>
+                        <h1>Categoria não encontrada!</h1>
+                    </div>
+                )}
+            </section>
+            <section className={styles.section}>
+                <div className={styles.criar_container}>
+                    <Link to="/receitas/criar-receita">
+                        <a>+ AGREGAR RECETA</a>
+                    </Link>
+                </div>
+                <div className={styles.receitas_container}>
+                    {(receitas && receitas.length > 0) ?
+                        receitas.map(receita => {
+                            return (
+                                <>
+                                    <Link to={receita.path}>
+                                        <Receita receita={receita}></Receita>
+                                    </Link>
+                                </>
+                            )
+                        }) : (
+                            <div>
+                                <h1>Não há receitas no momento!</h1>
+                            </div>
+                        )}
+                </div>
+            </section>
+        </>
     );
 }
