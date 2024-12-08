@@ -21,12 +21,7 @@ export default function CriarReceitas(props) {
                     <label htmlFor="instructions">Instrucciones *</label>
                     <textarea id="instructions" placeholder="Instrucciones paso a paso"></textarea>
                 </div>
-                <article className={styles.receita}>
-                    <div className={styles.receita_container}>
-                        <img src={props.receita.imagemURL} />
-                        <span>{props.receita.nome}</span>
-                    </div>
-                </article>
+                
                 <button id="add-photo">Añadir Foto</button>
                 <button id="add-step">Añadir Paso</button>
                 <button id="add-video-image">Añadir Video/Imagen</button>
