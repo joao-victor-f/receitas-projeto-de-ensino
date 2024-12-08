@@ -40,7 +40,7 @@ export const data = {
         "imagemURL": "/categorias/empanadas.png",
         "descricao": "Una sección dedicada a panes caseros como pan de campo, chipá, medialunas y empanadas de carne, pollo o queso.",
         "path": "/receitas/empanadas",
-        "fullImagemURL": "/receitas/empanadas1.jpeg",
+        "fullImagemURL": "/receitas/empanadas1.png",
       },
       {
         "titulo": "Platos Principales",
