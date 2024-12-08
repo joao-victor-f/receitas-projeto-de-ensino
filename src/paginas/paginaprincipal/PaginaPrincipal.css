@@ -6,12 +6,15 @@
     border-radius: 6px;
     font-size: medium;  
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-top: 30px;
   }
 
   #ImagemPI {
     border: none;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-top: 40px;
+    display: flex;
   }
 
   #BodyPI {
@@ -19,9 +22,14 @@
     padding: 50px;
   }
 
+  #BodyPI h1 {
+    margin-bottom: 30px;
+  }
+  
   #BodyPI h1{
     font-size: 40px;
   }
+
   #BodyPI p{
     font-size: 18px;
   }

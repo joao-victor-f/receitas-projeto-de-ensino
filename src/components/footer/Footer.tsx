@@ -1,29 +1,50 @@
 import React from "react";
-import "./footer.css";
+import styles from "./footer.module.css";
 import logo from "../../assets/logo.png";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
     return (
-        <footer>
-            <img src={logo}/>
-            <div id="links_footer">
-                <div className="references">
-                    <a href="#" className="main-reference">Pagina de inicio</a>
-                    <a href="#">Sobre nosotros</a>
-                    <a href="#">Recetas</a>
-                    <a href="#">Feedbacks</a>
+        <footer className={styles.footer}>
+            <div className={styles.outer_container}>
+                <div className={styles.inner_container}>
+                    <div className={styles.intro_container}>
+                        <Link to="/">
+                            <img src={logo} />
+                        </Link>
+                        <div className={styles.social_container}>
+                            <a href="">
+                                <img src="/icons/facebook-icon.svg" alt="ícone do facebook" />
+                            </a>
+                            <a href="">
+                                <img src="/icons/instagram-icon.png" alt="ícone do instagram" />
+                            </a>
+                            <a href="">
+                                <img src="/icons/tiktok-icon.png" alt="ícone do tiktok" />
+                            </a>
+                            <a href="">
+                                <img src="/icons/twitter-icon.png" alt="ícone do X" />
+                            </a>
+                        </div>
+                    </div>
+                    <p>De La Cocina es el sitio donde la pasión por la gastronomía argentina cobra vida. Descubre recetas auténticas, consejos prácticos y sabores que llevan la esencia de Argentina a tu mesa. ¡Aprovecha!</p>
                 </div>
-                <div className="references">
-                    <a href="#" className="main-reference">Recetas</a>
-                    <a href="#">Agregar una receta</a>
-                    <a href="#">Historia de la cocina argentina</a>
-                    <a href="#">Recomendaciones de recetas</a>
-                </div>
-                <div className="references">
-                    <a href="#" className="main-reference">Sobre nosotros</a>
-                    <a href="#">Contacto</a>
+                <div className={styles.topics_container}>
+                    <Link to="/">
+                        <a>Pagina de inicio</a>
+                    </Link>
+                    <Link to="/sobre">
+                        <a>Contacto</a>
+                    </Link>
+                    <Link to="/ingredientes">
+                        <a>Ingredientes</a>
+                    </Link>
+                    <Link to="/categorias">
+                        <a>Categorias</a>
+                    </Link>
                 </div>
             </div>
+            <p>© 2024 De La Cocina</p>
         </footer>
     );
 }

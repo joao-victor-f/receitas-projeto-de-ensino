@@ -7,6 +7,7 @@ import PaginaPrincipal from './paginas/paginaprincipal/PaginaPrincipal.tsx';
 import Receitas from './paginas/receitas/Receitas.tsx';
 import Ingredientes from './paginas/ingredientes/Ingredientes.tsx';
 import Sobre from './paginas/sobre/Sobre.tsx';
+import CriarIgredientes from './paginas/criarigredientes/CriarIgredientes.tsx';
 
 export default function App() {
   return (
@@ -16,9 +17,10 @@ export default function App() {
         <Routes>
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/" element={<PaginaPrincipal />}/>
-          <Route path="/receitas" element={<Receitas />}/>
+          <Route path="/receitas/:nomeCategoria" element={<Receitas />}/>
           <Route path="/categorias" element={<Categorias />}/>
           <Route path="/ingredientes" element={<Ingredientes />}/>
+          <Route path="/criar-igredientes" element={<CriarIgredientes />}/>
         </Routes>
       </main>
       <Footer></Footer>

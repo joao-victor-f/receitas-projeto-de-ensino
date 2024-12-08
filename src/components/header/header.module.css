@@ -1,4 +1,4 @@
-header {
+.header {
   display: flex;
   justify-content: space-between;
   max-width: 100vw;
@@ -7,28 +7,32 @@ header {
   flex-shrink: 0;
 }
 
-header div {
+.header div {
   display: flex;
   align-items: center;
 }
-ul {
+.ul {
   list-style-type: none;
   display: flex;
   align-items: center;
 }
 
-li {
+.li {
   margin: 0 16px;
   font-size: medium;
   font-weight: 500;
   cursor: pointer;
 }
 
-#menu-button {
+#menu_button {
   background: black;
   color: white;
   padding: 12px;
   border: none;
   border-radius: 8px;
   font-size: medium;
+}
+
+#menu_mobile {
+    display: none;
 }

@@ -1,17 +1,19 @@
 import React from 'react';
-import "./listagemDeCategorias.css";
+import styles from "./listagemDeCategorias.module.css";
 import { data } from '../../lib/data';
 import Categoria from '../categoria/Categoria';
+import { Link } from 'react-router-dom';
+
 export default function ListagemDeCategorias() {
     return (
-        <section id="listagem-receitas">
+        <section id={styles.listagem_receitas}>
             <h1>Tipos de comida</h1>
-            <div id="container-receitas">
+            <div id={styles.container_receitas}>
                 {data.categorias.map(categoria => {
                     return (
-                        <>
+                        <Link to={categoria.path}>
                             <Categoria categoria={categoria} />
-                        </>
+                        </Link>
                     )
                 })}
             </div>
