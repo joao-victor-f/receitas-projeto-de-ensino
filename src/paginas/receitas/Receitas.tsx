@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-import React from 'react';
-export default function Receitas() {
-    return (
-        <h1>Receitas</h1>
-=======
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { data } from '../../lib/data';
@@ -72,6 +66,5 @@ export default function Receitas() {
                 </div>
             </section>
         </>
->>>>>>> 0671990cfbf8920b0297a403bde775041a6a77cf
     );
 }

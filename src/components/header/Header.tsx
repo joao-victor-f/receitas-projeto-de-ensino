@@ -12,17 +12,11 @@ export default function Header() {
       </Link>
       <div>
         <SearchBar />
-<<<<<<< HEAD
-        <ul>
-          <li>
-            <a  href="#">Pagina de inicio</a>
-=======
         <ul className={styles.ul}>
           <li className={styles.li}>
             <Link to="/">
               <a>Pagina de inicio</a>
             </Link>
->>>>>>> 0671990cfbf8920b0297a403bde775041a6a77cf
           </li>
           <li className={styles.li}>
             <Link to="/sobre">
