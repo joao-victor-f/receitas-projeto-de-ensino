@@ -3,6 +3,8 @@ import { useLocation } from 'react-router-dom';
 import { data } from '../../lib/data';
 import { Link } from 'react-router-dom';
 import Receita from '../../components/receita/Receita';
+import styles from './receitas.module.css';
+
 export default function Receitas() {
     const location = useLocation();
     const [categoria, setCategoria] = useState<Categoria | undefined>(undefined);
@@ -27,7 +29,7 @@ export default function Receitas() {
         console.log(receitasEncontradas);
     }, [setCategoria, setReceitas])
     return (
-        <section>
+        <section className={styles.section}>
             {(receitas && receitas.length > 0) && 
                 receitas.map(receita => {
                     return (
