@@ -92,6 +92,15 @@ export const data = {
           "Cocinar a fuego lento hasta que los ingredientes estén tiernos."
         ],
         "path": "/receita/locro_criollo",
+        "substituicoes": [
+          "Puedes sustituir el maíz blanco por maíz amarillo.",
+          "El zapallo puede ser reemplazado por calabaza.",
+          "La carne de cerdo puede ser sustituida por carne de res."
+        ],
+        "conselhos": [
+          "Es recomendable dejar reposar el locro durante una hora después de cocinar para intensificar los sabores.",
+          "Si deseas un sabor más profundo, agrega un toque de comino o pimentón ahumado al final de la cocción."
+        ],
       },
       {
         "nome": "Empanadas",
@@ -120,6 +129,15 @@ export const data = {
           "Cerrar las empanadas y hornear a 180°C durante 20 minutos."
         ],
         "path": "/receita/empanadas",
+        "substituicoes": [
+          "Puedes sustituir la carne molida por carne de pollo o de cerdo.",
+          "Las aceitunas verdes pueden ser reemplazadas por aceitunas negras.",
+          "Si no tienes tapas para empanadas, puedes usar masa para pizza."
+        ],
+        "conselhos": [
+          "Deja reposar las empanadas unos minutos después de hornearlas, esto mejora su sabor.",
+          "Puedes acompañarlas con una salsa picante o chimichurri para un toque extra de sabor."
+        ]
       },
       {
         "nome": "Parrilla",
@@ -147,6 +165,15 @@ export const data = {
           "Servir acompañado de chimichurri."
         ],
         "path": "/receita/parrila",
+        "substituicoes": [
+          "Puedes sustituir la costilla de res por vacío o entraña.",
+          "El chorizo puede ser reemplazado por salchichones o morcilla.",
+          "Si prefieres, puedes sazonar con pimienta negra además de sal gruesa."
+        ],
+        "conselhos": [
+          "Es recomendable no mover la carne con frecuencia mientras se asa para que conserve sus jugos.",
+          "Si te gusta un sabor más ahumado, puedes agregar madera de quebracho o roble a las brasas."
+        ],
       }
     ]
 }

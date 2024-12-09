@@ -24,4 +24,6 @@ type Receitas = {
     tempoDePreparacao: string,
     passos: string[],
     path: string,
+    substituicoes: string[],
+    conselhos: string[],
 };
