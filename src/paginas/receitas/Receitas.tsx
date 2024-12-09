@@ -34,7 +34,7 @@ export default function Receitas() {
                 {categoria ? (
                     <div className={styles.image_container} style={{backgroundImage: `url(${categoria.fullImagemURL})`}}>
                         <h1>{categoria.titulo}</h1>
-                        <p>{categoria.descricao}</p>
+                        <p>{categoria.descricao.replace('.', '')}</p>
                     </div>
                 ) : (
                     <div>
