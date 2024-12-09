@@ -23,7 +23,7 @@ export default function PaginaPrincipal () {
       <section className={styles.receitas_container}>
         <div className={styles.receitas_container_header}>
           <h1>Recetas</h1>
-          <Link to="/categorias/">
+          <Link id={styles.botao_ver_mais} to="/categorias/">
             <a>Ver más</a>
           </Link>
         </div>
