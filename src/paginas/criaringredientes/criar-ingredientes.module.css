@@ -1,16 +1,16 @@
-#moduloExternoCriarIgredientes {
+#moduloExternoCriarIngredientes {
     width: 1272px;
     height: 864px;
     margin: 150px auto 80px auto;
     box-shadow: 0px 0px 10px #00000038;
 }
 
-#moduloInternoCriarIgredientes {
+#moduloInternoCriarIngredientes {
     width: 1140px;
     margin: 66px auto 0 auto;
 }
 
-#tituloCriarIgrediente {
+#tituloCriarIngrediente {
     font-size: 48px;
     text-align: center;
     padding-top: 70px;
@@ -18,7 +18,7 @@
     font-weight: 600;
 }
 
-#descricaoCriarIgredientes {
+#descricaoCriarIngredientes {
     margin-top: 58px;
     color: #444444;
     font-size: 21.7px;
@@ -32,7 +32,7 @@
     margin-top: 40px;
 }
 
-#imagemCriarIgredientes {
+#imagemCriarIngredientes {
     margin-top: 40px;
     border-radius: 5px;
 }
@@ -42,6 +42,7 @@
     height: 74px;
     border: 1px solid #45454536;
     background-color: #82828211;
+    font-family: 'Poppins';
     border-radius: 10px;
     margin-top: 10px;
     padding-left: 17px;
