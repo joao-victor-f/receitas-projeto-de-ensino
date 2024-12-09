@@ -29,6 +29,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-bottom: 24px;
 }
 
 .image_container img {
@@ -73,7 +74,7 @@
 
 .descricao_container {
   display: flex;
-  margin-top: 18px;
+  margin-top: 32px;
 }
 
 .texts_container {
@@ -100,6 +101,7 @@
 }
 
 .feedbacks_container {
+  margin-top: 12px;
   display: flex;
   flex-direction: column;
   gap: 12px;
