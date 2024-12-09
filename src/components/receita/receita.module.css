@@ -30,6 +30,11 @@
     font-size: 24px;
 }
 
+.receita_container img {
+    width: 100%;
+    height: auto;
+}
+
 .info_container {
     display: flex;
     flex-direction: column;
