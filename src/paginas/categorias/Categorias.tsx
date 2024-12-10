@@ -13,7 +13,7 @@ export default function Categorias() {
                     <span>El sabor de Argentina a un clic: recetas, paso a paso y mucha inspiracion para tu cocina.</span>
                 </div>
                 <div>
-                    <a href="#">+ AGREGAR RECETA</a>
+                    <a href="/criar-receitas">+ AGREGAR RECETA</a>
                 </div>
             </section>
             <ListagemDeCategorias></ListagemDeCategorias>
