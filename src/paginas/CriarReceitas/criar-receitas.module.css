@@ -1,6 +1,6 @@
 #moduloExternoCriarIngredientes {
     width: 1272px;
-    height: 864px;
+    height: 3910px;
     margin: 150px auto 80px auto;
     box-shadow: 0px 0px 10px #00000038;
 }
@@ -76,10 +76,84 @@
     margin-top: 10px;
     padding-left: 17px;
 }
+#inputPorciones {
+    width: 300px;
+    height: 68px;
+    border: 1px solid #45454536;
+    background-color: #82828211;
+    font-family: 'Poppins';
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 248px;
+    padding-left: 17px;
+}
+
+#inputTiempoP {
+    width: 134px;
+    height: 68px;
+    border: 1px solid #45454536;
+    background-color: #82828211;
+    font-family: 'Poppins';
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 80px;
+    padding-left: 17px;
+}
+
+#inputTiempoP2 {
+    width: 134px;
+    height: 68px;
+    border: 1px solid #45454536;
+    background-color: #82828211;
+    font-family: 'Poppins';
+    border-radius: 10px;
+    margin-top: 10px;
+    padding-left: 17px;
+}
+
+#inputDescricao {
+    display: flex;
+    width: 1140px;
+    height: 230px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    border: 1px solid #45454536;
+    background-color: #82828211;
+    font-family: 'Poppins';
+    border-radius: 10px;
+    margin-top: 20px;
+    position: relative;
+}
 
 #inputNomeIngrediente::placeholder {
     color: #ACACAC;
     font-family: 'Poppins';
+}
+
+#inputPorciones::placeholder {
+    color: #ACACAC;
+    font-family: 'Poppins';
+}
+
+#inputTiempoP::placeholder {
+    color: #ACACAC;
+    font-family: 'Poppins';
+}
+#inputTiempoP2::placeholder {
+    color: #ACACAC;
+    font-family: 'Poppins';
+}
+
+#inputDescricao::placeholder {
+    color: #ACACAC;
+    font-family: 'Poppins';
+    position: absolute;
+    width: 1088px;
+    top: 23px;
+    left: 26px;
+    letter-spacing: 0;
+    line-height: normal;
 }
 
 #moduloInputNomeIngrediente {
@@ -88,6 +162,26 @@
 
 #labelNomeIngrediente {
     font-family: "Poppins";
+    font-size: 24px;
+    font-weight: 500;
+}
+
+#labelPorciones {
+    font-family: "Poppins";
+    font-size: 24px;
+    font-weight: 500;
+}
+
+#labelTiempoP {
+    font-family: "Poppins";
+    font-size: 24px;
+    font-weight: 500;
+}
+
+#labelDescricao {
+    font-family: "Poppins";
+    font-size: 24px;
+    font-weight: 500;
 }
 
 #botoes {
@@ -117,11 +211,6 @@
     font-size: 23px;
     font-weight: 400;
     font-family: "Poppins";
-}
-
-#labelNomeIngrediente {
-    font-size: 24px;
-    font-weight: 500;
 }
 
 .required:after {
