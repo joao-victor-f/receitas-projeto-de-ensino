@@ -96,9 +96,9 @@ export default function SearchBar() {
             >
               <div className={styles.description_container}>
                 <span><strong>{receita.nome}</strong></span>
-                <img src={receita.imagemURL} className={styles.imagem_receita}/>
+                <p>{receita.categoria.titulo}</p>
               </div>
-              <p>{receita.categoria.titulo}</p>
+              <img src={receita.imagemURL} className={styles.imagem_receita}/>
             </li>
           ))}
         </ul>
