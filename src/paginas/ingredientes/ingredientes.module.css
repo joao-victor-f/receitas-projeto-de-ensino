@@ -7,17 +7,45 @@ body {
     margin-right: 31px;
 }
 
+#conteudoHeader {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#tituloIngredientes {
+    text-align: center;
+    font-size: 64px;
+    color: white;
+}
+
+#textoHeader {
+    position: absolute;
+}
+
+#descricaoHeader {
+    color: white;
+    font-size: 24px;
+}
+
+#imagemDoHeader {
+    width: 100%;
+}
+
 #fileiraDeReceitasUm, #fileiraDeReceitasDois {
     margin-bottom: 40px;
 }
 
 #grupoReceitas {
-    margin: 60px 0 0 0;
+    margin: 130px auto 0 auto;
+    width: 1281px;
 }
 
 #conteudoReceitas {
     margin: 40px 0 80px 0;
-    width: max-content;
+    width: 100%;
 }
 
 #inserirIngrediente {
@@ -25,7 +53,7 @@ body {
     font-family: 'Poppins';
     font-size: 22px;
     font-weight: 500;
-    margin-right: 10px;
+    margin: 50px 33px 30px 0;
 }
 
 .receita {
