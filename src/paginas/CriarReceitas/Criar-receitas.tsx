@@ -88,6 +88,7 @@ export default function CriarReceitas() {
                     <button id={styles.botaoCancelar}>Cancelar</button>
                     <button id={styles.botaoAgregarReceta}>Enviar receta</button>
                 </div>
+                <p id={styles.descricaoPaginaR}>Si ha encontrado esta receta en una revista, un libro de cocina o en otro sitio web, no podemos publicarla aquí. Nuestra plataforma se nutre de la originalidad y las recetas publicadas deben cumplir con nuestros principios. Mantengamos fluyendo la creatividad en la cocina con sus recetas únicas.</p>
             </div>
         </div>
     );

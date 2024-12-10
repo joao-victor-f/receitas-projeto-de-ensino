@@ -1,8 +1,9 @@
 #moduloExternoCriarIngredientes {
     width: 1272px;
-    height: 3910px;
-    margin: 150px auto 80px auto;
+    height: 3200px;
+    margin: 100px auto 80px auto;
     box-shadow: 0px 0px 10px #00000038;
+    border-radius: 10px;
 }
 
 #moduloInternoCriarIngredientes {
@@ -27,6 +28,16 @@
 
 #descricaoLabel {
     margin-top: 17px;
+    margin-bottom: 17px;
+    color: #444444;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+    font-family: "Poppins";
+}
+
+#descricaoPaginaR {
+    margin-top: 35px;
     margin-bottom: 17px;
     color: #444444;
     font-style: normal;
