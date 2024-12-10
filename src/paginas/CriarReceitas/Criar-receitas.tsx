@@ -2,6 +2,8 @@ import React from "react";
 import styles from "./criar-receitas.module.css";
 import botaoAdicionar from "../../assets/botao-adicionar.svg";
 import Divisor from "../../assets/Divider.svg";
+import botaoRemover from "../../assets/remove-button.svg";
+import ReOrder from "../../assets/re-order-button.svg";
 
 export default function CriarReceitas() {
     return (
@@ -36,9 +38,55 @@ export default function CriarReceitas() {
                     <input type="text" id={styles.inputTiempoP} placeholder="hrs" />
                     <input type="text" id={styles.inputTiempoP2} placeholder="min" />
                 </div>
+                <div id={styles.moduloInputNomeIngrediente}>
+                    <label id={styles.labelNomeIngrediente} className={styles.required}>Ingredientes</label>
+                    <p id={styles.descricaoLabel}>Enumere un ingrediente por línea, especificando cantidades (1, 2), medidas (tazas, cucharas) y cualquier detalle de preparación (picado, tamizado) junto con el artículo.</p>
+                    <div id={styles.botaoReOrder}>
+                        <button><img src={ReOrder} alt="botão remover I" /></button>
+                    </div>
+                    <input type="text" id={styles.inputTiempoP} placeholder="Cantidad" />
+                    <select id={styles.inputTiempoP} name="Mediciones">
+                        <option value="kg">KG</option>
+                        <option value="g">G</option>
+                        <option value="hg">HG</option>
+                    </select>
+                    <input type="text" id={styles.inputTiempoP} placeholder="Producto" />
+                    <div id={styles.botaoAddIngrediente}>
+                        <button><img src={botaoAdicionar} alt="botão remover I" /></button>
+                        <span>Agregar ingredientes</span>
+                    </div>
+                </div>
+                <div id={styles.moduloInputNomeIngrediente}>
+                    <label id={styles.labelNomeIngrediente} className={styles.required}>Instrucciones</label>
+                    <p id={styles.descricaoLabel}>Divide tu receta en instrucciones claras paso a paso.</p>
+                    <div id={styles.botaoReOrder}>
+                        <button><img src={ReOrder} alt="botão re-order" /></button>
+                    </div>
+                    <input type="text" id={styles.inputDescricao} placeholder="Texto de entrada" />
+                    <div id={styles.botaoReOrder}>
+                        <button><img src={ReOrder} alt="botão re-order" /></button>
+                    </div>
+                    <input type="text" id={styles.inputDescricao} placeholder="Texto de entrada" />
+                    <div id={styles.botaoAddIngrediente}>
+                        <button><img src={botaoAdicionar} alt="botão adicionar I" /></button>
+                        <span>Agregar ingredientes</span>
+                    </div>
+                </div>
+                <div id={styles.moduloInputNomeIngrediente}>
+                    <label id={styles.labelDescricao} className={styles.nonrequired}>Consejos de cocina</label>
+                    <input type="text" id={styles.inputDescricao} placeholder="¡Comparte tus secretos de cocina! Trucos, intercambios o cualquier consejo sobre el horno para lograr el máximo éxito en la receta." />
+                </div>
+                <div id={styles.moduloInputNomeIngrediente}>
+                    <label id={styles.labelDescricao} className={styles.nonrequired}>Categoría</label>
+                    <select id={styles.inputNomeIngrediente} name="Tipo de comida">
+                        <option value="descricao">Tipo de comida</option>
+                        <option value="g">G</option>
+                        <option value="hg">HG</option>
+                    </select>
+                </div>
                 <div id={styles.botoes}>
                     <button id={styles.botaoCancelar}>Cancelar</button>
-                    <button id={styles.botaoAgregarIngredientes}>Agregar Ingrediente</button>
+                    <button id={styles.botaoAgregarReceta}>Enviar receta</button>
                 </div>
             </div>
         </div>

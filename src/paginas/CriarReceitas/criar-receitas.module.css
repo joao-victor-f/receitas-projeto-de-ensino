@@ -25,6 +25,35 @@
     font-family: "Poppins";
 }
 
+#descricaoLabel {
+    margin-top: 17px;
+    margin-bottom: 17px;
+    color: #444444;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 25px;
+    font-family: "Poppins";
+}
+
+#botaoReOrder {
+
+
+}
+
+#botaoAddIngrediente {
+    margin-top: 30px;
+    display: flex;
+    padding: 10px 10px;
+    align-items: center;
+    gap: 10px;
+    color: #000000;
+    font-family: 'Poppins';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
 #linhaDivisoria {
     background-color: #00000011;
     width: 1140px;
@@ -76,6 +105,7 @@
     margin-top: 10px;
     padding-left: 17px;
 }
+
 #inputPorciones {
     width: 300px;
     height: 68px;
@@ -140,6 +170,7 @@
     color: #ACACAC;
     font-family: 'Poppins';
 }
+
 #inputTiempoP2::placeholder {
     color: #ACACAC;
     font-family: 'Poppins';
@@ -202,8 +233,8 @@
     font-family: "Poppins";
 }
 
-#botaoAgregarIngredientes {
-    width: 284px;
+#botaoAgregarReceta {
+    width: 200px;
     height: 56px;
     background-color: #454545;
     color: white;
