@@ -1,0 +1,150 @@
+.top_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 12px;
+    font-family: 'Poppins';
+}
+
+.top_container h1 {
+    font-size: 48px;
+}
+
+.top_container button {
+    background-color: inherit;
+}
+
+.top_container div {
+    display: flex;
+    gap: 12px;
+}
+
+.image_container {
+    margin-bottom: 18px;
+}
+
+.visao_geral_container h1 {
+    color: #1D1D1D;
+    font-family: Poppins;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.visao_geral_container p {
+    color: #444;
+    text-align: justify;
+    font-family: Poppins;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 38px; /* 172.727% */
+}
+
+.conselhos_container ul {
+    padding-left: 18px;
+}
+
+.conselhos_container h1 {
+    color: #1D1D1D;
+    font-family: Poppins;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.conselhos_container span {
+    color: #444;
+    text-align: justify;
+    font-family: Poppins;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 38px; /* 172.727% */
+}
+
+.substituicoes_container ul {
+    padding-left: 18px;
+}
+
+.substituicoes_container h1 {
+    color: #1D1D1D;
+    font-family: Poppins;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.substituicoes_container span {
+    color: #444;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 38px; /* 158.333% */
+}
+
+.instrucoes_container h1 {
+    color: #1D1D1D;
+    font-family: Poppins;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.ingredientes_container h1 {
+    color: #1D1D1D;
+    font-family: Poppins;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.ingredientes_container span {
+    color: #444;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 38px; /* 158.333% */
+}
+
+.ingrediente_container {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.instrucoes_container {
+    margin-top: 16px;
+}
+
+.instrucoes_container p {
+    color: #444;
+    text-align: justify;
+    font-family: Poppins;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 38px; /* 172.727% */
+}
+
+.instrucoes_container span {
+    color: #1D1D1D;
+    font-family: Poppins;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.instrucao_container {
+    display: flex;
+    gap: 16px;
+}

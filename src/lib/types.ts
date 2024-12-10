@@ -11,6 +11,15 @@ type Ingrediente = {
     imagemURL: string,
 };
 
+type IngredienteReceita = {
+    ingrediente: {
+      nome: string;
+      imagemURL: string;
+    };
+    quantidade: number;
+    medicao: string;
+};
+
 type Receitas = {
     nome: string,
     categoria: Categoria,
@@ -24,4 +33,8 @@ type Receitas = {
     tempoDePreparacao: string,
     passos: string[],
     path: string,
+    substituicoes: string[],
+    conselhos: string[],
+    visaoGeral: string,
+    porcoes: number,
 };
