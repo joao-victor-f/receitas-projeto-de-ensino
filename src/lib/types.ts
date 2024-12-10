@@ -26,4 +26,5 @@ type Receitas = {
     path: string,
     substituicoes: string[],
     conselhos: string[],
+    visaoGeral: string,
 };
