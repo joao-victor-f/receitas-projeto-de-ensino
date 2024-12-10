@@ -27,4 +27,5 @@ type Receitas = {
     substituicoes: string[],
     conselhos: string[],
     visaoGeral: string,
+    porcoes: number,
 };
