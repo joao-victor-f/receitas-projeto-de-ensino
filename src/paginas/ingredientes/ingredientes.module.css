@@ -56,6 +56,11 @@ body {
     margin: 50px 33px 30px 0;
 }
 
+#inserirIngrediente:hover {
+    color: rgba(0, 0, 0, 0.671);
+    cursor: pointer;
+}
+
 .receita {
     display: inline-block;
     width: 403px;
