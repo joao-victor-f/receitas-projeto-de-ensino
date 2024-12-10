@@ -10,6 +10,7 @@ import chocolate from '../../assets/chocolate.jpg';
 import leche from '../../assets/leche.jpg';
 import manteca from '../../assets/manteca.jpg';
 import imagemDoHeader from '../../assets/imagemDoHeader.jpg';
+import { Link } from "react-router-dom";
 
 
 export default function Ingredientes() {
@@ -23,7 +24,9 @@ export default function Ingredientes() {
                         <span id={styles.descricaoHeader}>Los ingredientes que componen la cocina argentina</span>
                     </div>
                 </div>
-                <span id={styles.inserirIngrediente}>+ AGREGAR INGREDIENTE</span>
+                <Link to="/criar-ingredientes">
+                    <a id={styles.inserirIngrediente}>+ AGREGAR INGREDIENTE</a>
+                </Link>
                 <div id={styles.grupoReceitas}>
                     <div className={styles.fileiraDeReceitas} id={styles.fileiraDeReceitasUm}>
                         <div className={styles.receita} id={styles.receitaUm}>

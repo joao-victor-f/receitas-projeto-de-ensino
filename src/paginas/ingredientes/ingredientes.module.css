@@ -32,6 +32,8 @@ body {
 
 #imagemDoHeader {
     width: 100%;
+    border-radius: 20px;
+    box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.486);
 }
 
 #fileiraDeReceitasUm, #fileiraDeReceitasDois {
