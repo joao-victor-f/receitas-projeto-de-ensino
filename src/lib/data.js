@@ -102,6 +102,7 @@ export const data = {
           "Si deseas un sabor más profundo, agrega un toque de comino o pimentón ahumado al final de la cocción."
         ],
          "visaoGeral": "El locro criollo es un plato tradicional de Argentina que tiene sus raíces en las comidas indígenas de la región andina. A lo largo de los siglos, este guiso fue evolucionando con influencias de la gastronomía española y europea. Es un plato reconfortante que se prepara especialmente en días fríos, y se asocia a celebraciones como el 25 de mayo, cuando se conmemora la Revolución de Mayo. El locro, a base de maíz, zapallo y carne, es un ejemplo de la cocina tradicional argentina, simbolizando la unión de los ingredientes locales en una receta simple pero sabrosa.",
+         "porcoes": 6,
       },
       {
         "nome": "Empanadas",
@@ -140,6 +141,7 @@ export const data = {
           "Puedes acompañarlas con una salsa picante o chimichurri para un toque extra de sabor."
         ],
         "visaoGeral": "Las empanadas argentinas son un emblema de la gastronomía nacional y tienen una historia que se remonta a la época colonial. Se cree que las empanadas fueron traídas por los españoles, aunque los pueblos originarios ya preparaban alimentos similares. Con el tiempo, las empanadas se adaptaron a las diversas regiones del país, incorporando ingredientes autóctonos y variando en los rellenos. En Argentina, las empanadas son una comida versátil, consumida tanto en celebraciones como en comidas diarias, y son conocidas por su sabroso relleno de carne, pollo, queso, entre otros.",
+        "porcoes": 12,
       },
       {
         "nome": "Parrilla",
@@ -177,6 +179,7 @@ export const data = {
           "Si te gusta un sabor más ahumado, puedes agregar madera de quebracho o roble a las brasas."
         ],
         "visaoGeral": "La parrilla argentina es una tradición culinaria que se remonta a los primeros pobladores del país. El asado, como es conocido, tiene sus raíces en la cultura gaucha, los trabajadores rurales que comenzaron a cocinar carne en grandes fogatas durante las jornadas de trabajo. A lo largo del tiempo, la parrilla se ha convertido en una de las formas más representativas de la cocina argentina, conocida por sus cortes de carne de alta calidad, cocidos a la perfección sobre brasas. Es una verdadera celebración de la carne, que no solo se disfruta en reuniones familiares, sino también en encuentros sociales.",
+        "porcoes": 8,
       }
     ]
 }
