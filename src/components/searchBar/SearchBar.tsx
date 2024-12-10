@@ -47,7 +47,11 @@ export default function SearchBar() {
 
   // Função para navegar para a página da receita
   const handleSelectRecipe = (path: string) => {
-    navigate(path); // Redireciona para a página da receita
+    if (window.location.pathname !== path) {
+      navigate(path, {replace: true}); // Redireciona para a página da receita
+    } else {
+      navigate(0); // Isso recarrega a página, mas pode ser uma abordagem drástica
+    }
     setBusca(""); // Limpa o campo de busca
     setExibirResultados(false); // Fecha a lista de resultados
   };

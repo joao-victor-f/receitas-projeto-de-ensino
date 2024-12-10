@@ -17,7 +17,7 @@ export default function Receita() {
         return;
 
     setReceita(receitaEncontrada);
-  }, []);
+  }, [location.pathname]);
 
   if (!receita) {
     return (
