@@ -44,7 +44,7 @@ export default function Receitas() {
             </section>
             <section className={styles.section}>
                 <div className={styles.criar_container}>
-                    <Link to="/receitas/criar-receita">
+                    <Link to="/criar-receitas">
                         <a>+ AGREGAR RECETA</a>
                     </Link>
                 </div>
