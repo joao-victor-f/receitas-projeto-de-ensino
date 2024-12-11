@@ -76,11 +76,11 @@ export const data = {
         },
         "descricao": "Un guiso tradicional argentino a base de maíz blanco, zapallo y carne, perfecto para días fríos.",
         "ingredientes": [
-          { "ingrediente": {"nome": "Maíz blanco", "imagemURL": "exemplo.com"}, "quantidade": 1, "medicao": "taza" },
-          { "ingrediente": {"nome": "Zapallo", "imagemURL": "exemplo.com"}, "quantidade": 500, "medicao": "gramo"  },
-          { "ingrediente": {"nome": "Carne de cerdo", "imagemURL": "exemplo.com"}, "quantidade": 300, "medicao": "gramo"  },
-          { "ingrediente": {"nome": "Chorizo colorado", "imagemURL": "exemplo.com"}, "quantidade": 2, "medicao": "unidad"  },
-          { "ingrediente": {"nome": "Cebolla", "imagemURL": "exemplo.com"}, "quantidade": 1, "medicao": "unidad" }
+          { "ingrediente": {"nome": "Maíz blanco", "imagemURL": "/ingredientes/maiz_blanco.jpeg"}, "quantidade": 1, "medicao": "taza" },
+          { "ingrediente": {"nome": "Zapallo", "imagemURL": "/ingredientes/zapallo.jpeg"}, "quantidade": 500, "medicao": "gramo"  },
+          { "ingrediente": {"nome": "Carne de cerdo", "imagemURL": "/ingredientes/carne_de_cerdo.jpeg"}, "quantidade": 300, "medicao": "gramo"  },
+          { "ingrediente": {"nome": "Chorizo", "imagemURL": "/ingredientes/chorizo.jpg"}, "quantidade": 2, "medicao": "unidad"  },
+          { "ingrediente": {"nome": "Cebolla", "imagemURL": "/ingredientes/cebolla.jpg"}, "quantidade": 1, "medicao": "unidad" }
         ],
         "imagemURL": "/receitas/locro-criollo.png",
         "tempoDePreparacao": "02:00:00",
@@ -115,11 +115,11 @@ export const data = {
         },
         "descricao": "Empanadas argentinas clásicas con relleno de carne y condimentos tradicionales.",
         "ingredientes": [
-          { "ingrediente": {"nome": "Carne molida", "imagemURL":"exemplo.com"}, "quantidade": 500, "medicao": "gramo" },
-          { "ingrediente": {"nome": "Cebolla", "imagemURL": "exemplo.com"}, "quantidade": 2, "medicao": "unidad" },
-          { "ingrediente": {"nome": "Aceitunas verdes", "imagemURL": "exemplo.com"}, "quantidade": 100, "medicao": "gramo" },
-          { "ingrediente": {"nome": "Tapas para empanadas", "imagemURL": "exemplo.com"}, "quantidade": 12, "medicao": "unidad" },
-          { "ingrediente": {"nome": "Comino", "imagemURL": "exemplo.com"}, "quantidade": 1, "medicao": "cucharadita" }
+          { "ingrediente": {"nome": "Carne molida", "imagemURL":"/ingredientes/carne_molida.jpeg"}, "quantidade": 500, "medicao": "gramo" },
+          { "ingrediente": {"nome": "Cebolla", "imagemURL": "/ingredientes/cebolla.jpg"}, "quantidade": 2, "medicao": "unidad" },
+          { "ingrediente": {"nome": "Aceitunas verdes", "imagemURL": "/ingredientes/aceituna.jpeg"}, "quantidade": 100, "medicao": "gramo" },
+          { "ingrediente": {"nome": "Tapas para empanadas", "imagemURL": "/ingredientes/tapas_para_empanadas.jpeg"}, "quantidade": 12, "medicao": "unidad" },
+          { "ingrediente": {"nome": "Comino", "imagemURL": "/ingredientes/comino.jpeg"}, "quantidade": 1, "medicao": "cucharadita" }
         ],
         "imagemURL": "/receitas/empanadas.png",
         "tempoDePreparacao": "01:00:00",
@@ -154,10 +154,10 @@ export const data = {
         },
         "descricao": "Una selección de cortes de carne asados a la perfección en la parrilla.",
         "ingredientes": [
-          { "ingrediente": {"nome": "Costilla de res", "imagemURL": "exemplo.com"}, "quantidade": 1, "medicao": "kg" },
-          { "ingrediente": {"nome": "Chorizo", "imagemURL": "exemplo.com"}, "quantidade": 4, "medicao": "unidad" },
-          { "ingrediente": {"nome": "Morcilla", "imagemURL": "exemplo.com"}, "quantidade": 2, "medicao": "unidad" },
-          { "ingrediente": {"nome": "Sal gruesa", "imagemURL": "exemplo.com"}, "quantidade": 2, "medicao": "cucharada" }
+          { "ingrediente": {"nome": "Costilla de res", "imagemURL": "/ingredientes/costilla_de_res.jpeg"}, "quantidade": 1, "medicao": "kg" },
+          { "ingrediente": {"nome": "Chorizo", "imagemURL": "/ingredientes/chorizo.jpg"}, "quantidade": 4, "medicao": "unidad" },
+          { "ingrediente": {"nome": "Morcilla", "imagemURL": "/ingredientes/morcilla.jpg"}, "quantidade": 2, "medicao": "unidad" },
+          { "ingrediente": {"nome": "Sal gruesa", "imagemURL": "/ingredientes/sal_gruesa.jpg"}, "quantidade": 2, "medicao": "cucharada" }
         ],
         "imagemURL": "/receitas/parrila.png",
         "tempoDePreparacao": "01:30:00",
@@ -181,5 +181,55 @@ export const data = {
         "visaoGeral": "La parrilla argentina es una tradición culinaria que se remonta a los primeros pobladores del país. El asado, como es conocido, tiene sus raíces en la cultura gaucha, los trabajadores rurales que comenzaron a cocinar carne en grandes fogatas durante las jornadas de trabajo. A lo largo del tiempo, la parrilla se ha convertido en una de las formas más representativas de la cocina argentina, conocida por sus cortes de carne de alta calidad, cocidos a la perfección sobre brasas. Es una verdadera celebración de la carne, que no solo se disfruta en reuniones familiares, sino también en encuentros sociales.",
         "porcoes": 8,
       }
-    ]
+    ],
+    "ingredientes": [
+      {
+        "nome": "Maíz blanco",
+        "imagemURL": "/ingredientes/maiz_blanco.jpeg"
+      },
+      {
+        "nome": "Zapallo",
+        "imagemURL": "/ingredientes/zapallo.jpeg"
+      },
+      {
+        "nome": "Carne de cerdo",
+        "imagemURL": "/ingredientes/carne_de_cerdo.jpeg"
+      },
+      {
+        "nome": "Chorizo",
+        "imagemURL": "/ingredientes/chorizo.jpg"
+      },
+      {
+        "nome": "Cebolla",
+        "imagemURL": "/ingredientes/cebolla.jpg"
+      },
+      {
+        "nome": "Carne molida",
+        "imagemURL": "/ingredientes/carne_molida.jpeg"
+      },
+      {
+        "nome": "Aceitunas verdes",
+        "imagemURL": "/ingredientes/aceituna.jpeg"
+      },
+      {
+        "nome": "Tapas para empanadas",
+        "imagemURL": "/ingredientes/tapas_para_empanadas.jpeg"
+      },
+      {
+        "nome": "Comino",
+        "imagemURL": "/ingredientes/comino.jpeg"
+      },
+      {
+        "nome": "Costilla de res",
+        "imagemURL": "/ingredientes/costilla_de_res.jpeg"
+      },
+      {
+        "nome": "Morcilla",
+        "imagemURL": "/ingredientes/morcilla.jpg"
+      },
+      {
+        "nome": "Sal gruesa",
+        "imagemURL": "/ingredientes/sal_gruesa.jpg"
+      }
+]
 }
