@@ -157,7 +157,7 @@ export const data = {
           { "ingrediente": {"nome": "Costilla de res", "imagemURL": "/ingredientes/costilla_de_res.jpeg"}, "quantidade": 1, "medicao": "kg" },
           { "ingrediente": {"nome": "Chorizo", "imagemURL": "/ingredientes/chorizo.jpg"}, "quantidade": 4, "medicao": "unidad" },
           { "ingrediente": {"nome": "Morcilla", "imagemURL": "/ingredientes/morcilla.jpg"}, "quantidade": 2, "medicao": "unidad" },
-          { "ingrediente": {"nome": "Sal gruesa", "imagemURL": "/ingredientes/sal_gruesa.jpg"}, "quantidade": 2, "medicao": "cucharada" }
+          { "ingrediente": {"nome": "Sal gruesa", "imagemURL": "/ingredientes/sal_gruesa.jpeg"}, "quantidade": 2, "medicao": "cucharada" }
         ],
         "imagemURL": "/receitas/parrila.png",
         "tempoDePreparacao": "01:30:00",
@@ -229,7 +229,7 @@ export const data = {
       },
       {
         "nome": "Sal gruesa",
-        "imagemURL": "/ingredientes/sal_gruesa.jpg"
+        "imagemURL": "/ingredientes/sal_gruesa.jpeg"
       }
 ]
 }
