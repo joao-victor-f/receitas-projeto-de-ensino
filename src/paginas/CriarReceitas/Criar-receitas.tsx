@@ -41,16 +41,42 @@ export default function CriarReceitas() {
                 <div id={styles.moduloInputNomeIngrediente}>
                     <label id={styles.labelNomeIngrediente} className={styles.required}>Ingredientes</label>
                     <p id={styles.descricaoLabel}>Enumere un ingrediente por línea, especificando cantidades (1, 2), medidas (tazas, cucharas) y cualquier detalle de preparación (picado, tamizado) junto con el artículo.</p>
+                    <div id={styles.InputAgregarIngrediente}>
                         <button><img src={ReOrder} alt="botão reOrder I" /></button>
-                    <input type="text" id={styles.inputCantidad} placeholder="Cantidad" />
-                    <select id={styles.inputMedicion} name="Medicion">
-                        <option value="Titulo">Medición</option>
-                        <option value="g">G</option>
-                        <option value="kg">KG</option>
-                        <option value="hg">HG</option>
-                    </select>
-                    <input type="text" id={styles.inputProducto} placeholder="Producto" />
+                        <input type="text" id={styles.inputCantidad} placeholder="Cantidad" />
+                        <select id={styles.inputMedicion} name="Medicion">
+                            <option value="Titulo">Medición</option>
+                            <option value="g">G</option>
+                            <option value="kg">KG</option>
+                            <option value="hg">HG</option>
+                        </select>
+                        <input type="text" id={styles.inputProducto} placeholder="Producto" />
                         <button><img src={botaoRemover} alt="botão remover I" /></button>
+                    </div>
+                    <div id={styles.InputAgregarIngrediente}>
+                        <button><img src={ReOrder} alt="botão reOrder I" /></button>
+                        <input type="text" id={styles.inputCantidad} placeholder="Cantidad" />
+                        <select id={styles.inputMedicion} name="Medicion">
+                            <option value="Titulo">Medición</option>
+                            <option value="g">G</option>
+                            <option value="kg">KG</option>
+                            <option value="hg">HG</option>
+                        </select>
+                        <input type="text" id={styles.inputProducto} placeholder="Producto" />
+                        <button><img src={botaoRemover} alt="botão remover I" /></button>
+                    </div>
+                    <div id={styles.InputAgregarIngrediente}>
+                        <button><img src={ReOrder} alt="botão reOrder I" /></button>
+                        <input type="text" id={styles.inputCantidad} placeholder="Cantidad" />
+                        <select id={styles.inputMedicion} name="Medicion">
+                            <option value="Titulo">Medición</option>
+                            <option value="g">G</option>
+                            <option value="kg">KG</option>
+                            <option value="hg">HG</option>
+                        </select>
+                        <input type="text" id={styles.inputProducto} placeholder="Producto" />
+                        <button><img src={botaoRemover} alt="botão remover I" /></button>
+                    </div>
                     <div id={styles.botaoAddIngrediente}>
                         <button><img src={botaoAdicionar} alt="botão adicionar I" /></button>
                         <span>Agregar ingredientes</span>
@@ -59,17 +85,19 @@ export default function CriarReceitas() {
                 <div id={styles.moduloInputNomeIngrediente}>
                     <label id={styles.labelNomeIngrediente} className={styles.required}>Instrucciones</label>
                     <p id={styles.descricaoLabel}>Divide tu receta en instrucciones claras paso a paso.</p>
-                    <div id={styles.botaoReOrder}>
+                    <div id={styles.InputPassos}>
                         <button><img src={ReOrder} alt="botão re-order" /></button>
+                        <input type="text" id={styles.inputDescPasso} placeholder="Passo 1" />
+                        <button><img src={botaoRemover} alt="botão remover I" /></button>
                     </div>
-                    <input type="text" id={styles.inputDescricao} placeholder="Texto de entrada" />
-                    <div id={styles.botaoReOrder}>
+                    <div id={styles.InputPassos}>
                         <button><img src={ReOrder} alt="botão re-order" /></button>
+                        <input type="text" id={styles.inputDescPasso} placeholder="Passo 2" />
+                        <button><img src={botaoRemover} alt="botão remover I" /></button>
                     </div>
-                    <input type="text" id={styles.inputDescricao} placeholder="Texto de entrada" />
                     <div id={styles.botaoAddIngrediente}>
                         <button><img src={botaoAdicionar} alt="botão adicionar I" /></button>
-                        <span>Agregar ingredientes</span>
+                        <span>Agregar paso</span>
                     </div>
                 </div>
                 <div id={styles.moduloInputNomeIngrediente}>

@@ -1,6 +1,6 @@
 #moduloExternoCriarIngredientes {
     width: 1272px;
-    height: 3200px;
+    height: 3300px;
     margin: 100px auto 80px auto;
     box-shadow: 0px 0px 10px #00000038;
     border-radius: 10px;
@@ -101,6 +101,17 @@
     line-height: normal;
 }
 
+#InputPassos {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    width: 1136px;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    flex-shrink: 0;
+}
+
 #inputNomeIngrediente {
     width: 1140px;
     height: 74px;
@@ -110,6 +121,17 @@
     border-radius: 10px;
     margin-top: 10px;
     padding-left: 17px;
+}
+
+#InputAgregarIngrediente {
+    margin-bottom: 30px;
+    display: flex;
+    width: 1136px;
+    height: 68px;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    flex-shrink: 0;
 }
 
 #inputPorciones {
@@ -192,18 +214,43 @@
 }
 
 #inputDescricao {
-    display: flex;
     width: 1140px;
     height: 230px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
+    display: flex;
+    padding: 24px 26px 106px 26px;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 0;
+    align-self: stretch;
+    border-radius: 10px;
     border: 1px solid #45454536;
     background-color: #82828211;
-    font-family: 'Poppins';
+    color: var(--Light-Grey, #000000);
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#inputDescPasso{
+    width: 1012px;
+    height: 160px;
+    display: flex;
+    padding: 24px 26px 106px 26px;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 0;
+    align-self: stretch;
     border-radius: 10px;
-    margin-top: 20px;
-    position: relative;
+    border: 1px solid #45454536;
+    background-color: #82828211;
+    color: var(--Light-Grey, #000000);
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 #inputNomeIngrediente::placeholder {
@@ -245,6 +292,7 @@
     font-family: "Poppins";
     font-size: 24px;
     font-weight: 500;
+    margin-top: 60px;
 }
 
 #labelPorciones {
