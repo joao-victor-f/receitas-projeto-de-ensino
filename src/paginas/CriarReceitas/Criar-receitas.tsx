@@ -41,18 +41,18 @@ export default function CriarReceitas() {
                 <div id={styles.moduloInputNomeIngrediente}>
                     <label id={styles.labelNomeIngrediente} className={styles.required}>Ingredientes</label>
                     <p id={styles.descricaoLabel}>Enumere un ingrediente por línea, especificando cantidades (1, 2), medidas (tazas, cucharas) y cualquier detalle de preparación (picado, tamizado) junto con el artículo.</p>
-                    <div id={styles.botaoReOrder}>
-                        <button><img src={ReOrder} alt="botão remover I" /></button>
-                    </div>
-                    <input type="text" id={styles.inputTiempoP} placeholder="Cantidad" />
-                    <select id={styles.inputTiempoP} name="Mediciones">
-                        <option value="kg">KG</option>
+                        <button><img src={ReOrder} alt="botão reOrder I" /></button>
+                    <input type="text" id={styles.inputCantidad} placeholder="Cantidad" />
+                    <select id={styles.inputMedicion} name="Medicion">
+                        <option value="Titulo">Medición</option>
                         <option value="g">G</option>
+                        <option value="kg">KG</option>
                         <option value="hg">HG</option>
                     </select>
-                    <input type="text" id={styles.inputTiempoP} placeholder="Producto" />
+                    <input type="text" id={styles.inputProducto} placeholder="Producto" />
+                        <button><img src={botaoRemover} alt="botão remover I" /></button>
                     <div id={styles.botaoAddIngrediente}>
-                        <button><img src={botaoAdicionar} alt="botão remover I" /></button>
+                        <button><img src={botaoAdicionar} alt="botão adicionar I" /></button>
                         <span>Agregar ingredientes</span>
                     </div>
                 </div>
