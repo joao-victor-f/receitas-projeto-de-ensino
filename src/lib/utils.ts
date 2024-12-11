@@ -1,3 +1,4 @@
+
 export function formatarTempo(tempo: string): string {
   // Divide a string de tempo em horas, minutos e segundos
   const [horas, minutos, segundos] = tempo.split(":").map(Number);
@@ -20,3 +21,28 @@ export function formatarTempo(tempo: string): string {
   // Caso tenha apenas minutos (quando segundos são diferentes de zero, mas não influenciam na exibição)
   return `${minutos} minuto${minutos > 1 ? 's' : ''}`;
 }
+
+export const pluralizeMedicao = (medicao: string, quantidade: number): string => {
+  switch (medicao) {
+    case 'kg':
+      return quantidade > 1 ? 'kgs' : 'kg';
+    case 'unidad':
+      return quantidade > 1 ? 'unidades' : 'unidad';
+    case 'cucharada':
+      return quantidade > 1 ? 'cucharadas' : 'cucharada';
+    case 'cucharadita':
+      return quantidade > 1 ? 'cucharaditas' : 'cucharadita';
+    case 'gramo':
+      return quantidade > 1 ? 'gramos' : 'gramo';
+    case 'taza':
+      return quantidade > 1 ? 'tazas' : 'taza';
+    default:
+      return medicao;
+  }
+};
+
+export const formatarIngrediente = (ingrediente: IngredienteReceita): string => {
+  const { quantidade, medicao, ingrediente: { nome } } = ingrediente;
+  const medicaoPlural = pluralizeMedicao(medicao, quantidade);
+  return `${quantidade} ${medicaoPlural} de ${nome}`;
+};

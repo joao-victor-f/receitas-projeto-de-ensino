@@ -1,0 +1,42 @@
+.feedback_container img {
+    width: 32px;
+    height: auto;
+}
+
+.feedback_container {
+    border-radius: 12px;
+    border: 1px solid #e6e6e6;
+    background: #FFF;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.feedback_container p {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 36px */
+    align-self: stretch;
+}
+
+#username {
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 24px */
+}
+
+.feedback_description_container {
+    display: flex;
+    align-self: start;
+    gap: 12px;
+}
+
+.feedback_autor_data_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

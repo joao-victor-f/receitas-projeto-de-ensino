@@ -12,9 +12,6 @@ export default function Categorias() {
                     <h1>Recetas</h1>
                     <span>El sabor de Argentina a un clic: recetas, paso a paso y mucha inspiracion para tu cocina.</span>
                 </div>
-                <div>
-                    <a href="/criar-receitas">+ AGREGAR RECETA</a>
-                </div>
             </section>
             <ListagemDeCategorias></ListagemDeCategorias>
             <section id="historia_cozinha" className={styles.historia_cozinha}>

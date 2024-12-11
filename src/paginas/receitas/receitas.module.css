@@ -19,7 +19,7 @@
 }
 
 .image_container h1, .image_container p {
-    background-color: rgba(255, 255, 255, 0.6);
+    color: white;
     padding: 8px;
     border-radius: 4px;
 }
@@ -29,10 +29,20 @@
     align-self: end;
     margin: 16px 0;
     font-size: 18px;
-    transition: 250ms ease-out;
-    padding: 4px;
+    padding: 8px;
     border-radius: 8px;
-    border: 1px solid rgba(0, 0, 0, 1);
+    transition: 250ms ease-out;
+    color: #1D1D1D;
+}
+
+.criar_container a {
+    text-align: right;
+    font-family: Poppins;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
 }
 
 .criar_container:hover {
