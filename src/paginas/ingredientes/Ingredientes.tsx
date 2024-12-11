@@ -9,15 +9,24 @@ import esenciavainilla from '../../assets/esenciavainilla.jpg';
 import chocolate from '../../assets/chocolate.jpg';
 import leche from '../../assets/leche.jpg';
 import manteca from '../../assets/manteca.jpg';
+import imagemDoHeader from '../../assets/imagemDoHeader.jpg';
+import { Link } from "react-router-dom";
 
 
 export default function Ingredientes() {
     return (
         <>
             <div id={styles.conteudoReceitas}>
-                <h1>Ingredientes</h1>
-                <span>Los ingredientes que componen la cocina argentina</span>
-                <span id={styles.inserirIngrediente}>+ AGREGAR INGREDIENTE</span>
+                <div id={styles.conteudoHeader}>
+                    <img src={imagemDoHeader} alt="Ingredientes" id={styles.imagemDoHeader}/>
+                    <div id={styles.textoHeader}>
+                        <h1 id={styles.tituloIngredientes}>Ingredientes</h1>
+                        <span id={styles.descricaoHeader}>Los ingredientes que componen la cocina argentina</span>
+                    </div>
+                </div>
+                <Link to="/criar-ingredientes">
+                    <a id={styles.inserirIngrediente}>+ AGREGAR INGREDIENTE</a>
+                </Link>
                 <div id={styles.grupoReceitas}>
                     <div className={styles.fileiraDeReceitas} id={styles.fileiraDeReceitasUm}>
                         <div className={styles.receita} id={styles.receitaUm}>

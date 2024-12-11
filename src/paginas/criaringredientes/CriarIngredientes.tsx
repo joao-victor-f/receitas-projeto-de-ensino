@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./criar-ingredientes.module.css";
-import imagem from "../../assets/comidasdaPI.png";
+import botaoAdicionar from "../../assets/botao-adicionar.svg";
+
 
 export default function CriarIngredientes() {
     return (
@@ -13,7 +14,12 @@ export default function CriarIngredientes() {
                     {/* As dimensões definidas para a imagem são provisórias. Servem somente para saber como fica o resultado. Elas 
                     devem ser retiradas posteriormente para que se coloque uma imagem já com as dimensões definidas.
                     */}
-                    <img src={imagem} width="1140px" height="200px" alt="Criar igredientes" id={styles.imagemCriarIngredientes} />
+                    <div id={styles.areaAdicionarImagem}>
+                        <div id={styles.botaoAdicionarImagem}>
+                            <img src={botaoAdicionar} alt="botão adicionar"/>
+                            <span>Añadir foto</span>
+                        </div>
+                    </div>
                     <div id={styles.moduloInputNomeIngrediente}>
                             <label id={styles.labelNomeIngrediente} className={styles.required}>Nombre del Ingrediente</label>
                         <input type="text" id={styles.inputNomeIngrediente} placeholder="Introduce el título de tu receta"/>
