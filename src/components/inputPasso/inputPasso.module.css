@@ -1,0 +1,39 @@
+#inputDescPasso{
+    width: 1012px;
+    height: 160px;
+    display: flex;
+    padding: 24px 26px 106px 26px;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 0;
+    align-self: stretch;
+    border-radius: 10px;
+    border: 1px solid #45454536;
+    background-color: #82828211;
+    color: var(--Light-Grey, #000000);
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#inputDescPasso{
+    width: 1012px;
+    height: 160px;
+    display: flex;
+    padding: 24px 26px 106px 26px;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 0;
+    align-self: stretch;
+    border-radius: 10px;
+    border: 1px solid #45454536;
+    background-color: #82828211;
+    color: var(--Light-Grey, #000000);
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}

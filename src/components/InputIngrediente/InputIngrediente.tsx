@@ -4,7 +4,7 @@ import botaoRemover from "../../assets/remove-button.svg";
 import ReOrder from "../../assets/re-order-button.svg";
 import { medicoes } from '../../lib/constants';
 
-export default function InputIngrediente ({ ingrediente, onChange, onRemove }) {
+export default function InputIngrediente ({ ingredientes, ingrediente, onChange, onRemove }) {
     const handleChange = (e, field) => {
       onChange(e.target.value, ingrediente.id, field);
     };
@@ -17,13 +17,16 @@ export default function InputIngrediente ({ ingrediente, onChange, onRemove }) {
         </button>
   
         {/* Campo de nome */}
-        <input
-          type="text"
+        <select
           value={ingrediente.nome}
           onChange={(e) => handleChange(e, 'nome')}
-          placeholder="Nome do Ingrediente"
           className={styles.inputProducto}
-        />
+        >
+          <option selected disabled value="">selecione um ingrediente</option>
+          {ingredientes.map(ingrediente => (
+            <option value={ingrediente.nome}>{ingrediente.nome}</option>
+          ))}
+        </select>
   
         {/* Campo de quantidade */}
         <input
@@ -40,7 +43,7 @@ export default function InputIngrediente ({ ingrediente, onChange, onRemove }) {
           onChange={(e) => handleChange(e, 'medicion')}
           className={styles.inputMedicion}
         >
-          <option value="">Medição</option>
+          <option selected disabled value="">Medição</option>
           {medicoes.map(medicao => (
             <option value={medicao}>{medicao}</option>
           ))}

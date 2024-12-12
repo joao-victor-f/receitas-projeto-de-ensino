@@ -1,3 +1,8 @@
+button {
+    border: none;
+    cursor: pointer;
+}
+
 #moduloExternoCriarIngredientes {
     width: 1272px;
     height: 3050px;
@@ -158,49 +163,6 @@
     padding-left: 17px;
 }
 
-#inputCantidad {
-    width: 134px;
-    height: 68px;
-    border: 1px solid #45454536;
-    background-color: #82828211;
-    font-family: 'Poppins';
-    border-radius: 10px;
-    margin-top: 10px;
-    margin-left: 0px;
-    padding-left: 17px;
-    margin-right: 16px;
-}
-
-#inputMedicion {
-    width: 288px;
-    height: 68px;
-    border: 1px solid #45454536;
-    background-color: #82828211;
-    color: var(--Light-Grey, #686868);
-    font-family: Poppins;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    border-radius: 10px;
-    margin-top: 10px;
-    margin-left: 0px;
-    padding-left: 17px;
-    margin-right: 0px;
-}
-
-#inputProducto {
-    width: 558px;
-    height: 68px;
-    border: 1px solid #45454536;
-    background-color: #82828211;
-    font-family: 'Poppins';
-    border-radius: 10px;
-    margin-top: 10px;
-    margin-left: 16px;
-    padding-left: 17px;
-    margin-right: 0px;
-}
 
 #inputTiempoP2 {
     width: 134px;

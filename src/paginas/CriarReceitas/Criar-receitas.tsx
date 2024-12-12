@@ -1,11 +1,79 @@
-import React from "react";
+import React, {useState, useEffect } from "react";
 import styles from "./criar-receitas.module.css";
 import botaoAdicionar from "../../assets/botao-adicionar.svg";
-import Divisor from "../../assets/Divider.svg";
-import botaoRemover from "../../assets/remove-button.svg";
-import ReOrder from "../../assets/re-order-button.svg";
+
+import { medicoes } from "../../lib/constants";
+import InputIngrediente from "../../components/InputIngrediente/InputIngrediente";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import InputPasso from "../../components/inputPasso/inputPasso";
 
 export default function CriarReceitas() {
+    const [dataIngredientes, setDataIngredientes] = useState<Ingrediente[]>([]);
+    const [ingredientes, setIngredientes] = useState([
+        { id: '1', nome: '', imagemURL: '', cantidad: '', medicion: '' },
+    ]);
+
+    const [passos, setPassos] = useState([
+        { id: '1', passo: ''},
+    ]) 
+    
+    // Função para atualizar os valores dos ingredientes
+    const handleChangeIngredientes = (value, id, field) => {
+        const updatedIngredientes = ingredientes.map((ingrediente) =>
+            ingrediente.id === id ? { ...ingrediente, [field]: value } : ingrediente
+        );
+        setIngredientes(updatedIngredientes);
+    };
+
+    // Função para remover ingrediente
+    const removeIngrediente = (id) => {
+        setIngredientes(ingredientes.filter((ing) => ing.id !== id));
+    };
+
+    // Função para lidar com o evento de drag and drop
+    const onDragEndIngredientes = (result) => {
+        if (!result.destination) {
+            return;
+        }
+    
+        const items = [...ingredientes];
+        const [reorderedItem] = items.splice(result.source.index, 1);
+        items.splice(result.destination.index, 0, reorderedItem);
+    
+        setIngredientes(items);
+    };
+
+    const onDragEndPassos = (result) => {
+        if (!result.destination) {
+            return;
+        }
+    
+        const items = [...passos];
+        const [reorderedItem] = items.splice(result.source.index, 1);
+        items.splice(result.destination.index, 0, reorderedItem);
+    
+        setPassos(items);
+
+    }
+
+    const removePasso = (id) => {
+        setPassos(passos.filter((passo) => passo.id !== id));
+    }
+
+    const handleChangePasso = (value, id, field) => {
+        const updatedPassos = passos.map((passo) =>
+            passo.id === id ? { ...passo, [field]: value } : passo 
+        );
+        setPassos(updatedPassos);
+    }
+
+    useEffect(() => {
+        const storedData = localStorage.getItem('data');
+        if (storedData) {
+            const ingredientesStoredData = JSON.parse(storedData).ingredientes;
+            setDataIngredientes(ingredientesStoredData);
+        }
+    });
     return (
         <div id={styles.moduloExternoCriarIngredientes}>
             <div id={styles.moduloInternoCriarIngredientes}>
@@ -41,64 +109,81 @@ export default function CriarReceitas() {
                 <div id={styles.moduloInputNomeIngrediente}>
                     <label id={styles.labelNomeIngrediente} className={styles.required}>Ingredientes</label>
                     <p id={styles.descricaoLabel}>Enumere un ingrediente por línea, especificando cantidades (1, 2), medidas (tazas, cucharas) y cualquier detalle de preparación (picado, tamizado) junto con el artículo.</p>
-                    <div id={styles.InputAgregarIngrediente}>
-                        <button><img src={ReOrder} alt="botão reOrder I" /></button>
-                        <input type="text" id={styles.inputCantidad} placeholder="Cantidad" />
-                        <select id={styles.inputMedicion} name="Medicion">
-                            <option value="Titulo">Medición</option>
-                            <option value="g">G</option>
-                            <option value="kg">KG</option>
-                            <option value="hg">HG</option>
-                        </select>
-                        <input type="text" id={styles.inputProducto} placeholder="Producto" />
-                        <button><img src={botaoRemover} alt="botão remover I" /></button>
-                    </div>
-                    <div id={styles.InputAgregarIngrediente}>
-                        <button><img src={ReOrder} alt="botão reOrder I" /></button>
-                        <input type="text" id={styles.inputCantidad} placeholder="Cantidad" />
-                        <select id={styles.inputMedicion} name="Medicion">
-                            <option value="Titulo">Medición</option>
-                            <option value="g">G</option>
-                            <option value="kg">KG</option>
-                            <option value="hg">HG</option>
-                        </select>
-                        <input type="text" id={styles.inputProducto} placeholder="Producto" />
-                        <button><img src={botaoRemover} alt="botão remover I" /></button>
-                    </div>
-                    <div id={styles.InputAgregarIngrediente}>
-                        <button><img src={ReOrder} alt="botão reOrder I" /></button>
-                        <input type="text" id={styles.inputCantidad} placeholder="Cantidad" />
-                        <select id={styles.inputMedicion} name="Medicion">
-                            <option value="Titulo">Medición</option>
-                            <option value="g">G</option>
-                            <option value="kg">KG</option>
-                            <option value="hg">HG</option>
-                        </select>
-                        <input type="text" id={styles.inputProducto} placeholder="Producto" />
-                        <button><img src={botaoRemover} alt="botão remover I" /></button>
-                    </div>
-                    <div id={styles.botaoAddIngrediente}>
-                        <button><img src={botaoAdicionar} alt="botão adicionar I" /></button>
+                    <div id={styles.botaoAddIngrediente} onClick={() => setIngredientes([...ingredientes, { id: String(ingredientes.length + 1), nome: '', imagemURL: '', cantidad: '', medicion: '' }])}>
+                        <button><img src={botaoAdicionar} alt="botão adicionar" /></button>
                         <span>Agregar ingredientes</span>
                     </div>
+                    <DragDropContext onDragEnd={onDragEndIngredientes}>
+                        <Droppable droppableId="droppable" direction="vertical">
+                        {(provided) => (
+                            <div
+                            className={styles.droppableContainer}
+                            {...provided.droppableProps}
+                            ref={provided.innerRef}
+                            >
+                            {ingredientes.map((ingrediente, index) => (
+                                <Draggable key={ingrediente.id} draggableId={ingrediente.id} index={index}>
+                                {(provided) => (
+                                    <div
+                                    ref={provided.innerRef}
+                                    {...provided.draggableProps}
+                                    {...provided.dragHandleProps}
+                                    >
+                                    {/* Passa as funções e valores para o componente filho */}
+                                    <InputIngrediente
+                                        ingrediente={ingrediente}
+                                        ingredientes={dataIngredientes}
+                                        onChange={handleChangeIngredientes}  // Passa o handleChange como callback
+                                        onRemove={removeIngrediente}  // Passa o removeIngrediente como callback
+                                    />
+                                    </div>
+                                )}
+                                </Draggable>
+                            ))}
+                            {provided.placeholder}
+                            </div>
+                        )}
+                        </Droppable>
+                    </DragDropContext>
                 </div>
                 <div id={styles.moduloInputNomeIngrediente}>
                     <label id={styles.labelNomeIngrediente} className={styles.required}>Instrucciones</label>
                     <p id={styles.descricaoLabel}>Divide tu receta en instrucciones claras paso a paso.</p>
-                    <div id={styles.InputPassos}>
-                        <button><img src={ReOrder} alt="botão re-order" /></button>
-                        <input type="text" id={styles.inputDescPasso} placeholder="Passo 1" />
-                        <button><img src={botaoRemover} alt="botão remover I" /></button>
-                    </div>
-                    <div id={styles.InputPassos}>
-                        <button><img src={ReOrder} alt="botão re-order" /></button>
-                        <input type="text" id={styles.inputDescPasso} placeholder="Passo 2" />
-                        <button><img src={botaoRemover} alt="botão remover I" /></button>
-                    </div>
-                    <div id={styles.botaoAddIngrediente}>
+                    <div id={styles.botaoAddIngrediente} onClick={() => setPassos([...passos, { id: String(passos.length + 1), passo: '' }])}>
                         <button><img src={botaoAdicionar} alt="botão adicionar I" /></button>
                         <span>Agregar paso</span>
                     </div>
+                    <DragDropContext onDragEnd={onDragEndPassos}>
+                        <Droppable droppableId="droppable" direction="vertical">
+                        {(provided) => (
+                            <div
+                            className={styles.droppableContainer}
+                            {...provided.droppableProps}
+                            ref={provided.innerRef}
+                            >
+                            {passos.map((passo, index) => (
+                                <Draggable key={passo.id} draggableId={passo.id} index={index}>
+                                {(provided) => (
+                                    <div
+                                    ref={provided.innerRef}
+                                    {...provided.draggableProps}
+                                    {...provided.dragHandleProps}
+                                    >
+                                    {/* Passa as funções e valores para o componente filho */}
+                                    <InputPasso
+                                        passo={passo}
+                                        onChange={handleChangePasso}  // Passa o handleChange como callback
+                                        onRemove={removePasso}  // Passa o removeIngrediente como callback
+                                    />
+                                    </div>
+                                )}
+                                </Draggable>
+                            ))}
+                            {provided.placeholder}
+                            </div>
+                        )}
+                        </Droppable>
+                    </DragDropContext>
                 </div>
                 <div id={styles.moduloInputNomeIngrediente}>
                     <label id={styles.labelDescricao} className={styles.nonrequired}>Consejos de cocina</label>
@@ -106,11 +191,6 @@ export default function CriarReceitas() {
                 </div>
                 <div id={styles.moduloInputNomeIngrediente}>
                     <label id={styles.labelDescricao} className={styles.nonrequired}>Categoría</label>
-                    <select id={styles.inputNomeIngrediente} name="Tipo de comida">
-                        <option value="descricao">Tipo de comida</option>
-                        <option value="g">G</option>
-                        <option value="hg">HG</option>
-                    </select>
                 </div>
                 <div id={styles.botoes}>
                     <button id={styles.botaoCancelar}>Cancelar</button>

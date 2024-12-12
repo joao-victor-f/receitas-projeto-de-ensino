@@ -1,0 +1,59 @@
+.button {
+    border: none;
+}
+
+.InputAgregarIngrediente {
+    margin-bottom: 30px;
+    display: flex;
+    width: 1136px;
+    height: 68px;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.inputCantidad {
+    width: 134px;
+    height: 68px;
+    border: 1px solid #45454536;
+    background-color: #82828211;
+    font-family: 'Poppins';
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 0px;
+    padding-left: 17px;
+    margin-right: 16px;
+}
+
+.inputMedicion {
+    width: 288px;
+    height: 68px;
+    border: 1px solid #45454536;
+    background-color: #82828211;
+    color: var(--Light-Grey, #686868);
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 0px;
+    padding-left: 17px;
+    margin-right: 0px;
+}
+
+.inputProducto {
+    width: 558px;
+    height: 68px;
+    border: 1px solid #45454536;
+    background-color: #82828211;
+    font-family: 'Poppins';
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 16px;
+    padding-left: 17px;
+    margin-right: 0px;
+}
