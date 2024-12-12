@@ -1,4 +1,5 @@
 import Header from './components/header/Header.tsx';
+import { useEffect } from 'react';
 import Footer from './components/footer/Footer.tsx';
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -10,8 +11,13 @@ import Sobre from './paginas/sobre/Sobre.tsx';
 import CriarReceitas from './paginas/CriarReceitas/Criar-receitas.tsx';
 import CriarIngredientes from './paginas/criaringredientes/CriarIngredientes.tsx';
 import Receita from './paginas/receita/Receita.tsx';
+import { data } from './lib/data.js';
 
 export default function App() {
+  useEffect(() => {
+    const storedData = localStorage.getItem('data');
+    if (!storedData) localStorage.setItem('data', JSON.stringify(data));
+  })
   return (
     <Router>
       <Header></Header> 
