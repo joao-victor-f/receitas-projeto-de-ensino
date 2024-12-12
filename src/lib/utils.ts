@@ -46,3 +46,17 @@ export const formatarIngrediente = (ingrediente: IngredienteReceita): string => 
   const medicaoPlural = pluralizeMedicao(medicao, quantidade);
   return `${quantidade} ${medicaoPlural} de ${nome}`;
 };
+
+export const generateRecipePath = (recipeName: string): string  => {
+  // Converter para minúsculas, substituir espaços por underscores, e remover caracteres especiais
+  const slug = recipeName
+    .toLowerCase()
+    .replace(/\s+/g, '_') // Substitui espaços por underscores
+    .replace(/[^a-z0-9_]/g, ''); // Remove caracteres especiais
+
+  // Adiciona um número aleatório ao final para garantir unicidade
+  const uniqueId = Math.floor(Math.random() * 1000000);
+
+  // Retorna o path no formato desejado
+  return `/receitas/${slug}${uniqueId}`;
+}

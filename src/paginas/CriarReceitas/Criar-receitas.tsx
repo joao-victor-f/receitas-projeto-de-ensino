@@ -7,6 +7,7 @@ import InputIngrediente from "../../components/InputIngrediente/InputIngrediente
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import InputPasso from "../../components/inputPasso/inputPasso";
 import { data } from "../../lib/data";
+import { generateRecipePath } from "../../lib/utils";
 
 export default function CriarReceitas() {
     const [dataIngredientes, setDataIngredientes] = useState<Ingrediente[]>([]);
@@ -107,15 +108,36 @@ export default function CriarReceitas() {
         e.preventDefault();
         console.log(ingredientes);
         const ingredientesFormatados = ingredientes.map(({ id, nome, imagemURL, quantidade, medicao }) => ({
-            ingrediente: { nome, imagemURL: dataIngredientes.find(ingrediente => ingrediente.nome === nome).imagemURL },
+            ingrediente: { nome, imagemURL: dataIngredientes.find(ingrediente => ingrediente.nome === nome)?.imagemURL },
             quantidade,
             medicao
         }));
 
+        const passosFormatados = passos.map(passo => passo.passo); 
+
+        const receita = {
+            titulo: titulo,
+            categoria: data.categorias.find(categoriaObj => categoriaObj.titulo === categoria),
+            descricao: descricao,
+            ingredientes: ingredientesFormatados,
+            imagemURL: '',
+            passos: passosFormatados,
+            path: generateRecipePath(titulo),
+            substituicoes: [],
+            conselhos: [conselhos],
+            visaoGeral: descricao,
+            porcoes: porcoes
+        };
+
         console.log(passos);
-        const passosFormatados = passos.map(({id, passo}) => passo);
         console.log(passosFormatados);
         console.log(ingredientesFormatados);
+
+        const dados = JSON.parse(localStorage.getItem('data'));
+        const receitas = dados.receitas;
+        receitas.push(receita);
+        dados.receitas = receitas;
+        localStorage.setItem('data', JSON.stringify(dados));
     }
 
     return (
