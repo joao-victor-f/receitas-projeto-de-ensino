@@ -1,12 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './inputIngrediente.module.css';
 import botaoRemover from "../../assets/remove-button.svg";
 import ReOrder from "../../assets/re-order-button.svg";
 import { medicoes } from '../../lib/constants';
 
 export default function InputIngrediente ({ ingredientes, ingrediente, onChange, onRemove }) {
+    const [nome, setNome] = useState('');
+    const [quantidade, setQuantidade] = useState(0);
+    const [medicao, setMedicao] = useState('');
+
     const handleChange = (e, field) => {
-      onChange(e.target.value, ingrediente.id, field);
+      const value = e.target.value;
+      onChange(value, ingrediente.id, field);
+
+      if (field === 'nome') {
+        setNome(value);
+      } else if (field === 'quantidade') {
+        setQuantidade(value);
+      } else if (field === 'medicao') {
+        setMedicao(value);
+      }
     };
   
     return (
@@ -21,6 +34,7 @@ export default function InputIngrediente ({ ingredientes, ingrediente, onChange,
           value={ingrediente.nome}
           onChange={(e) => handleChange(e, 'nome')}
           className={styles.inputProducto}
+          required
         >
           <option selected disabled value="">selecione um ingrediente</option>
           {ingredientes.map(ingrediente => (
@@ -30,18 +44,20 @@ export default function InputIngrediente ({ ingredientes, ingrediente, onChange,
   
         {/* Campo de quantidade */}
         <input
-          type="text"
-          value={ingrediente.cantidad}
-          onChange={(e) => handleChange(e, 'cantidad')}
+          type="number"
+          value={ingrediente.quantidade}
+          onChange={(e) => handleChange(e, 'quantidade')}
           placeholder="Quantidade"
           className={styles.inputCantidad}
+          required
         />
   
         {/* Campo de medição */}
         <select
-          value={ingrediente.medicion}
-          onChange={(e) => handleChange(e, 'medicion')}
+          value={medicao}
+          onChange={(e) => handleChange(e, 'medicao')}
           className={styles.inputMedicion}
+          required
         >
           <option selected disabled value="">Medição</option>
           {medicoes.map(medicao => (
