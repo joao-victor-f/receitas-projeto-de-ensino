@@ -62,7 +62,8 @@ export default function CriarIngredientes() {
 
                 localStorage.setItem('data', JSON.stringify(dados));
                 alert("ingrediente salvo com sucesso!");
-                navigate("/");
+                navigate("/ingredientes");
+                window.location.reload();
             } else {
                 throw new Error("Erro no upload da imagem.");
             }

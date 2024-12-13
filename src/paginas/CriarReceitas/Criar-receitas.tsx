@@ -1,7 +1,7 @@
 import React, {useState, useEffect } from "react";
 import styles from "./criar-receitas.module.css";
 import botaoAdicionar from "../../assets/botao-adicionar.svg";
-
+import { useNavigate } from "react-router-dom";
 import { medicoes } from "../../lib/constants";
 import InputIngrediente from "../../components/InputIngrediente/InputIngrediente";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
@@ -10,6 +10,7 @@ import { data } from "../../lib/data";
 import { formatarHorario, generateRecipePath } from "../../lib/utils";
 
 export default function CriarReceitas() {
+    const navigate = useNavigate();
     const [image, setImage] = useState<File | null>(null);
     const [imagePreview, setImagePreview] = useState<string | null>(null);
 
@@ -178,6 +179,8 @@ export default function CriarReceitas() {
                 localStorage.setItem('data', JSON.stringify(dados));
 
                 alert("Receita salva com sucesso!");
+                navigate("/categorias");
+                window.location.reload();
             } else {
                 throw new Error("Erro no upload da imagem.");
             }
