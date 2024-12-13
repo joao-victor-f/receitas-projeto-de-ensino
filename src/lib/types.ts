@@ -9,6 +9,7 @@ type Categoria = {
 type Ingrediente = {
     nome: string,
     imagemURL: string,
+    path: string,
 };
 
 type IngredienteReceita = {
