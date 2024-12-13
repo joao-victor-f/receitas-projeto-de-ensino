@@ -3,8 +3,10 @@ import { useLocation } from 'react-router-dom';
 import { data } from '../../lib/data';
 import { formatarIngrediente, formatarTempo } from '../../lib/utils';
 import styles from './receita.module.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function Receita() {
+  const navigate = useNavigate();
   const [receita, setReceita] = useState<Receitas | undefined>(undefined);
   const location = useLocation();
 
@@ -28,6 +30,24 @@ export default function Receita() {
         </section>
     )
   }
+
+  const handleDelete = () => {
+    const response = window.confirm('Você tem certeza que deseja deletar a receita?');
+
+      if (response) {
+          const categoria = receita.categoria;
+          const dados = JSON.parse(localStorage.getItem('data'));
+          let dadosReceita = dados.receitas;
+          dadosReceita = dadosReceita.filter(receitaObj => receitaObj.path !== receita.path);
+          console.log(dadosReceita);
+          dados.receitas = dadosReceita;
+          localStorage.setItem('data', JSON.stringify(dados))
+          navigate(`${categoria.path}`);
+          window.location.reload();
+          console.log('hello ');
+    }
+  }
+
   return (
     <>
         <section className={styles.top_container}>
@@ -36,7 +56,7 @@ export default function Receita() {
                 <button>
                     <img src="/icons/edit-icon.svg" />
                 </button>
-                <button>
+                <button onClick={handleDelete}>
                     <img src="/icons/trash.svg" />
                 </button>
             </div>
