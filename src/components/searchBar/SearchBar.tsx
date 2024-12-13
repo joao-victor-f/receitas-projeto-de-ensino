@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { data } from "../../lib/data";
 import styles from './searchBar.module.css';
 import icon from "../../assets/icon.svg";
 
@@ -15,9 +14,12 @@ export default function SearchBar() {
 
   // Função de debounce para melhorar a performance
   useEffect(() => {
+    const receitasData = JSON.parse(localStorage.getItem('data')).receitas;
+    console.log(receitasData);
+
     const timeoutId = setTimeout(() => {
       if (busca.trim()) {
-        const resultadosFiltrados = data.receitas.filter((receita) =>
+        const resultadosFiltrados = receitasData.filter((receita) =>
           receita.nome.toLowerCase().includes(busca.toLowerCase())
         );
         setResultado(resultadosFiltrados);
