@@ -7,7 +7,7 @@ import InputIngrediente from "../../components/InputIngrediente/InputIngrediente
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import InputPasso from "../../components/inputPasso/inputPasso";
 import { data } from "../../lib/data";
-import { generateRecipePath } from "../../lib/utils";
+import { formatarHorario, generateRecipePath } from "../../lib/utils";
 
 export default function CriarReceitas() {
     const [image, setImage] = useState<File | null>(null);
@@ -151,13 +151,15 @@ export default function CriarReceitas() {
                 }));
 
                 const passosFormatados = passos.map(passo => passo.passo);
+                console.log(passosFormatados)
 
                 const receita = {
-                    titulo: titulo,
+                    nome: titulo,
                     categoria: data.categorias.find(categoriaObj => categoriaObj.titulo === categoria),
                     descricao: descricao,
                     ingredientes: ingredientesFormatados,
                     imagemURL: imageURL,  // A URL da imagem agora é armazenada aqui
+                    tempoDePreparacao: formatarHorario(horas, minutos),
                     passos: passosFormatados,
                     path: generateRecipePath(titulo),
                     substituicoes: [],
