@@ -47,9 +47,9 @@ export const formatarIngrediente = (ingrediente: IngredienteReceita): string => 
   return `${quantidade} ${medicaoPlural} de ${nome}`;
 };
 
-export const generateRecipePath = (recipeName: string): string  => {
+export const generatePath = (section: string, name: string): string  => {
   // Converter para minúsculas, substituir espaços por underscores, e remover caracteres especiais
-  const slug = recipeName
+  const slug = name
     .toLowerCase()
     .replace(/\s+/g, '_') // Substitui espaços por underscores
     .replace(/[^a-z0-9_]/g, ''); // Remove caracteres especiais
@@ -58,7 +58,7 @@ export const generateRecipePath = (recipeName: string): string  => {
   const uniqueId = Math.floor(Math.random() * 1000000);
 
   // Retorna o path no formato desejado
-  return `/receita/${slug}${uniqueId}`;
+  return `/${section}/${slug}${uniqueId}`;
 }
 
 export const formatarHorario = (hora, minuto) => {
