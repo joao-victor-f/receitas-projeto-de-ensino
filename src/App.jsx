@@ -12,6 +12,7 @@ import CriarReceitas from './paginas/CriarReceitas/Criar-receitas.tsx';
 import CriarIngredientes from './paginas/criaringredientes/CriarIngredientes.tsx';
 import Receita from './paginas/receita/Receita.tsx';
 import { data } from './lib/data.js';
+import Ingrediente from './paginas/viewIngrediente/Ingrediente.tsx';
 
 export default function App() {
   useEffect(() => {
@@ -24,13 +25,14 @@ export default function App() {
       <main>
         <Routes>
           <Route path="/sobre" element={<Sobre />} />
-          <Route path="/" element={<PaginaPrincipal />}/>
-          <Route path="/receitas/:nomeCategoria" element={<Receitas />}/>
-          <Route path="/receita/:nomeReceita" element={<Receita />} key={window.location.pathname}/>
-          <Route path="/categorias" element={<Categorias />}/>
-          <Route path="/ingredientes" element={<Ingredientes />}/>
-          <Route path="/criar-receitas" element={<CriarReceitas />}/>
-          <Route path="/criar-ingredientes" element={<CriarIngredientes />}/>
+          <Route path="/" element={<PaginaPrincipal />} />
+          <Route path="/receitas/:nomeCategoria" element={<Receitas />} />
+          <Route path="/receita/:nomeReceita" element={<Receita />} key={window.location.pathname} />
+          <Route path="/categorias" element={<Categorias />} />
+          <Route path="/ingredientes" element={<Ingredientes />} />
+          <Route path="/criar-receitas" element={<CriarReceitas />} />
+          <Route path="/criar-ingredientes" element={<CriarIngredientes />} />
+          <Route path="/ingrediente/:pathIngrediente" element={<Ingrediente />} />
         </Routes>
       </main>
       <Footer></Footer>
