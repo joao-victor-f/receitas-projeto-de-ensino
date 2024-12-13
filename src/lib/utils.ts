@@ -58,5 +58,14 @@ export const generateRecipePath = (recipeName: string): string  => {
   const uniqueId = Math.floor(Math.random() * 1000000);
 
   // Retorna o path no formato desejado
-  return `/receitas/${slug}${uniqueId}`;
+  return `/receita/${slug}${uniqueId}`;
+}
+
+export const formatarHorario = (hora, minuto) => {
+  // Adiciona zero à esquerda se a hora ou minuto forem menores que 10
+  const horaFormatada = hora < 10 ? `0${hora}` : hora;
+  const minutoFormatado = minuto < 10 ? `0${minuto}` : minuto;
+  
+  // Retorna a hora no formato desejado
+  return `${horaFormatada}:${minutoFormatado}:00`;
 }
