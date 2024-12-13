@@ -227,12 +227,12 @@ export default function CriarReceitas() {
                     </div>
                     <div id={styles.moduloInputNomeIngrediente}>
                         <label id={styles.labelPorciones} className={styles.required}>Porciones</label>
-                        <input type="text" id={styles.inputPorciones} placeholder="e.g.,4" value={porcoes} onChange={(e) => handleChange(e, 'porcoes')} />
+                        <input type="number" id={styles.inputPorciones} placeholder="e.g.,4" value={porcoes} onChange={(e) => handleChange(e, 'porcoes')} />
                     </div>
                     <div id={styles.moduloInputNomeIngrediente}>
                         <label id={styles.labelTiempoP} className={styles.required}>Tiempo de preparación</label>
-                        <input type="text" id={styles.inputTiempoP} placeholder="hrs" value={horas} onChange={(e) => handleChange(e, 'horas')} />
-                        <input type="text" id={styles.inputTiempoP2} placeholder="min" value={minutos} onChange={(e) => handleChange(e, 'minutos')} />
+                        <input type="number" id={styles.inputTiempoP} placeholder="hrs" value={horas} onChange={(e) => handleChange(e, 'horas')} />
+                        <input type="number" id={styles.inputTiempoP2} placeholder="min" value={minutos} onChange={(e) => handleChange(e, 'minutos')} />
                     </div>
                     <div id={styles.moduloInputNomeIngrediente}>
                         <label id={styles.labelNomeIngrediente} className={styles.required}>Ingredientes</label>
