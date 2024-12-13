@@ -18,7 +18,7 @@ export default function InputPasso({passo, onChange, onRemove}) {
             id={styles.inputDescPasso}
             value={nome}
             placeholder={`descreva seu passo`}
-            onChange={(e) => handleChange(e, 'nome')}
+            onChange={(e) => handleChange(e, 'passo')}
             required
         />
         <button onClick={() => onRemove(passo.id)}>
