@@ -14,6 +14,8 @@ export default function Receitas() {
 
     useEffect(() => {
         const currentPath = location.pathname;
+        const receitasData = JSON.parse(localStorage.getItem('data')).receitas;
+
         console.log(currentPath);
         const categoriaEncontrada = data.categorias.find((categoria) => categoria.path == currentPath);
         setCategoria(categoriaEncontrada);
@@ -21,10 +23,11 @@ export default function Receitas() {
         if (!categoriaEncontrada) {
             return;
         }
-        const receitasEncontradas = data.receitas.filter((receita) => receita.categoria.titulo == categoriaEncontrada.titulo);
+        const receitasEncontradas = receitasData.filter((receita) => receita.categoria.titulo == categoriaEncontrada.titulo);
         if (!receitasEncontradas) {
             return;
         }
+
         setReceitas(receitasEncontradas);
         console.log(receitasEncontradas);
     }, [setCategoria, setReceitas])

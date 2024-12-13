@@ -10,7 +10,9 @@ export default function Receita() {
 
   useEffect(() => {
     const path = location.pathname;
-    const receitaEncontrada = data.receitas.find(receita => receita.path == path);
+    const receitasData = JSON.parse(localStorage.getItem('data')).receitas;
+
+    const receitaEncontrada = receitasData.find(receita => receita.path == path);
     console.log(receitaEncontrada);
 
     if (!receitaEncontrada)
