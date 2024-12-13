@@ -7,7 +7,7 @@ import InputIngrediente from "../../components/InputIngrediente/InputIngrediente
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import InputPasso from "../../components/inputPasso/inputPasso";
 import { data } from "../../lib/data";
-import { formatarHorario, generateRecipePath } from "../../lib/utils";
+import { formatarHorario, generatePath } from "../../lib/utils";
 
 export default function CriarReceitas() {
     const navigate = useNavigate();
@@ -162,7 +162,7 @@ export default function CriarReceitas() {
                     imagemURL: imageURL,  // A URL da imagem agora é armazenada aqui
                     tempoDePreparacao: formatarHorario(horas, minutos),
                     passos: passosFormatados,
-                    path: generateRecipePath(titulo),
+                    path: generatePath('receitas', titulo),
                     substituicoes: [],
                     conselhos: [conselhos],
                     visaoGeral: descricao,
