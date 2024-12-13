@@ -10,6 +10,9 @@ import { data } from "../../lib/data";
 import { generateRecipePath } from "../../lib/utils";
 
 export default function CriarReceitas() {
+    const [image, setImage] = useState<File | null>(null);
+    const [imagePreview, setImagePreview] = useState<string | null>(null);
+
     const [dataIngredientes, setDataIngredientes] = useState<Ingrediente[]>([]);
     const [ingredientes, setIngredientes] = useState([
         { id: '1', nome: '', imagemURL: '', quantidade: '', medicao: '' },
@@ -18,6 +21,18 @@ export default function CriarReceitas() {
     const [passos, setPassos] = useState([
         { id: '1', passo: ''},
     ]) 
+
+
+    const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const file = event.target.files?.[0];
+        if (file) {
+            setImage(file);
+            // Cria a URL para visualização do arquivo
+            const previewUrl = URL.createObjectURL(file);
+            setImagePreview(previewUrl);
+        }
+
+    }
 
     const [titulo, setTitulo] = useState('');
     const [descricao, setDescricao] = useState('');
@@ -104,40 +119,70 @@ export default function CriarReceitas() {
         }
     }, [setDataIngredientes]);
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(ingredientes);
-        const ingredientesFormatados = ingredientes.map(({ id, nome, imagemURL, quantidade, medicao }) => ({
-            ingrediente: { nome, imagemURL: dataIngredientes.find(ingrediente => ingrediente.nome === nome)?.imagemURL },
-            quantidade,
-            medicao
-        }));
 
-        const passosFormatados = passos.map(passo => passo.passo); 
+        if (!image) {
+          alert("Por favor, selecione uma imagem.");
+          return;
+        }
 
-        const receita = {
-            titulo: titulo,
-            categoria: data.categorias.find(categoriaObj => categoriaObj.titulo === categoria),
-            descricao: descricao,
-            ingredientes: ingredientesFormatados,
-            imagemURL: '',
-            passos: passosFormatados,
-            path: generateRecipePath(titulo),
-            substituicoes: [],
-            conselhos: [conselhos],
-            visaoGeral: descricao,
-            porcoes: porcoes
-        };
+        // Cria o FormData para enviar a imagem
+        const formData = new FormData();
+        formData.append("file", image);  // 'image' é o arquivo selecionado pelo usuário
 
-        console.log(passos);
-        console.log(passosFormatados);
-        console.log(ingredientesFormatados);
+        try {
+            // Faz o upload da imagem para o backend
+            const response = await fetch("http://localhost:3000/upload", {
+                method: "POST",
+                body: formData
+            });
 
-        const dados = JSON.parse(localStorage.getItem('data'));
-        const receitas = dados.receitas;
-        receitas.push(receita);
-        dados.receitas = receitas;
-        localStorage.setItem('data', JSON.stringify(dados));
+            // Se o upload for bem-sucedido, captura a URL da imagem
+            if (response.ok) {
+                const dadosAPI = await response.json();
+                const imageURL = dadosAPI.imageURL;  // A URL que você recebe do backend
+
+                // Agora cria o objeto da receita com a URL da imagem
+                const ingredientesFormatados = ingredientes.map(({ id, nome, imagemURL, quantidade, medicao }) => ({
+                    ingrediente: { nome, imagemURL: dataIngredientes.find(ingrediente => ingrediente.nome === nome)?.imagemURL },
+                    quantidade,
+                    medicao
+                }));
+
+                const passosFormatados = passos.map(passo => passo.passo);
+
+                const receita = {
+                    titulo: titulo,
+                    categoria: data.categorias.find(categoriaObj => categoriaObj.titulo === categoria),
+                    descricao: descricao,
+                    ingredientes: ingredientesFormatados,
+                    imagemURL: imageURL,  // A URL da imagem agora é armazenada aqui
+                    passos: passosFormatados,
+                    path: generateRecipePath(titulo),
+                    substituicoes: [],
+                    conselhos: [conselhos],
+                    visaoGeral: descricao,
+                    porcoes: porcoes
+                };
+
+                // Recupera os dados existentes do localStorage e atualiza
+                const dados = JSON.parse(localStorage.getItem('data'));
+                const receitas = dados.receitas;
+                receitas.push(receita);
+                dados.receitas = receitas;
+
+                // Salva os dados no localStorage
+                localStorage.setItem('data', JSON.stringify(dados));
+
+                alert("Receita salva com sucesso!");
+            } else {
+                throw new Error("Erro no upload da imagem.");
+            }
+        } catch (error) {
+            console.error("Erro ao enviar a receita:", error);
+            alert("Erro ao enviar a receita.");
+        }
     }
 
     return (
@@ -151,10 +196,26 @@ export default function CriarReceitas() {
             devem ser retiradas posteriormente para que se coloque uma imagem já com as dimensões definidas.
             */}
                     <div id={styles.areaAdicionarImagem}>
-                        <div id={styles.botaoAdicionarImagem}>
+                        {/* Label estilizado que simula o botão */}
+                        <label htmlFor="botaoAdicionarImagem" id={styles.botaoAdicionarImagem}>
                             <img src={botaoAdicionar} alt="botão adicionar" />
                             <span>Añadir foto</span>
-                        </div>
+                        </label>
+                        <input
+                            id="botaoAdicionarImagem"
+                            type="file"
+                            accept="image/*"
+                            onChange={handleFileChange}
+                            style={{ display: "none" }} // Esconde o input
+                            required
+                        />
+                        {/* Pré-visualização da imagem */}
+                        {imagePreview && (
+                            <div>
+                                <h3>Pré-visualização:</h3>
+                                <img src={imagePreview} alt="Pré-visualização" style={{ maxWidth: "300px" }} />
+                            </div>
+                        )}
                     </div>
                     <div id={styles.moduloInputNomeIngrediente}>
                         <label id={styles.labelNomeIngrediente} className={styles.required}>Título de la receta</label>
