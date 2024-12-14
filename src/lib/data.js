@@ -186,62 +186,62 @@ export const data = {
     {
       "nome": "Maíz blanco",
       "imagemURL": "/ingredientes/maiz_blanco.jpeg",
-      "path": "/ingredientes/maz_blanco216086"
+      "path": "/ingrediente/maz_blanco216086"
     },
     {
       "nome": "Zapallo",
       "imagemURL": "/ingredientes/zapallo.jpeg",
-      "path": "/ingredientes/zapallo574348"
+      "path": "/ingrediente/zapallo574348"
     },
     {
       "nome": "Carne de cerdo",
       "imagemURL": "/ingredientes/carne_de_cerdo.jpeg",
-      "path": "/ingredientes/carne_de_cerdo639480"
+      "path": "/ingrediente/carne_de_cerdo639480"
     },
     {
       "nome": "Chorizo",
       "imagemURL": "/ingredientes/chorizo.jpg",
-      "path": "/ingredientes/chorizo560526"
+      "path": "/ingrediente/chorizo560526"
     },
     {
       "nome": "Cebolla",
       "imagemURL": "/ingredientes/cebolla.jpg",
-      "path": "/ingredientes/cebolla856410"
+      "path": "/ingrediente/cebolla856410"
     },
     {
       "nome": "Carne molida",
       "imagemURL": "/ingredientes/carne_molida.jpeg",
-      "path": "/ingredientes/carne_molida167778"
+      "path": "/ingrediente/carne_molida167778"
     },
     {
       "nome": "Aceitunas verdes",
       "imagemURL": "/ingredientes/aceituna.jpeg",
-      "path": "/ingredientes/aceitunas_verdes574358"
+      "path": "/ingrediente/aceitunas_verdes574358"
     },
     {
       "nome": "Tapas para empanadas",
       "imagemURL": "/ingredientes/tapas_para_empanadas.jpeg",
-      "path": "/ingredientes/tapas_para_empanadas309469"
+      "path": "/ingrediente/tapas_para_empanadas309469"
     },
     {
       "nome": "Comino",
       "imagemURL": "/ingredientes/comino.jpeg",
-      "path": "/ingredientes/comino195860"
+      "path": "/ingrediente/comino195860"
     },
     {
       "nome": "Costilla de res",
       "imagemURL": "/ingredientes/costilla_de_res.jpeg",
-      "path": "/ingredientes/costilla_de_res810825"
+      "path": "/ingrediente/costilla_de_res810825"
     },
     {
       "nome": "Morcilla",
       "imagemURL": "/ingredientes/morcilla.jpg",
-      "path": "/ingredientes/morcilla968482"
+      "path": "/ingrediente/morcilla968482"
     },
     {
       "nome": "Sal gruesa",
       "imagemURL": "/ingredientes/sal_gruesa.jpeg",
-      "path": "/ingredientes/sal_gruesa776192"
+      "path": "/ingrediente/sal_gruesa776192"
     }
   ]
 }
