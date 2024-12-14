@@ -1,0 +1,40 @@
+.top_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin-bottom: 12px;
+    font-family: 'Poppins';
+}
+
+.top_container h1 {
+    font-size: 48px;
+}
+
+.top_container button {
+    background-color: inherit;
+}
+
+.top_container div {
+    display: flex;
+    gap: 12px;
+}
+
+.image_container {
+    width: 100%;
+    overflow: hidden
+}
+
+.image_container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.receitas_container h1 {
+    font-size: 38px;
+    margin-bottom: 24px;
+}
+
+.receitas_container {
+    padding-top: 24px;
+}
