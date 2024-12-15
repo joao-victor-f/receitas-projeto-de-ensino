@@ -6,7 +6,7 @@ export default function Receita(props) {
     return (
         <article className={styles.receita}>
             <div className={styles.receita_container}>
-                <img src={props.receita.imagemURL}/>
+                <img src={props.receita.imagensURL[0]}/>
                 <span>{props.receita.nome}</span>
             </div>
             <div className={styles.info_container}>
