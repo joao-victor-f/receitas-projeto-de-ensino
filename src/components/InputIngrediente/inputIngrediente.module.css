@@ -1,59 +1,77 @@
-.button {
+button {
     border: none;
+    background-color: inherit;
 }
 
-.InputAgregarIngrediente {
-    margin-bottom: 30px;
+.input_adicionar_ingrediente {
     display: flex;
-    width: 1136px;
-    height: 68px;
-    justify-content: center;
+    justify-content: space-around;
+    width: 100%;
     align-items: center;
-    gap: 18px;
-    flex-shrink: 0;
-    cursor: pointer;
+    gap: 16px;
+    margin-bottom: 30px;
 }
 
-.inputCantidad {
+.input_quantidade {
+    display: flex;
     width: 134px;
     height: 68px;
-    border: 1px solid #45454536;
-    background-color: #82828211;
-    font-family: 'Poppins';
-    border-radius: 10px;
-    margin-top: 10px;
-    margin-left: 0px;
-    padding-left: 17px;
-    margin-right: 16px;
-}
-
-.inputMedicion {
-    width: 288px;
-    height: 68px;
-    border: 1px solid #45454536;
-    background-color: #82828211;
-    color: var(--Light-Grey, #686868);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 12px 13px 10px 13px;
+    color: var(--Light-Grey, #ACACAC);
     font-family: Poppins;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     border-radius: 10px;
-    margin-top: 10px;
-    margin-left: 0px;
-    padding-left: 17px;
-    margin-right: 0px;
+    border: 1px solid rgba(130, 130, 130, 0.70);
+    background: #FBFBFB;
 }
 
-.inputProducto {
+.input_medicao {
+    display: flex;
+    width: 288px;
+    height: 68px;
+    padding: 15px 15px 15px 26px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2px;
+    flex: 1 0 0;
+    align-self: stretch;
+    border-radius: 5px;
+    border: 1px solid rgba(130, 130, 130, 0.70);
+    background: #FBFBFB;
+    color: var(--Light-Grey, #ACACAC);
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.input_produto {
     width: 558px;
     height: 68px;
-    border: 1px solid #45454536;
-    background-color: #82828211;
-    font-family: 'Poppins';
+    gap: 6px;
+    color: var(--Light-Grey, #ACACAC);
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    padding: 24px 26px 14px 26px;
+    align-items: center;
+    flex: 1 0 0;
+    align-self: stretch;
     border-radius: 10px;
-    margin-top: 10px;
-    margin-left: 16px;
-    padding-left: 17px;
-    margin-right: 0px;
+    border: 1px solid rgba(130, 130, 130, 0.70);
+    background: #FBFBFB;
+}
+
+input:focus, input::selection {
+    border: none;
 }

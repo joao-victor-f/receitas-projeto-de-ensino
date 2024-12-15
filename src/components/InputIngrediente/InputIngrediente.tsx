@@ -23,32 +23,21 @@ export default function InputIngrediente ({ ingredientes, ingrediente, onChange,
     };
   
     return (
-      <div className={styles.InputAgregarIngrediente}>
+      <div className={styles.input_adicionar_ingrediente}>
         {/* Botão de reorder */}
         <button>
           <img src={ReOrder} alt="botão reOrder" />
         </button>
   
         {/* Campo de nome */}
-        <select
-          value={ingrediente.nome}
-          onChange={(e) => handleChange(e, 'nome')}
-          className={styles.inputProducto}
-          required
-        >
-          <option selected disabled value="">selecione um ingrediente</option>
-          {ingredientes.map(ingrediente => (
-            <option value={ingrediente.nome}>{ingrediente.nome}</option>
-          ))}
-        </select>
   
         {/* Campo de quantidade */}
         <input
           type="number"
           value={ingrediente.quantidade}
           onChange={(e) => handleChange(e, 'quantidade')}
-          placeholder="Quantidade"
-          className={styles.inputCantidad}
+          placeholder="Cantidad"
+          className={styles.input_quantidade}
           required
         />
   
@@ -56,15 +45,27 @@ export default function InputIngrediente ({ ingredientes, ingrediente, onChange,
         <select
           value={medicao}
           onChange={(e) => handleChange(e, 'medicao')}
-          className={styles.inputMedicion}
+          className={styles.input_medicao}
           required
         >
-          <option selected disabled value="">Medição</option>
+          <option selected disabled value="">Medicion</option>
           {medicoes.map(medicao => (
             <option value={medicao}>{medicao}</option>
           ))}
         </select>
   
+        <select
+          value={ingrediente.nome}
+          onChange={(e) => handleChange(e, 'nome')}
+          className={styles.input_produto}
+          required
+        >
+          <option selected disabled value="">Selecione un producto</option>
+          {ingredientes.map(ingrediente => (
+            <option value={ingrediente.nome}>{ingrediente.nome}</option>
+          ))}
+        </select>
+
         {/* Botão de remover */}
         <button onClick={() => onRemove(ingrediente.id)}>
           <img src={botaoRemover} alt="botão remover" />

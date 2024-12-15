@@ -1,18 +1,50 @@
-#inputDescPasso{
-    width: 80%;
+.passos_container {
     display: flex;
-    padding: 24px 26px 106px 26px;
-    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 32px;
+}
+
+.passos_container span {
+    margin-left: 70px;
+    color: var(--Shadow-Grey, #444);
+    font-family: Poppins;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 38px;
+    /* 172.727% */
+}
+
+.passo_input_container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
     align-items: center;
-    flex: 1 0 0;
-    align-self: stretch;
-    border-radius: 10px;
-    border: 1px solid #45454536;
-    background-color: #82828211;
-    color: var(--Light-Grey, #000000);
+}
+
+.passo_input_container input {
+    display: flex;
+    width: 1012px;
+    height: 160px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    color: var(--Light-Grey, black);
     font-family: Poppins;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    display: flex;
+    padding: 24px 26px 106px 26px;
+    flex: 1 0 0;
+    align-self: stretch;
+    border-radius: 10px;
+    border: 1px solid rgba(130, 130, 130, 0.70);
+    background: #FBFBFB;
+}
+
+button {
+    cursor: pointer;
 }

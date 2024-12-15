@@ -20,9 +20,8 @@ export default function CriarReceitas() {
     ]);
 
     const [passos, setPassos] = useState([
-        { id: '1', passo: ''},
-    ]) 
-
+        { id: '1', passo: '' }
+    ]);
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
@@ -192,60 +191,93 @@ export default function CriarReceitas() {
 
     return (
         <form method="post" onSubmit={handleSubmit}>
-            <div id={styles.moduloExternoCriarIngredientes}>
-                <div id={styles.moduloInternoCriarIngredientes}>
-                    <h1 id={styles.tituloCriarIngrediente}>Agregar recetas</h1>
-                    <p id={styles.descricaoCriarIngredientes}>¿Te sientes como un Picasso de cocina? ¡Queremos ver tu obra maestra! Añade tu receta y muestra tu creatividad culinaria.</p>
-                    <div id={styles.linhaDivisoria}></div>
-                    {/* As dimensões definidas para a imagem são provisórias. Servem somente para saber como fica o resultado. Elas 
-            devem ser retiradas posteriormente para que se coloque uma imagem já com as dimensões definidas.
-            */}
-                    <div id={styles.areaAdicionarImagem}>
-                        {/* Label estilizado que simula o botão */}
-                        <label htmlFor="botaoAdicionarImagem" id={styles.botaoAdicionarImagem}>
-                            <img src={botaoAdicionar} alt="botão adicionar" />
-                            <span>Añadir foto</span>
-                        </label>
+            <div className={styles.outer_container}>
+                <section className={styles.main_topic_container}>
+                    <h1>Agregar una receta</h1>
+                    <p className={styles.paragrafo}>¿Te sientes como un Picasso de cocina? ¡Queremos ver tu obra maestra! Añade tu receta y muestra tu creatividad culinaria.</p>
+                </section>
+                <div className={styles.linha_divisoria}></div>
+                <section className={styles.adicionar_img_container}>
+                    <label className={styles.button_adicionar_img} htmlFor="botaoAdicionarImagem">
+                        <img src={botaoAdicionar} />
+                        <span>Añadir foto</span>
                         <input
                             id="botaoAdicionarImagem"
-                            type="file"
+                            type="file"    
                             accept="image/*"
                             onChange={handleFileChange}
-                            style={{ display: "none" }} // Esconde o input
+                            style={{display: "none"}}
                             required
                         />
-                        {/* Pré-visualização da imagem */}
-                        {imagePreview && (
-                            <div>
-                                <h3>Pré-visualização:</h3>
-                                <img src={imagePreview} alt="Pré-visualização" style={{ maxWidth: "300px" }} />
-                            </div>
-                        )}
+                    </label>
+                </section>
+
+                <section className={styles.input_container}>
+                    <label className={styles.label_input}>Título de la receta</label>
+                    <input
+                        type="text"
+                        value={titulo}
+                        placeholder="Introduce el título de tu receta!"
+                        onChange={(e) => handleChange(e, 'titulo')}
+                        className={styles.input_titulo}
+                    />
+                </section>
+                <section className={styles.input_container}>
+                    <label className={styles.label_input}>Descrípcion</label>
+                    <textarea
+                        rows={10}
+                        cols={120}
+                        value={descricao}
+                        placeholder="Describe tu receta de una manera que haga la boca agua."
+                        onChange={(e) => handleChange(e, 'descricao')}
+                        className={styles.input_descricao}
+                    />
+                </section>
+                <section className={styles.minor_info_container1}>
+                    <label className={styles.label_input}>Porciones</label>
+                    <input
+                        type="number"
+                        className={styles.input_porcoes}
+                        placeholder="e.g.,4"
+                        value={porcoes}
+                        onChange={(e) => handleChange(e, 'porcoes')}
+                        required
+                    />
+                </section>
+                <section className={styles.minor_info_container2}>
+                    <label className={styles.label_input}>Tiempo de preparación</label>
+                    <div>
+                        <input
+                            type="number"
+                            className={styles.input_tempo}
+                            placeholder="hrs"
+                            value={horas}
+                            onChange={(e) => handleChange(e, 'horas')}
+                            required
+                        />
+                        <input
+                            type="number"
+                            className={styles.input_tempo}
+                            placeholder="min"
+                            value={minutos}
+                            onChange={(e) => handleChange(e, 'minutos')}
+                            required
+                        />
+
                     </div>
-                    <div id={styles.moduloInputNomeIngrediente}>
-                        <label id={styles.labelNomeIngrediente} className={styles.required}>Título de la receta</label>
-                        <input type="text" id={styles.inputNomeIngrediente} value={titulo} placeholder="Introduce el título de tu receta" onChange={(e) => handleChange(e, 'titulo')} />
+                </section>
+                <section className={styles.ingredientes_main_container}>
+                    <div className={styles.ingredientes_header_container}>
+                        <label className={styles.label_input}>Ingredientes</label>
+                        <p>Enumere un ingrediente por línea, especificando cantidades (1, 2), medidas (tazas, cucharas) y cualquier detalle de preparación (picado, tamizado) junto con el artículo.</p>
                     </div>
-                    <div id={styles.moduloInputNomeIngrediente}>
-                        <label id={styles.labelDescricao} className={styles.required}>Descripción</label>
-                        <input type="text" id={styles.inputDescricao} value={descricao} placeholder="Describe tu receta de una manera que haga la boca agua." onChange={(e) => handleChange(e, 'descricao')} />
-                    </div>
-                    <div id={styles.moduloInputNomeIngrediente}>
-                        <label id={styles.labelPorciones} className={styles.required}>Porciones</label>
-                        <input type="number" id={styles.inputPorciones} placeholder="e.g.,4" value={porcoes} onChange={(e) => handleChange(e, 'porcoes')} />
-                    </div>
-                    <div id={styles.moduloInputNomeIngrediente}>
-                        <label id={styles.labelTiempoP} className={styles.required}>Tiempo de preparación</label>
-                        <input type="number" id={styles.inputTiempoP} placeholder="hrs" value={horas} onChange={(e) => handleChange(e, 'horas')} />
-                        <input type="number" id={styles.inputTiempoP2} placeholder="min" value={minutos} onChange={(e) => handleChange(e, 'minutos')} />
-                    </div>
-                    <div id={styles.moduloInputNomeIngrediente}>
-                        <label id={styles.labelNomeIngrediente} className={styles.required}>Ingredientes</label>
-                        <p id={styles.descricaoLabel}>Enumere un ingrediente por línea, especificando cantidades (1, 2), medidas (tazas, cucharas) y cualquier detalle de preparación (picado, tamizado) junto con el artículo.</p>
-                        <div id={styles.botaoAddIngrediente} onClick={() => setIngredientes([...ingredientes, { id: String(ingredientes.length + 1), nome: '', imagemURL: '', quantidade: '', medicao: '' }])}>
-                            <button><img src={botaoAdicionar} alt="botão adicionar" /></button>
-                            <span>Agregar ingredientes</span>
+                    <div className={styles.adicionar_ingrediente_container}>
+                        <div className={styles.botao_add_ingrediente} onClick={() => setIngredientes([...ingredientes, { id: String(ingredientes.length + 1), nome: '', imagemURL: '', quantidade: '', medicao: '' }])}>
+                            <span>+</span>
                         </div>
+                    </div>
+                    <div className={styles.linha_divisoria}></div>
+                    <div className={styles.ingredientes_container}>
                         <DragDropContext onDragEnd={onDragEndIngredientes}>
                             <Droppable droppableId="droppable" direction="vertical">
                                 {(provided) => (
@@ -279,13 +311,20 @@ export default function CriarReceitas() {
                             </Droppable>
                         </DragDropContext>
                     </div>
-                    <div id={styles.moduloInputNomeIngrediente}>
-                        <label id={styles.labelNomeIngrediente} className={styles.required}>Instrucciones</label>
-                        <p id={styles.descricaoLabel}>Divide tu receta en instrucciones claras paso a paso.</p>
-                        <div id={styles.botaoAddIngrediente} onClick={() => setPassos([...passos, { id: String(passos.length + 1), passo: '' }])}>
-                            <button><img src={botaoAdicionar} alt="botão adicionar I" /></button>
-                            <span>Agregar paso</span>
+                    <div className={styles.linha_divisoria}></div>
+                </section>
+                <section className={styles.ingredientes_main_container}>
+                    <div className={styles.ingredientes_header_container}>
+                        <label className={styles.label_input}>Instrucciones</label>
+                        <p className={styles.paragrafo}>Enumere un ingrediente por línea, especificando cantidades (1, 2), medidas (tazas, cucharas) y cualquier detalle de preparación (picado, tamizado) junto con el artículo.</p>
+                    </div>
+                    <div className={styles.adicionar_ingrediente_container}>
+                        <div className={styles.botao_add_ingrediente} onClick={() => setPassos([...passos, { id: String(passos.length + 1), passo: '', }])}>
+                            <span>+</span>
                         </div>
+                    </div>
+                    <div className={styles.linha_divisoria}></div>
+                    <div className={styles.passos_container}>
                         <DragDropContext onDragEnd={onDragEndPassos}>
                             <Droppable droppableId="droppable" direction="vertical">
                                 {(provided) => (
@@ -318,27 +357,35 @@ export default function CriarReceitas() {
                             </Droppable>
                         </DragDropContext>
                     </div>
-                    <div id={styles.moduloInputNomeIngrediente}>
-                        <label id={styles.labelDescricao} className={styles.nonrequired}>Consejos de cocina</label>
-                        <input type="text" id={styles.inputDescricao} placeholder="¡Comparte tus secretos de cocina! Trucos, intercambios o cualquier consejo sobre el horno para lograr el máximo éxito en la receta." value={conselhos} onChange={(e) => handleChange(e, 'conselhos')} />
-                    </div>
-                    <div id={styles.moduloInputNomeIngrediente}>
-                        <label id={styles.labelDescricao} className={styles.nonrequired}>Categoría</label>
-                        <select value={categoria} id={styles.inputNomeIngrediente} onChange={(e) => handleChange(e, 'categoria')}>
-                            <option value=''>selecione uma</option>
-                            {data.categorias.map(categoria => (
-                                <option value={categoria.titulo}>{categoria.titulo}</option>
-                            ))}
-                        </select>
-                    </div>
-                    <div id={styles.botoes}>
-                        <button id={styles.botaoCancelar}>Cancelar</button>
-                        <button id={styles.botaoAgregarReceta}>Enviar receta</button>
-                    </div>
-                    <p id={styles.descricaoPaginaR}>Si ha encontrado esta receta en una revista, un libro de cocina o en otro sitio web, no podemos publicarla aquí. Nuestra plataforma se nutre de la originalidad y las recetas publicadas deben cumplir con nuestros principios. Mantengamos fluyendo la creatividad en la cocina con sus recetas únicas.</p>
-                </div>
+                    <div className={styles.linha_divisoria}></div>
+                </section>
+                <section className={styles.conselhos_container}>
+                    <label className={styles.label_input}>Consejos de cocina</label>
+                    <textarea
+                        rows={10}
+                        cols={120}
+                        value={descricao}
+                        placeholder="¡Comparte tus secretos de cocina! Trucos, intercambios o cualquier consejo sobre el horno para lograr el máximo éxito en la receta."
+                        onChange={(e) => handleChange(e, 'conselhos')}
+                        className={styles.input_descricao}
+                    />
+                </section>
+                <section className={styles.categoria_container}>
+                    <label className={styles.label_input}>Categoría</label>
+                    <select value={categoria} className={styles.categoria_select}>
+                        <option value=''>Tipo de comida</option>
+                        {data.categorias.map(categoria => (
+                            <option value={categoria.titulo}>{categoria.titulo}</option>
+                        ))}
+                    </select>
+                </section>
+                <section className={styles.end_container}>
+                    <button className={`${styles.cancel_button} ${styles.button}`}>Cancelar</button>
+                    <button className={`${styles.save_button} ${styles.button}`}>Enviar receta</button>
+                </section>
+                <div className={styles.linha_divisoria}></div>
+                <p className={styles.ending_paragraph}>Si ha encontrado esta receta en una revista, un libro de cocina o en otro sitio web, no podemos publicarla aquí. Nuestra plataforma se nutre de la originalidad y las recetas publicadas deben cumplir con nuestros principios. Mantengamos fluyendo la creatividad en la cocina con sus recetas únicas.</p>
             </div>
-
         </form>
     );
 };

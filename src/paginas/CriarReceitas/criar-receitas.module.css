@@ -1,310 +1,307 @@
-button {
-    border: none;
+.paragrafo {
+    color: var(--Shadow-Grey, #444);
+    /* Mainly used Text Styles/Body w line height */
+    font-family: Poppins;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 38px;
+    /* 172.727% */
+}
+
+.outer_container {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    background: var(--Brand-Colors-White, #FFF);
+    box-shadow: 0px 0px 10px 0px rgba(29, 29, 29, 0.25);
+    padding: 66px;
+    gap: 48px;
+}
+
+.main_topic_container {
+    text-align: center;
+}
+
+.main_topic_container h1 {
+    color: var(--Brand-Colors-Light-Black, #1D1D1D);
+    text-align: center;
+    font-family: Inter;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.linha_divisoria {
+    width: 100%;
+    height: 2px;
+    background-color: rgba(111, 111, 111, 0.3);
+}
+
+.adicionar_img_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    border-radius: 8px;
+    border: 3px dashed #828282;
+    background: #D9D9D9;
+}
+
+.button_adicionar_img {
+    display: flex;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 60px;
+    border: 1px solid #000;
+    background: #454545;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     cursor: pointer;
 }
 
-#moduloExternoCriarIngredientes {
-    width: 1272px;
-    height: 3050px;
-    margin: 100px auto 80px auto;
-    box-shadow: 0px 0px 10px #00000038;
+.adicionar_img_container span {
+    color: #EEE;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.input_container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.label_input {
+    color: var(--Brand-Colors-Light-Black, #1D1D1D);
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.input_titulo {
+    display: flex;
+    padding: 24px 26px 20px 26px;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 0;
+    align-self: stretch;
     border-radius: 10px;
+    border: 1px solid rgba(130, 130, 130, 0.70);
+    background: #FBFBFB;
+    color:black;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
-#moduloInternoCriarIngredientes {
-    width: 1140px;
-    margin: 66px auto 0 auto;
+.input_titulo::placeholder {
+    color: var(--Light-Grey, #ACACAC);
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
-#tituloCriarIngrediente {
-    font-size: 48px;
-    text-align: center;
-    padding-top: 70px;
-    font-family: 'Inter';
+.input_descricao {
+    width: 100%;
+    min-height: 120px;
+    padding: 26px 24px 26px 12px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: none;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    color: black;
+    font-size: 20px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-wrap: wrap;
+}
+
+.input_descricao::placeholder {
+    color: var(--Light-Grey, #ACACAC);
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-wrap: wrap;
+}
+
+.minor_info_container1 {
+    display: flex;
+    align-items: center;
+    gap: 248px;
+}
+
+.minor_info_container2 {
+    display: flex;
+    align-items: center;
+    gap: 84px;
+}
+
+.minor_info_container2 div {
+    display: flex;
+    width: 288px;
+    justify-content: space-between;
+}
+
+.input_porcoes {
+    display: flex;
+    width: 288px;
+    height: 68px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 6px;
+    display: flex;
+    padding: 24px 26px 26px 24px;
+    align-self: stretch;
+    border-radius: 10px;
+    border: 1px solid rgba(130, 130, 130, 0.70);
+    background: #FBFBFB;
+    color: var(--Light-Grey, black);
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.input_tempo {
+    display: flex;
+    width: 134px;
+    height: 68px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    display: flex;
+    padding: 24px 26px 26px 24px;
+    border-radius: 10px;
+    border: 1px solid rgba(130, 130, 130, 0.70);
+    background: #FBFBFB;
+    color: var(--Light-Grey, black);
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.ingredientes_main_container  {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.ingredientes_header_container p {
+    color: var(--Shadow-Grey, #444);
+    font-family: Poppins;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 38px; /* 172.727% */
+}
+
+.botao_add_ingrediente {
+    color: var(--Brand-Colors-Light-Black, #1D1D1D);
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
     font-weight: 600;
-}
-
-#descricaoCriarIngredientes {
-    margin-top: 58px;
-    color: #444444;
-    font-size: 21.7px;
-    font-family: "Poppins";
-}
-
-#descricaoLabel {
-    margin-top: 17px;
-    margin-bottom: 17px;
-    color: #444444;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 25px;
-    font-family: "Poppins";
-}
-
-#descricaoPaginaR {
-    margin-top: 35px;
-    margin-bottom: 17px;
-    color: #444444;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 25px;
-    font-family: "Poppins";
-}
-
-#botaoAddIngrediente {
-    margin-top: 30px;
-    display: flex;
-    padding: 10px 10px;
-    align-items: center;
-    gap: 10px;
-    color: #000000;
-    font-family: 'Poppins';
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
     line-height: normal;
-}
-
-#linhaDivisoria {
-    background-color: #00000011;
-    width: 1140px;
-    height: 3px;
-    margin-top: 40px;
-}
-
-#areaAdicionarImagem {
-    margin-top: 40px;
-    border-radius: 6px;
-    width: 1140px;
-    height: 200px;
-    background-color: #D9D9D9;
-    border: 4px dotted #828282;
+    cursor: pointer;
+    border-radius: 50px;
+    width: fit-content;
+    transition: 250ms ease-out;
+    width: 32px;
+    height: 32px;
     display: flex;
-    padding: 10px 10px;
-    justify-content: center;
     align-items: center;
-    gap: 10px;
-}
-
-#botaoAdicionarImagem {
-    background: #454545;
-    border: 1px solid #000000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 60px;
-    width: 192px;
-    height: 50px;
-    display: flex;
-    padding: 10px 10px;
     justify-content: center;
-    align-items: center;
-    gap: 10px;
-    color: #EEEEEE;
-    font-family: 'Poppins';
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+    border: 1px solid black;
 }
 
-#InputPassos {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    display: flex;
-    width: 1136px;
-    justify-content: center;
-    align-items: center;
-    gap: 18px;
-    flex-shrink: 0;
-}
-
-#inputNomeIngrediente {
-    width: 1140px;
-    height: 74px;
-    border: 1px solid #45454536;
-    background-color: #82828211;
-    font-family: 'Poppins';
-    border-radius: 10px;
-    margin-top: 10px;
-    padding-left: 17px;
-}
-
-#InputAgregarIngrediente {
-    margin-bottom: 30px;
-    display: flex;
-    width: 1136px;
-    height: 68px;
-    justify-content: center;
-    align-items: center;
-    gap: 18px;
-    flex-shrink: 0;
-}
-
-#inputPorciones {
-    width: 300px;
-    height: 68px;
-    border: 1px solid #45454536;
-    background-color: #82828211;
-    font-family: 'Poppins';
-    border-radius: 10px;
-    margin-top: 10px;
-    margin-left: 248px;
-    padding-left: 17px;
-}
-
-#inputTiempoP {
-    width: 134px;
-    height: 68px;
-    border: 1px solid #45454536;
-    background-color: #82828211;
-    font-family: 'Poppins';
-    border-radius: 10px;
-    margin-top: 10px;
-    margin-left: 80px;
-    padding-left: 17px;
-}
-
-
-#inputTiempoP2 {
-    width: 134px;
-    height: 68px;
-    border: 1px solid #45454536;
-    background-color: #82828211;
-    font-family: 'Poppins';
-    border-radius: 10px;
-    margin-top: 10px;
-    padding-left: 17px;
-}
-
-#inputDescricao {
-    width: 1140px;
-    height: 230px;
-    display: flex;
-    padding: 24px 26px 106px 26px;
-    justify-content: center;
-    align-items: center;
-    flex: 1 0 0;
-    align-self: stretch;
-    border-radius: 10px;
-    border: 1px solid #45454536;
-    background-color: #82828211;
-    color: var(--Light-Grey, #000000);
-    font-family: Poppins;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-#inputDescPasso{
-    width: 1012px;
-    height: 160px;
-    display: flex;
-    padding: 24px 26px 106px 26px;
-    justify-content: center;
-    align-items: center;
-    flex: 1 0 0;
-    align-self: stretch;
-    border-radius: 10px;
-    border: 1px solid #45454536;
-    background-color: #82828211;
-    color: var(--Light-Grey, #000000);
-    font-family: Poppins;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-#inputNomeIngrediente::placeholder {
-    color: #ACACAC;
-    font-family: 'Poppins';
-}
-
-#inputPorciones::placeholder {
-    color: #ACACAC;
-    font-family: 'Poppins';
-}
-
-#inputTiempoP::placeholder {
-    color: #ACACAC;
-    font-family: 'Poppins';
-}
-
-#inputTiempoP2::placeholder {
-    color: #ACACAC;
-    font-family: 'Poppins';
-}
-
-#inputDescricao::placeholder {
-    color: #ACACAC;
-    font-family: 'Poppins';
-    position: absolute;
-    width: 1088px;
-    top: 23px;
-    left: 26px;
-    letter-spacing: 0;
-    line-height: normal;
-}
-
-#moduloInputNomeIngrediente {
-    margin-top: 40px;
-}
-
-#labelNomeIngrediente {
-    font-family: "Poppins";
-    font-size: 24px;
-    font-weight: 500;
-    margin-top: 60px;
-}
-
-#labelPorciones {
-    font-family: "Poppins";
-    font-size: 24px;
-    font-weight: 500;
-}
-
-#labelTiempoP {
-    font-family: "Poppins";
-    font-size: 24px;
-    font-weight: 500;
-}
-
-#labelDescricao {
-    font-family: "Poppins";
-    font-size: 24px;
-    font-weight: 500;
-}
-
-#botoes {
-    float: right;
-    margin-top: 100px;
-}
-
-#botaoCancelar {
-    width: 152px;
-    height: 56px;
-    background-color: white;
-    border: 2px solid #454545;
-    border-radius: 30px;
-    color: #454545;
-    font-size: 23px;
-    font-weight: 450;
-    margin-right: 20px;
-    font-family: "Poppins";
-}
-
-#botaoAgregarReceta {
-    width: 200px;
-    height: 56px;
+.botao_add_ingrediente:hover {
     background-color: #454545;
     color: white;
-    border-radius: 30px;
-    font-size: 23px;
-    font-weight: 400;
-    font-family: "Poppins";
 }
 
-.required:after {
-    content: " *";
-    color: #DB0F0F;
+.categoria_select {
+    margin-top: 24px;
+    width: 100%;
+    display: flex;
+    padding: 15px 15px 15px 26px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2px;
+    flex: 1 0 0;
+    align-self: stretch;
+    border-radius: 5px;
+    border: 1px solid rgba(130, 130, 130, 0.70);
+    background: #FBFBFB;
+    color: var(--Light-Grey, #ACACAC);
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.end_container {
+    display: flex;
+    align-self: flex-end;
+    gap: 24px;
+}
+
+.ending_paragraph {
+    width: 100%;
+    color: var(--Shadow-Grey, #444);
+    font-family: Poppins;
+    font-size: 17px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.button {
+    display: flex;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 60px;
+    border: 2px solid #454545;
+    cursor: pointer;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.cancel_button {
+    color: #454545;
+    font-family: Poppins;
+}
+
+.save_button {
+    color: white;
+    background: #454545;
 }
