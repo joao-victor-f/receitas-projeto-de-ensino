@@ -30,7 +30,7 @@ type Receitas = {
         quantidade: number,
         medicao: string,
     }[],
-    imagemURL: string,
+    imagensURL: string[],
     tempoDePreparacao: string,
     passos: string[],
     path: string,
