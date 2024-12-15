@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { data } from '../../lib/data'
 import styles from './listagem.module.css';
 import Ingrediente from '../ingrediente/Ingrediente';
 import { Link } from 'react-router-dom';
