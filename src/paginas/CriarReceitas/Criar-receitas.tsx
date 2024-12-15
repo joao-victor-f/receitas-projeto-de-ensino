@@ -159,12 +159,13 @@ export default function CriarReceitas() {
                 const passosFormatados = passos.map(passo => passo.passo);
                 console.log(passosFormatados)
 
+                const imagensFormatadas = imagensURL.map(imagem => imagem.url);
                 const receita = {
                     nome: titulo,
                     categoria: data.categorias.find(categoriaObj => categoriaObj.titulo === categoria),
                     descricao: descricao,
                     ingredientes: ingredientesFormatados,
-                    imagemURL: imagensURL,  // A URL da imagem agora é armazenada aqui
+                    imagensURL: imagensFormatadas,  // A URL da imagem agora é armazenada aqui
                     tempoDePreparacao: formatarHorario(horas, minutos),
                     passos: passosFormatados,
                     path: generatePath('receita', titulo),

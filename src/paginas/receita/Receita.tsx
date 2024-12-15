@@ -4,6 +4,7 @@ import { data } from '../../lib/data';
 import { formatarIngrediente, formatarTempo } from '../../lib/utils';
 import styles from './receita.module.css';
 import { useNavigate } from 'react-router-dom';
+import Carrossel from '../../components/carrossel/Carrossel';
 
 export default function Receita() {
   const navigate = useNavigate();
@@ -62,7 +63,7 @@ export default function Receita() {
             </div>
         </section>
         <section className={styles.image_container}>
-            <img src={receita.imagemURL} />
+            <Carrossel imagens={receita.imagensURL} />
         </section>
         <section className={styles.visao_geral_container}>
             <h1>Visión General</h1>
