@@ -25,12 +25,20 @@ const upload = multer({ storage });
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Endpoint para upload de imagem
-app.post("/upload", upload.single("file"), (req, res) => {
-  if (!req.file) {
-    return res.status(400).send("Erro ao salvar a imagem.");
+app.post("/upload", upload.array("images", 10), (req, res) => {
+  if (!req.files || req.files.length === 0) {
+    return res.status(400).json({ message: 'Nenhum arquivo enviado!' });
   }
-    const imageURL = `http://localhost:3000/uploads/${req.file.filename}`;
-    res.json({imageURL: imageURL});
+
+  const fileUrls = req.files.map((file) => ({
+    name: file.originalname,
+    url: `http://localhost:3000/uploads/${file.filename}`,
+  }));
+
+  res.json({
+    message: 'Upload realizado com sucesso!',
+    files: fileUrls,
+  });
 });
 
 // Servidor ouvindo na porta 3000
