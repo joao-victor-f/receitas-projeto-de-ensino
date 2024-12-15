@@ -61,11 +61,13 @@ export default function Ingrediente() {
                     <img src={ingrediente.imagemURL} />
                 </section>
                 {receitas && (
-                <section className={styles.receitas_container}>
+                <section className={styles.receitas_header_container}>
                     <h1>Receitas</h1>
-                    {receitas.length > 0 && receitas.map(receita => (
-                        <Receita receita={receita} />
-                    ))}
+                    <div className={styles.receitas_container}>
+                        {receitas.length > 0 && receitas.map(receita => (
+                            <Receita receita={receita} />
+                        ))}
+                    </div>
                 </section>
                 )}
             </>
