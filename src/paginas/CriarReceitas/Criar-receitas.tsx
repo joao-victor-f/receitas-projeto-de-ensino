@@ -161,7 +161,7 @@ export default function CriarReceitas() {
                     imagemURL: imageURL,  // A URL da imagem agora é armazenada aqui
                     tempoDePreparacao: formatarHorario(horas, minutos),
                     passos: passosFormatados,
-                    path: generatePath('receitas', titulo),
+                    path: generatePath('receita', titulo),
                     substituicoes: [],
                     conselhos: [conselhos],
                     visaoGeral: descricao,
@@ -364,7 +364,7 @@ export default function CriarReceitas() {
                     <textarea
                         rows={10}
                         cols={120}
-                        value={descricao}
+                        value={conselhos}
                         placeholder="¡Comparte tus secretos de cocina! Trucos, intercambios o cualquier consejo sobre el horno para lograr el máximo éxito en la receta."
                         onChange={(e) => handleChange(e, 'conselhos')}
                         className={styles.input_descricao}
@@ -372,7 +372,7 @@ export default function CriarReceitas() {
                 </section>
                 <section className={styles.categoria_container}>
                     <label className={styles.label_input}>Categoría</label>
-                    <select value={categoria} className={styles.categoria_select}>
+                    <select value={categoria} className={styles.categoria_select} onChange={(e) => handleChange(e, 'categoria')}>
                         <option value=''>Tipo de comida</option>
                         {data.categorias.map(categoria => (
                             <option value={categoria.titulo}>{categoria.titulo}</option>
