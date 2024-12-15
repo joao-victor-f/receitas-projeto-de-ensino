@@ -85,6 +85,7 @@ export default function Receita() {
                     <h3>Tiempo de Preparación</h3>
                     <span>{formatarTempo(receita.tempoDePreparacao)}</span>
                 </div>
+                <div className={styles.divider}></div>
                 <div>
                     <img src="/icons/serving-dish.png" />
                     <h3>Raciones</h3>
