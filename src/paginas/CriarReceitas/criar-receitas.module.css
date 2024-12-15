@@ -305,3 +305,42 @@
     color: white;
     background: #454545;
 }
+
+.image_preview_container {
+    position: relative;
+    display: inline-block;
+    object-fit: cover;
+    transition: all 1s ease;
+    overflow: hidden;
+}
+
+.image_preview_container:hover .image_preview {
+    filter: brightness(80%);
+}
+
+.delete_image_preview {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.5s ease;
+}
+
+.image_preview_container:hover .delete_image_preview {
+    display: block;
+    opacity: 1; /* Torna visível */
+}
+
+.images {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    padding: 16px;
+}

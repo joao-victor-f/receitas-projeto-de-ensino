@@ -2,17 +2,17 @@ import React, {useState, useEffect } from "react";
 import styles from "./criar-receitas.module.css";
 import botaoAdicionar from "../../assets/botao-adicionar.svg";
 import { useNavigate } from "react-router-dom";
-import { medicoes } from "../../lib/constants";
 import InputIngrediente from "../../components/InputIngrediente/InputIngrediente";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import InputPasso from "../../components/inputPasso/inputPasso";
 import { data } from "../../lib/data";
+import botaoRemover from "../../assets/remove-button.svg";
 import { formatarHorario, generatePath } from "../../lib/utils";
 
 export default function CriarReceitas() {
     const navigate = useNavigate();
-    const [image, setImage] = useState<File | null>(null);
-    const [imagePreview, setImagePreview] = useState<string | null>(null);
+    const [images, setImages] = useState<File[] | null>(null);
+    const [imagePreviews, setImagePreviews] = useState<string[]>([]);
 
     const [dataIngredientes, setDataIngredientes] = useState<Ingrediente[]>([]);
     const [ingredientes, setIngredientes] = useState([
@@ -23,16 +23,21 @@ export default function CriarReceitas() {
         { id: '1', passo: '' }
     ]);
 
-    const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const file = event.target.files?.[0];
-        if (file) {
-            setImage(file);
-            // Cria a URL para visualização do arquivo
-            const previewUrl = URL.createObjectURL(file);
-            setImagePreview(previewUrl);
-        }
+    const handleRemove = (index, e) => {
+        e.preventDefault();
+        // Remove o arquivo e seu preview pela posição
+        setImages((prev) => prev.filter((_, i) => i !== index));
+        setImagePreviews((prev) => prev.filter((_, i) => i !== index));
+    };
 
-    }
+    const handleFileChange = (e) => {
+        const images: File[] = Array.from(e.target.files);
+        setImages(images);
+    
+        // Gerar URLs temporárias para o preview
+        const previewUrls = images.map((file) => URL.createObjectURL(file));
+        setImagePreviews(previewUrls);
+    };
 
     const [titulo, setTitulo] = useState('');
     const [descricao, setDescricao] = useState('');
@@ -122,14 +127,15 @@ export default function CriarReceitas() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!image) {
-          alert("Por favor, selecione uma imagem.");
-          return;
-        }
-
         // Cria o FormData para enviar a imagem
         const formData = new FormData();
-        formData.append("file", image);  // 'image' é o arquivo selecionado pelo usuário
+
+        if (!images) {
+            alert("Você precisa selecionar uma imagem.");
+            return;
+        }
+
+        images.forEach(image => formData.append('images', image));
 
         try {
             // Faz o upload da imagem para o backend
@@ -141,7 +147,7 @@ export default function CriarReceitas() {
             // Se o upload for bem-sucedido, captura a URL da imagem
             if (response.ok) {
                 const dadosAPI = await response.json();
-                const imageURL = dadosAPI.imageURL;  // A URL que você recebe do backend
+                const imagensURL = dadosAPI.files;  // A URL que você recebe do backend
 
                 // Agora cria o objeto da receita com a URL da imagem
                 const ingredientesFormatados = ingredientes.map(({ id, nome, imagemURL, quantidade, medicao }) => ({
@@ -158,7 +164,7 @@ export default function CriarReceitas() {
                     categoria: data.categorias.find(categoriaObj => categoriaObj.titulo === categoria),
                     descricao: descricao,
                     ingredientes: ingredientesFormatados,
-                    imagemURL: imageURL,  // A URL da imagem agora é armazenada aqui
+                    imagemURL: imagensURL,  // A URL da imagem agora é armazenada aqui
                     tempoDePreparacao: formatarHorario(horas, minutos),
                     passos: passosFormatados,
                     path: generatePath('receita', titulo),
@@ -185,7 +191,7 @@ export default function CriarReceitas() {
             }
         } catch (error) {
             console.error("Erro ao enviar a receita:", error);
-            alert("Erro ao enviar a receita.");
+            alert("Erro ao enviar a receita. " + error);
         }
     }
 
@@ -203,13 +209,32 @@ export default function CriarReceitas() {
                         <span>Añadir foto</span>
                         <input
                             id="botaoAdicionarImagem"
-                            type="file"    
+                            type="file"
+                            multiple
                             accept="image/*"
                             onChange={handleFileChange}
-                            style={{display: "none"}}
+                            style={{ display: "none" }}
                             required
                         />
                     </label>
+                </section>
+                <section className={styles.media_section}>
+                    <label className={styles.label_input}>Media</label>
+                    <div className={styles.linha_divisoria}></div>
+                    <div className={styles.images}>
+                        {imagePreviews.map((url, index) => (
+                            <div key={index} className={styles.image_preview_container}>
+                                <img src={url} alt={`preview-${index}`} className={styles.image_preview} />
+                                <button
+                                    className={styles.delete_image_preview}
+                                    onClick={(e) => handleRemove(index, e)}
+                                >
+                                    <img src={botaoRemover} />
+                                </button>
+                            </div>
+                        ))}
+                    </div>
+                    <div className={styles.linha_divisoria}></div>
                 </section>
 
                 <section className={styles.input_container}>
