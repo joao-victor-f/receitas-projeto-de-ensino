@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styles from './ingrediente.module.css';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import Receita from '../../components/receita/Receita';
 
 export default function Ingrediente() {
@@ -65,7 +65,9 @@ export default function Ingrediente() {
                     <h1>Receitas</h1>
                     <div className={styles.receitas_container}>
                         {receitas.length > 0 && receitas.map(receita => (
-                            <Receita receita={receita} />
+                            <Link to={receita.path}>
+                                <Receita receita={receita} />
+                            </Link>
                         ))}
                     </div>
                 </section>
