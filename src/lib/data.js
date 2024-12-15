@@ -82,7 +82,7 @@ export const data = {
         { "ingrediente": { "nome": "Chorizo", "imagemURL": "/ingredientes/chorizo.jpg" }, "quantidade": 2, "medicao": "unidad" },
         { "ingrediente": { "nome": "Cebolla", "imagemURL": "/ingredientes/cebolla.jpg" }, "quantidade": 1, "medicao": "unidad" }
       ],
-      "imagemURL": "/receitas/locro-criollo.png",
+      "imagensURL": ["/receitas/locro-criollo.png"],
       "tempoDePreparacao": "02:00:00",
       "passos": [
         "Dejar el maíz en remojo durante 12 horas.",
@@ -121,7 +121,7 @@ export const data = {
         { "ingrediente": { "nome": "Tapas para empanadas", "imagemURL": "/ingredientes/tapas_para_empanadas.jpeg" }, "quantidade": 12, "medicao": "unidad" },
         { "ingrediente": { "nome": "Comino", "imagemURL": "/ingredientes/comino.jpeg" }, "quantidade": 1, "medicao": "cucharadita" }
       ],
-      "imagemURL": "/receitas/empanadas.png",
+      "imagensURL": ["/receitas/empanadas.png"],
       "tempoDePreparacao": "01:00:00",
       "passos": [
         "Cortar la cebolla en cubos pequeños y saltear en aceite.",
@@ -159,7 +159,7 @@ export const data = {
         { "ingrediente": { "nome": "Morcilla", "imagemURL": "/ingredientes/morcilla.jpg" }, "quantidade": 2, "medicao": "unidad" },
         { "ingrediente": { "nome": "Sal gruesa", "imagemURL": "/ingredientes/sal_gruesa.jpeg" }, "quantidade": 2, "medicao": "cucharada" }
       ],
-      "imagemURL": "/receitas/parrila.png",
+      "imagensURL": ["/receitas/parrila.png"],
       "tempoDePreparacao": "01:30:00",
       "passos": [
         "Preparar el fuego en la parrilla hasta obtener brasas.",
