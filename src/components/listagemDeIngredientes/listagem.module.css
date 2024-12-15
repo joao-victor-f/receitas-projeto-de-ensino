@@ -1,10 +1,11 @@
 .fileiraDeReceitas {
-    width: 1281px;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
+    gap: 12px;
 }
 
 #grupoReceitas {
     margin: 130px auto 0 auto;
-    width: 1281px;
+    width: 100%;
 }
