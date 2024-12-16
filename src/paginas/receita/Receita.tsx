@@ -5,6 +5,7 @@ import { formatarIngrediente, formatarTempo } from '../../lib/utils';
 import styles from './receita.module.css';
 import { useNavigate } from 'react-router-dom';
 import Carrossel from '../../components/carrossel/Carrossel';
+import YouTubeIframe from '../../components/YoutubeIframe/YoutubeIframe';
 
 export default function Receita() {
   const navigate = useNavigate();
@@ -69,16 +70,26 @@ export default function Receita() {
             <h1>Visión General</h1>
             <p>{receita.visaoGeral}</p>
         </section>
-        <section className={styles.conselhos_container}>
-            <h1>Consejos de Cocina</h1>
-            <ul>
-                {receita.conselhos.map(conselho => (
-                    <li>
-                        <span>{conselho}</span>
-                    </li>
-                ))}
-            </ul>
-        </section>
+        {receita.videoId && (
+            <section className={styles.iframe_container}>
+                <h1>Mira un vídeo de la receta!</h1>
+                <div className={styles.iframe}>
+                    <YouTubeIframe videoId={receita.videoId} nomeReceita={receita.nome} />
+                </div>
+            </section>
+        )}
+        {receita.conselhos.length > 0 && (
+            <section className={styles.conselhos_container}>
+                <h1>Consejos de Cocina</h1>
+                <ul>
+                    {receita.conselhos.map(conselho => (
+                        <li>
+                            <span>{conselho}</span>
+                        </li>
+                    ))}
+                </ul>
+            </section>
+        )}
         <section className={styles.info_container}>
             <div className={styles.info_main_container}>
                 <div>
@@ -96,7 +107,7 @@ export default function Receita() {
         </section>
         <section className={styles.ingredientes_container}>
             <h1>Ingredientes</h1>
-            <div>
+            <div className={styles.ingrediente_list_container}>
                 {receita.ingredientes.map(ingrediente => (
                     <div className={styles.ingrediente_container}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -104,20 +115,23 @@ export default function Receita() {
                             <path d="M12 6V18M6 12H18" stroke="#2E5834" stroke-width="2" stroke-linecap="round"/>
                         </svg>
                         <span>{formatarIngrediente(ingrediente)}</span>
+                        <img src={ingrediente.ingrediente.imagemURL} />
                     </div>
                 ))}
             </div>
         </section>
-        <section className={styles.substituicoes_container}>
-            <h1>Substituciones</h1>
-            <ul>
-                {receita.substituicoes.map(substituicao => (
-                    <li>
-                        <span>{substituicao}</span>
-                    </li>
-                ))}
-            </ul>
-        </section>
+        {receita.substituicoes.length > 0 && (
+            <section className={styles.substituicoes_container}>
+                <h1>Substituciones</h1>
+                <ul>
+                    {receita.substituicoes.map(substituicao => (
+                        <li>
+                            <span>{substituicao}</span>
+                        </li>
+                    ))}
+                </ul>
+            </section>
+        )}
         <section className={styles.instrucoes_container}>
             <h1>Instruciones</h1>
             <div>

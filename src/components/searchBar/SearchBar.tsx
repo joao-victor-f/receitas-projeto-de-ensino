@@ -100,7 +100,7 @@ export default function SearchBar() {
                 <span><strong>{receita.nome}</strong></span>
                 <p>{receita.categoria.titulo}</p>
               </div>
-              <img src={receita.imagemURL} className={styles.imagem_receita}/>
+              <img src={receita.imagensURL[0]} className={styles.imagem_receita}/>
             </li>
           ))}
         </ul>

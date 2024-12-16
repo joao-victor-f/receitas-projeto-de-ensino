@@ -38,4 +38,5 @@ type Receitas = {
     conselhos: string[],
     visaoGeral: string,
     porcoes: number,
+    videoId: string,
 };

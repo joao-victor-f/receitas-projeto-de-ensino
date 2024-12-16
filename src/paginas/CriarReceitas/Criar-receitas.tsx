@@ -11,7 +11,7 @@ import { formatarHorario, generatePath } from "../../lib/utils";
 
 export default function CriarReceitas() {
     const navigate = useNavigate();
-    const [images, setImages] = useState<File[] | null>(null);
+    const [images, setImages] = useState<File[]>([]);
     const [imagePreviews, setImagePreviews] = useState<string[]>([]);
 
     const [dataIngredientes, setDataIngredientes] = useState<Ingrediente[]>([]);
@@ -30,13 +30,23 @@ export default function CriarReceitas() {
         setImagePreviews((prev) => prev.filter((_, i) => i !== index));
     };
 
+    const removeConselho = (e) => {
+        e.preventDefault();
+        setConselhos(conselhos.slice(0, -1));
+    };
+
+    const removeSubstituicao = (e) => {
+        e.preventDefault();
+        setSubstituicoes(substituicoes.slice(0, -1));
+    }
+
     const handleFileChange = (e) => {
-        const images: File[] = Array.from(e.target.files);
-        setImages(images);
+        const newImages: File[] = Array.from(e.target.files);
+        setImages((prevImages) => [...prevImages, ...newImages] );
     
         // Gerar URLs temporárias para o preview
-        const previewUrls = images.map((file) => URL.createObjectURL(file));
-        setImagePreviews(previewUrls);
+        const previewUrls = newImages.map((file) => URL.createObjectURL(file));
+        setImagePreviews((previousPreviewUrls) => [...previousPreviewUrls, ...previewUrls]);
     };
 
     const [titulo, setTitulo] = useState('');
@@ -44,8 +54,11 @@ export default function CriarReceitas() {
     const [porcoes, setPorcoes] = useState<number>();
     const [horas, setHoras] = useState<number>();
     const [minutos, setMinutos] = useState<number>();
-    const [conselhos, setConselhos] = useState('');
+    const [conselhos, setConselhos] = useState<string[]>([]);
+    const [substituicoes, setSubstituicoes] = useState<string[]>([]);
     const [categoria, setCategoria] = useState('');
+    const [link, setLink] = useState('');
+    const [videoId, setVideoId] = useState('');
 
     // Função para atualizar os valores dos ingredientes
     const handleChangeIngredientes = (value, id, field) => {
@@ -72,6 +85,8 @@ export default function CriarReceitas() {
             setConselhos(value);
         else if (field == 'categoria')
             setCategoria(value);
+        else if (field == 'link')
+            setLink(value)
     }
     
     // Função para remover ingrediente
@@ -116,6 +131,18 @@ export default function CriarReceitas() {
         setPassos(updatedPassos);
     }
 
+    const handleChangeConselhos = (value, index) => {
+        const newConselhos = [...conselhos];
+        newConselhos[index] = value;
+        setConselhos(newConselhos);
+    };
+
+    const handleChangeSubstituicoes = (value, index) => {
+        const newSubstituicoes = [...conselhos];
+        newSubstituicoes[index] = value;
+        setSubstituicoes(newSubstituicoes);
+    };
+
     useEffect(() => {
         const storedData = localStorage.getItem('data');
         if (storedData) {
@@ -126,12 +153,34 @@ export default function CriarReceitas() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         // Cria o FormData para enviar a imagem
         const formData = new FormData();
 
-        if (!images) {
+        if (!(images.length > 0)) {
             alert("Você precisa selecionar uma imagem.");
+            return;
+        }
+
+        const regex = /(?:https?:\/\/(?:www\.)?youtube\.com\/(?:[^\/\n\s]+\/\S+|(?:v|e(?:mbed)?)\/|(?:watch\?v=))([a-zA-Z0-9_-]{11}))/;
+        const match = link.match(regex);
+
+        if (!(match && match[1])) {
+            alert('Você precisa inserir um link de youtube válido!');
+            return;
+        }
+
+        if (!(ingredientes.length > 0)) {
+            alert("la receta necesita de un ingrediente");
+            return;
+        }
+
+        if (!(passos.length > 0)) {
+            alert('la receta necesita de un paso');
+            return;
+        }
+
+        if (!(horas >= 0 || minutos >= 0)) {
+            alert('digite um intervalo de tempo válido');
             return;
         }
 
@@ -160,6 +209,7 @@ export default function CriarReceitas() {
                 console.log(passosFormatados)
 
                 const imagensFormatadas = imagensURL.map(imagem => imagem.url);
+
                 const receita = {
                     nome: titulo,
                     categoria: data.categorias.find(categoriaObj => categoriaObj.titulo === categoria),
@@ -169,10 +219,11 @@ export default function CriarReceitas() {
                     tempoDePreparacao: formatarHorario(horas, minutos),
                     passos: passosFormatados,
                     path: generatePath('receita', titulo),
-                    substituicoes: [],
-                    conselhos: [conselhos],
+                    substituicoes: substituicoes,
+                    conselhos: conselhos,
                     visaoGeral: descricao,
-                    porcoes: porcoes
+                    porcoes: porcoes,
+                    videoId: match[1],
                 };
 
                 // Recupera os dados existentes do localStorage e atualiza
@@ -245,6 +296,17 @@ export default function CriarReceitas() {
                         value={titulo}
                         placeholder="Introduce el título de tu receta!"
                         onChange={(e) => handleChange(e, 'titulo')}
+                        className={styles.input_titulo}
+                        required
+                    />
+                </section>
+                <section className={styles.input_container}>
+                    <label className={styles.label_input}>Link para video de Youtube</label>
+                    <input
+                        type="text"
+                        value={link}
+                        placeholder="Introduce el link de un video de tu receta!"
+                        onChange={(e) => handleChange(e, 'link')}
                         className={styles.input_titulo}
                     />
                 </section>
@@ -386,19 +448,70 @@ export default function CriarReceitas() {
                     <div className={styles.linha_divisoria}></div>
                 </section>
                 <section className={styles.conselhos_container}>
-                    <label className={styles.label_input}>Consejos de cocina</label>
-                    <textarea
-                        rows={10}
-                        cols={120}
-                        value={conselhos}
-                        placeholder="¡Comparte tus secretos de cocina! Trucos, intercambios o cualquier consejo sobre el horno para lograr el máximo éxito en la receta."
-                        onChange={(e) => handleChange(e, 'conselhos')}
-                        className={styles.input_descricao}
-                    />
+                    <div className={styles.ingredientes_header_container}>
+                        <label className={styles.label_input}>Consejos de cocina</label>
+                        <p className={styles.paragrafo}>¡Comparte tus secretos de cocina! Trucos, intercambios o cualquier consejo sobre el horno para lograr el máximo éxito en la receta.</p>
+                    </div>
+                    <div className={styles.adicionar_ingrediente_container}>
+                        <div className={styles.botao_add_ingrediente} onClick={() => { setConselhos([...conselhos, ""]) }}>
+                            <span>+</span>
+                        </div>
+                    </div>
+                    <div className={styles.linha_divisoria}></div>
+                    <div className={styles.conselhos_input_container}>
+                        {conselhos.map((conselho, index) => (
+                            <div className={styles.conselhos_input_list}>
+                                <input
+                                    key={index + 1}
+                                    type="text"
+                                    value={conselho}
+                                    onChange={(e) => handleChangeConselhos(e.target.value, index)}
+                                    placeholder="Su consejo"
+                                    className={styles.input_titulo}
+                                    required
+                                />
+                                <button onClick={(e) => removeConselho(e)}>
+                                    <img src={botaoRemover} />
+                                </button>
+                            </div>
+                        ))}
+                    </div>
+                    <div className={styles.linha_divisoria}></div>
+                </section>
+                <section className={styles.conselhos_container}>
+                    <div className={styles.ingredientes_header_container}>
+                        <label className={styles.label_input}>Substituciones</label>
+                        <p className={styles.paragrafo}>¡Comparte tus sustituciones de ingredientes! Aquí puedes proponer alternativas para adaptarse a diferentes gustos o necesidades, haciendo la receta más versátil.</p>
+                    </div>
+                    <div className={styles.adicionar_ingrediente_container}>
+                        <div className={styles.botao_add_ingrediente} onClick={() => { setSubstituicoes([...substituicoes, ""]) }}>
+                            <span>+</span>
+                        </div>
+                    </div>
+                    <div className={styles.linha_divisoria}></div>
+                    <div className={styles.conselhos_input_container}>
+                        {substituicoes.map((substituicao, index) => (
+                            <div className={styles.conselhos_input_list}>
+                                <input
+                                    key={index + 1}
+                                    type="text"
+                                    value={substituicao}
+                                    onChange={(e) => handleChangeSubstituicoes(e.target.value, index)}
+                                    placeholder="Su substitucion"
+                                    className={styles.input_titulo}
+                                    required
+                                />
+                                <button onClick={(e) => removeSubstituicao(e)}>
+                                    <img src={botaoRemover} />
+                                </button>
+                            </div>
+                        ))}
+                    </div>
+                    <div className={styles.linha_divisoria}></div>
                 </section>
                 <section className={styles.categoria_container}>
                     <label className={styles.label_input}>Categoría</label>
-                    <select value={categoria} className={styles.categoria_select} onChange={(e) => handleChange(e, 'categoria')}>
+                    <select value={categoria} className={styles.categoria_select} onChange={(e) => handleChange(e, 'categoria')} required>
                         <option value=''>Tipo de comida</option>
                         {data.categorias.map(categoria => (
                             <option value={categoria.titulo}>{categoria.titulo}</option>
