@@ -19,7 +19,7 @@ export default function Footer() {
                             <a href="https://www.instagram.com/delacocina.oficial/">
                                 <img src="/icons/instagram-icon.png" alt="ícone do instagram" />
                             </a>
-                            <a href="">
+                            <a href="https://tiktok.com/@delacocinaoficial">
                                 <img src="/icons/tiktok-icon.png" alt="ícone do tiktok" />
                             </a>
                             <a href="">
