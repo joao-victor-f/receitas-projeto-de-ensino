@@ -1,4 +1,4 @@
-type Categoria = {
+export type Categoria = {
     titulo: string,
     imagemURL: string,
     descricao: string,
@@ -6,14 +6,14 @@ type Categoria = {
     fullImagemURL: string,
 };
 
-type Ingrediente = {
+export type Ingrediente = {
     nome: string,
     imagemURL: string,
     path: string,
     id: number,
 };
 
-type IngredienteReceita = {
+export type IngredienteReceita = {
     ingrediente: {
       nome: string;
       imagemURL: string;
@@ -22,7 +22,7 @@ type IngredienteReceita = {
     medicao: string;
 };
 
-type Receitas = {
+export type Receitas = {
     id: number,
     nome: string,
     categoria: Categoria,
