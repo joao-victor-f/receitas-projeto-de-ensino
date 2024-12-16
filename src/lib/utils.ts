@@ -83,3 +83,11 @@ export const extrairHorasMinutos = (horaString) => {
     throw new Error('Formato de hora inválido. Use o formato {hh}:{mm}:00');
   }
 }
+
+export const gerarIdNumerico = (tamanho = 6) => {
+  let id = '';
+  for (let i = 0; i < tamanho; i++) {
+      id += Math.floor(Math.random() * 10); // Gera um número aleatório de 0 a 9
+  }
+  return parseInt(id);
+}

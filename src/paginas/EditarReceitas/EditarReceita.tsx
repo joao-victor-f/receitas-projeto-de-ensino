@@ -1,18 +1,21 @@
 import React, {useState, useEffect } from "react";
-import styles from "./criar-receitas.module.css";
+import styles from "./editarReceitas.module.css";
 import botaoAdicionar from "../../assets/botao-adicionar.svg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import InputIngrediente from "../../components/InputIngrediente/InputIngrediente";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import InputPasso from "../../components/inputPasso/inputPasso";
 import { data } from "../../lib/data";
 import botaoRemover from "../../assets/remove-button.svg";
-import { formatarHorario, generatePath, gerarIdNumerico } from "../../lib/utils";
+import { extrairHorasMinutos, formatarHorario, generatePath } from "../../lib/utils";
 
-export default function CriarReceitas() {
+export default function EditarReceita() {
+    const { idReceita } = useParams();
     const navigate = useNavigate();
     const [images, setImages] = useState<File[]>([]);
     const [imagePreviews, setImagePreviews] = useState<string[]>([]);
+    const [imagensExistentes, setImagensExistentes] = useState<string[]>([]);
+    const [receita, setReceita] = useState<Receitas | undefined>(undefined);
 
     const [dataIngredientes, setDataIngredientes] = useState<Ingrediente[]>([]);
     const [ingredientes, setIngredientes] = useState([
@@ -58,13 +61,13 @@ export default function CriarReceitas() {
     const [substituicoes, setSubstituicoes] = useState<string[]>([]);
     const [categoria, setCategoria] = useState('');
     const [link, setLink] = useState('');
-    const [videoId, setVideoId] = useState('');
 
     // Função para atualizar os valores dos ingredientes
     const handleChangeIngredientes = (value, id, field) => {
         const updatedIngredientes = ingredientes.map((ingrediente) =>
             ingrediente.id === id ? { ...ingrediente, [field]: value } : ingrediente
         );
+        console.log(updatedIngredientes);
         setIngredientes(updatedIngredientes);
     };
 
@@ -143,26 +146,90 @@ export default function CriarReceitas() {
     };
 
     useEffect(() => {
-        const storedData = localStorage.getItem('data');
-        if (storedData) {
-            const ingredientesStoredData = JSON.parse(storedData).ingredientes;
-            setDataIngredientes(ingredientesStoredData);
+
+        if (!idReceita) {
+            return;
         }
-    }, [setDataIngredientes]);
+
+        const storedData = localStorage.getItem('data');
+        if (!storedData) {
+            alert('não há dados armazenados.')
+            return;
+        }
+
+        const parsedData = JSON.parse(storedData);
+        const receitaEncontrada = parsedData.receitas.find(receitaObj => receitaObj.id === parseInt(idReceita));
+
+        if (!receitaEncontrada) {
+            return;
+        }
+
+        setReceita(receitaEncontrada);
+        const { horas, minutos } = extrairHorasMinutos(receitaEncontrada.tempoDePreparacao);
+        setHoras(horas);
+        setMinutos(minutos);
+        setCategoria(receitaEncontrada.categoria.titulo);
+        setConselhos(receitaEncontrada.conselhos);
+        setPassos(receitaEncontrada.passos.map((passo, index) => ({id: (index + 1).toString(), passo: passo})));
+        setIngredientes(receitaEncontrada.ingredientes.map((ingrediente, index) => (
+            {
+                id: (index + 1).toString(),
+                nome: ingrediente.ingrediente.nome,
+                imagemURL: ingrediente.ingrediente.imagemURL,
+                quantidade: ingrediente.quantidade.toString(),
+                medicao: ingrediente.medicao
+            }
+        )));
+        if (receitaEncontrada.videoId)
+            setLink(`https://www.youtube.com/watch?v=${receitaEncontrada.videoId}`);
+        setPorcoes(receitaEncontrada.porcoes);
+        setDescricao(receitaEncontrada.descricao);
+        setTitulo(receitaEncontrada.nome);
+        setSubstituicoes(receitaEncontrada.substituicoes);
+        setImagePreviews(receitaEncontrada.imagensURL);
+        setImagensExistentes(receitaEncontrada.imagensURL);
+
+        const ingredientesStoredData = JSON.parse(storedData).ingredientes;
+        setDataIngredientes(ingredientesStoredData);
+
+    }, [
+        setDataIngredientes,
+        setHoras,
+        setMinutos,
+        setCategoria,
+        setConselhos,
+        setIngredientes,
+        setTitulo,
+        setLink,
+        setPorcoes,
+        setSubstituicoes,
+        setPassos,
+        setDescricao,
+        setReceita
+    ]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         // Cria o FormData para enviar a imagem
         const formData = new FormData();
 
-        let videoId: String | null = null; // Inicializando a variável local
-
-        const regex = /(?:https?:\/\/(?:www\.)?youtube\.com\/(?:[^\/\n\s]+\/\S+|(?:v|e(?:mbed)?)\/|(?:watch\?v=))([a-zA-Z0-9_-]{11}))/;
-        const match = link.match(regex);
-
-        if (match && match[1]) {
-            videoId = match[1]; // Atribui o ID se o link for válido
+        if (!(imagePreviews.length > 0)) {
+            alert("Você precisa selecionar uma imagem.");
+            return;
         }
+
+        let videoId: string | null = null;
+        if (link) {
+            const regex = /(?:https?:\/\/(?:www\.)?youtube\.com\/(?:[^\/\n\s]+\/\S+|(?:v|e(?:mbed)?)\/|(?:watch\?v=))([a-zA-Z0-9_-]{11}))/;
+            const match = link.match(regex);
+            if (!(match && match[1])) {
+                alert('Você precisa inserir um link de youtube válido!');
+                return;
+            }
+
+            videoId = match[1];
+        }
+
 
         if (!(ingredientes.length > 0)) {
             alert("la receta necesita de un ingrediente");
@@ -179,66 +246,106 @@ export default function CriarReceitas() {
             return;
         }
 
-        images.forEach(image => formData.append('images', image));
+        if (images.length > 0) {
+            images.forEach(image => formData.append('images', image));
+            try {
+                const response = await fetch("http://localhost:3000/upload", {
+                    method: "POST",
+                    body: formData
+                });
 
-        try {
-            // Faz o upload da imagem para o backend
-            const response = await fetch("http://localhost:3000/upload", {
-                method: "POST",
-                body: formData
-            });
+                // Se o upload for bem-sucedido, captura a URL da imagem
+                if (response.ok) {
+                    const dadosAPI = await response.json();
+                    const imagensURL = dadosAPI.files;  // A URL que você recebe do backend
 
-            // Se o upload for bem-sucedido, captura a URL da imagem
-            if (response.ok) {
-                const dadosAPI = await response.json();
-                const imagensURL = dadosAPI.files;  // A URL que você recebe do backend
+                    // Agora cria o objeto da receita com a URL da imagem
+                    const ingredientesFormatados = ingredientes.map(({ id, nome, imagemURL, quantidade, medicao }) => ({
+                        ingrediente: { nome, imagemURL: dataIngredientes.find(ingrediente => ingrediente.nome === nome)?.imagemURL },
+                        quantidade,
+                        medicao
+                    }));
 
-                // Agora cria o objeto da receita com a URL da imagem
-                const ingredientesFormatados = ingredientes.map(({ id, nome, imagemURL, quantidade, medicao }) => ({
-                    ingrediente: { nome, imagemURL: dataIngredientes.find(ingrediente => ingrediente.nome === nome)?.imagemURL },
-                    quantidade,
-                    medicao
-                }));
+                    const passosFormatados = passos.map(passo => passo.passo);
 
-                const passosFormatados = passos.map(passo => passo.passo);
+                    const imagensFormatadas = imagensURL.map(imagem => imagem.url);
+                    const imagensTotais = [...imagensExistentes, ...imagensFormatadas];
 
-                const imagensFormatadas = imagensURL.map(imagem => imagem.url);
+                    const receita = {
+                        nome: titulo,
+                        categoria: data.categorias.find(categoriaObj => categoriaObj.titulo === categoria),
+                        descricao: descricao,
+                        ingredientes: ingredientesFormatados,
+                        imagensURL: imagensTotais,  // A URL da imagem agora é armazenada aqui
+                        tempoDePreparacao: formatarHorario(horas, minutos),
+                        passos: passosFormatados,
+                        substituicoes: substituicoes,
+                        conselhos: conselhos,
+                        visaoGeral: descricao,
+                        porcoes: porcoes,
+                        videoId: videoId,
+                    };
 
-                const receita = {
-                    id: gerarIdNumerico(),
-                    nome: titulo,
-                    categoria: data.categorias.find(categoriaObj => categoriaObj.titulo === categoria),
-                    descricao: descricao,
-                    ingredientes: ingredientesFormatados,
-                    imagensURL: imagensFormatadas,  // A URL da imagem agora é armazenada aqui
-                    tempoDePreparacao: formatarHorario(horas, minutos),
-                    passos: passosFormatados,
-                    path: generatePath('receita', titulo),
-                    substituicoes: substituicoes,
-                    conselhos: conselhos,
-                    visaoGeral: descricao,
-                    porcoes: porcoes,
-                    videoId: videoId,
-                };
+                    // Recupera os dados existentes do localStorage e atualiza
+                    const dados = JSON.parse(localStorage.getItem('data'));
+                    const receitas = dados.receitas;
+                    const index = receitas.findIndex(receita => receita.id === parseInt(idReceita));
 
-                // Recupera os dados existentes do localStorage e atualiza
-                const dados = JSON.parse(localStorage.getItem('data'));
-                const receitas = dados.receitas;
-                receitas.push(receita);
-                dados.receitas = receitas;
+                    console.log(receita);
+                    receitas[index] = {...receitas[index], ...receita};
+                    dados.receitas = receitas;
 
-                // Salva os dados no localStorage
-                localStorage.setItem('data', JSON.stringify(dados));
+                    // Salva os dados no localStorage
+                    localStorage.setItem('data', JSON.stringify(dados));
 
-                alert("Receita salva com sucesso!");
-                navigate("/categorias");
-                window.location.reload();
-            } else {
-                throw new Error("Erro no upload da imagem.");
+                    alert("Receita atualizada com sucesso!");
+                    navigate(`/categorias`);
+                    window.location.reload();
+                } else {
+                    throw new Error("Erro no upload da imagem.");
+                }
+            } catch (error) {
+                console.error("Erro ao enviar a receita:", error);
+                alert("Erro ao enviar a receita. " + error);
             }
-        } catch (error) {
-            console.error("Erro ao enviar a receita:", error);
-            alert("Erro ao enviar a receita. " + error);
+        } else {
+            const ingredientesFormatados = ingredientes.map(({ id, nome, imagemURL, quantidade, medicao }) => ({
+                ingrediente: { nome, imagemURL: dataIngredientes.find(ingrediente => ingrediente.nome === nome)?.imagemURL },
+                quantidade,
+                medicao
+            }));
+
+            const passosFormatados = passos.map(passo => passo.passo);
+
+            const receita = {
+                nome: titulo,
+                categoria: data.categorias.find(categoriaObj => categoriaObj.titulo === categoria),
+                descricao: descricao,
+                ingredientes: ingredientesFormatados,
+                tempoDePreparacao: formatarHorario(horas, minutos),
+                passos: passosFormatados,
+                substituicoes: substituicoes,
+                conselhos: conselhos,
+                visaoGeral: descricao,
+                porcoes: porcoes,
+                videoId: videoId,
+            };
+
+            // Recupera os dados existentes do localStorage e atualiza
+            const dados = JSON.parse(localStorage.getItem('data'));
+            const receitas = dados.receitas;
+            const index = receitas.findIndex(receita => receita.id === parseInt(idReceita));
+            console.log(idReceita, parseInt(idReceita), index, index === parseInt(idReceita));
+
+            receitas[index] = {...receitas[index], ...receita};
+            dados.receitas = receitas;
+
+            // Salva os dados no localStorage
+            localStorage.setItem('data', JSON.stringify(dados));
+
+            alert("Receita atualizada com sucesso!");
+            navigate(`/categorias`);
+            window.location.reload();
         }
     }
 
@@ -261,7 +368,6 @@ export default function CriarReceitas() {
                             accept="image/*"
                             onChange={handleFileChange}
                             style={{ display: "none" }}
-                            required
                         />
                     </label>
                 </section>

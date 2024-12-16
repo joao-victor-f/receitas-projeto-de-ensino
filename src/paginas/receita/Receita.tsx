@@ -6,6 +6,7 @@ import styles from './receita.module.css';
 import { useNavigate } from 'react-router-dom';
 import Carrossel from '../../components/carrossel/Carrossel';
 import YouTubeIframe from '../../components/YoutubeIframe/YoutubeIframe';
+import { Link } from 'react-router-dom';
 
 export default function Receita() {
   const navigate = useNavigate();
@@ -55,9 +56,11 @@ export default function Receita() {
         <section className={styles.top_container}>
             <h1>{receita.nome}</h1>
             <div>
-                <button>
-                    <img src="/icons/edit-icon.svg" />
-                </button>
+                <Link to={`/editar-receita/${receita.id}`}>
+                    <button>
+                        <img src="/icons/edit-icon.svg" />
+                    </button>
+                </Link>
                 <button onClick={handleDelete}>
                     <img src="/icons/trash.svg" />
                 </button>

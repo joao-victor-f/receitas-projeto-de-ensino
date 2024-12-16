@@ -66,6 +66,7 @@ export const data = {
   ],
   "receitas": [
     {
+      "id": 1,
       "nome": "Locro Criollo",
       "categoria": {
         "titulo": "Platos Principales",
@@ -76,11 +77,11 @@ export const data = {
       },
       "descricao": "Un guiso tradicional argentino a base de maíz blanco, zapallo y carne, perfecto para días fríos.",
       "ingredientes": [
-        { "ingrediente": { "nome": "Maíz blanco", "imagemURL": "/ingredientes/maiz_blanco.jpeg" }, "quantidade": 1, "medicao": "taza" },
-        { "ingrediente": { "nome": "Zapallo", "imagemURL": "/ingredientes/zapallo.jpeg" }, "quantidade": 500, "medicao": "gramo" },
-        { "ingrediente": { "nome": "Carne de cerdo", "imagemURL": "/ingredientes/carne_de_cerdo.jpeg" }, "quantidade": 300, "medicao": "gramo" },
-        { "ingrediente": { "nome": "Chorizo", "imagemURL": "/ingredientes/chorizo.jpg" }, "quantidade": 2, "medicao": "unidad" },
-        { "ingrediente": { "nome": "Cebolla", "imagemURL": "/ingredientes/cebolla.jpg" }, "quantidade": 1, "medicao": "unidad" }
+        { "ingrediente": { "id": 1, "nome": "Maíz blanco", "imagemURL": "/ingredientes/maiz_blanco.jpeg" }, "quantidade": 1, "medicao": "taza" },
+        { "ingrediente": { "id": 2, "nome": "Zapallo", "imagemURL": "/ingredientes/zapallo.jpeg" }, "quantidade": 500, "medicao": "gramo" },
+        { "ingrediente": { "id": 3, "nome": "Carne de cerdo", "imagemURL": "/ingredientes/carne_de_cerdo.jpeg" }, "quantidade": 300, "medicao": "gramo" },
+        { "ingrediente": { "id": 4,"nome": "Chorizo", "imagemURL": "/ingredientes/chorizo.jpg" }, "quantidade": 2, "medicao": "unidad" },
+        { "ingrediente": { "id": 5, "nome": "Cebolla", "imagemURL": "/ingredientes/cebolla.jpg" }, "quantidade": 1, "medicao": "unidad" }
       ],
       "imagensURL": ["/receitas/locro-criollo.png"],
       "tempoDePreparacao": "02:00:00",
@@ -106,6 +107,7 @@ export const data = {
       "videoId": '',
     },
     {
+      "id": 2,
       "nome": "Empanadas",
       "categoria": {
         "titulo": "Panes y Empanadas",
@@ -116,11 +118,11 @@ export const data = {
       },
       "descricao": "Empanadas argentinas clásicas con relleno de carne y condimentos tradicionales.",
       "ingredientes": [
-        { "ingrediente": { "nome": "Carne molida", "imagemURL": "/ingredientes/carne_molida.jpeg" }, "quantidade": 500, "medicao": "gramo" },
-        { "ingrediente": { "nome": "Cebolla", "imagemURL": "/ingredientes/cebolla.jpg" }, "quantidade": 2, "medicao": "unidad" },
-        { "ingrediente": { "nome": "Aceitunas verdes", "imagemURL": "/ingredientes/aceituna.jpeg" }, "quantidade": 100, "medicao": "gramo" },
-        { "ingrediente": { "nome": "Tapas para empanadas", "imagemURL": "/ingredientes/tapas_para_empanadas.jpeg" }, "quantidade": 12, "medicao": "unidad" },
-        { "ingrediente": { "nome": "Comino", "imagemURL": "/ingredientes/comino.jpeg" }, "quantidade": 1, "medicao": "cucharadita" }
+        { "ingrediente": { "id": 6, "nome": "Carne molida", "imagemURL": "/ingredientes/carne_molida.jpeg" }, "quantidade": 500, "medicao": "gramo" },
+        { "ingrediente": { "id": 5, "nome": "Cebolla", "imagemURL": "/ingredientes/cebolla.jpg" }, "quantidade": 2, "medicao": "unidad" },
+        { "ingrediente": { "id": 7, "nome": "Aceitunas verdes", "imagemURL": "/ingredientes/aceituna.jpeg" }, "quantidade": 100, "medicao": "gramo" },
+        { "ingrediente": { "id": 8, "nome": "Tapas para empanadas", "imagemURL": "/ingredientes/tapas_para_empanadas.jpeg" }, "quantidade": 12, "medicao": "unidad" },
+        { "ingrediente": { "id": 9, "nome": "Comino", "imagemURL": "/ingredientes/comino.jpeg" }, "quantidade": 1, "medicao": "cucharadita" }
       ],
       "imagensURL": ["/receitas/empanadas.png"],
       "tempoDePreparacao": "01:00:00",
@@ -146,6 +148,7 @@ export const data = {
       "videoId": '',
     },
     {
+      "id": 3,
       "nome": "Parrilla",
       "categoria": {
         "titulo": "Carnes",
@@ -156,10 +159,10 @@ export const data = {
       },
       "descricao": "Una selección de cortes de carne asados a la perfección en la parrilla.",
       "ingredientes": [
-        { "ingrediente": { "nome": "Costilla de res", "imagemURL": "/ingredientes/costilla_de_res.jpeg" }, "quantidade": 1, "medicao": "kg" },
-        { "ingrediente": { "nome": "Chorizo", "imagemURL": "/ingredientes/chorizo.jpg" }, "quantidade": 4, "medicao": "unidad" },
-        { "ingrediente": { "nome": "Morcilla", "imagemURL": "/ingredientes/morcilla.jpg" }, "quantidade": 2, "medicao": "unidad" },
-        { "ingrediente": { "nome": "Sal gruesa", "imagemURL": "/ingredientes/sal_gruesa.jpeg" }, "quantidade": 2, "medicao": "cucharada" }
+        { "ingrediente": { "id": 10, "nome": "Costilla de res", "imagemURL": "/ingredientes/costilla_de_res.jpeg" }, "quantidade": 1, "medicao": "kg" },
+        { "ingrediente": { "id": 4, "nome": "Chorizo", "imagemURL": "/ingredientes/chorizo.jpg" }, "quantidade": 4, "medicao": "unidad" },
+        { "ingrediente": { "id": 11, "nome": "Morcilla", "imagemURL": "/ingredientes/morcilla.jpg" }, "quantidade": 2, "medicao": "unidad" },
+        { "ingrediente": { "id": 12, "nome": "Sal gruesa", "imagemURL": "/ingredientes/sal_gruesa.jpeg" }, "quantidade": 2, "medicao": "cucharada" }
       ],
       "imagensURL": ["/receitas/parrila.png"],
       "tempoDePreparacao": "01:30:00",
@@ -187,61 +190,73 @@ export const data = {
   ],
   "ingredientes": [
     {
+      "id": 1,
       "nome": "Maíz blanco",
       "imagemURL": "/ingredientes/maiz_blanco.jpeg",
       "path": "/ingrediente/maz_blanco216086"
     },
     {
+      "id": 2,
       "nome": "Zapallo",
       "imagemURL": "/ingredientes/zapallo.jpeg",
       "path": "/ingrediente/zapallo574348"
     },
     {
+      "id": 3,
       "nome": "Carne de cerdo",
       "imagemURL": "/ingredientes/carne_de_cerdo.jpeg",
       "path": "/ingrediente/carne_de_cerdo639480"
     },
     {
+      "id": 4,
       "nome": "Chorizo",
       "imagemURL": "/ingredientes/chorizo.jpg",
       "path": "/ingrediente/chorizo560526"
     },
     {
+      "id": 5,
       "nome": "Cebolla",
       "imagemURL": "/ingredientes/cebolla.jpg",
       "path": "/ingrediente/cebolla856410"
     },
     {
+      "id": 6,
       "nome": "Carne molida",
       "imagemURL": "/ingredientes/carne_molida.jpeg",
       "path": "/ingrediente/carne_molida167778"
     },
     {
+      "id": 7,
       "nome": "Aceitunas verdes",
       "imagemURL": "/ingredientes/aceituna.jpeg",
       "path": "/ingrediente/aceitunas_verdes574358"
     },
     {
+      "id": 8,
       "nome": "Tapas para empanadas",
       "imagemURL": "/ingredientes/tapas_para_empanadas.jpeg",
       "path": "/ingrediente/tapas_para_empanadas309469"
     },
     {
+      "id": 9,
       "nome": "Comino",
       "imagemURL": "/ingredientes/comino.jpeg",
       "path": "/ingrediente/comino195860"
     },
     {
+      "id": 10,
       "nome": "Costilla de res",
       "imagemURL": "/ingredientes/costilla_de_res.jpeg",
       "path": "/ingrediente/costilla_de_res810825"
     },
     {
+      "id": 11,
       "nome": "Morcilla",
       "imagemURL": "/ingredientes/morcilla.jpg",
       "path": "/ingrediente/morcilla968482"
     },
     {
+      "id": 12,
       "nome": "Sal gruesa",
       "imagemURL": "/ingredientes/sal_gruesa.jpeg",
       "path": "/ingrediente/sal_gruesa776192"

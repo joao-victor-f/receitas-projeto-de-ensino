@@ -10,6 +10,7 @@ type Ingrediente = {
     nome: string,
     imagemURL: string,
     path: string,
+    id: number,
 };
 
 type IngredienteReceita = {
@@ -22,6 +23,7 @@ type IngredienteReceita = {
 };
 
 type Receitas = {
+    id: number,
     nome: string,
     categoria: Categoria,
     descricao: string,

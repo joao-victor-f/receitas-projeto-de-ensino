@@ -43,7 +43,7 @@ export default function InputIngrediente ({ ingredientes, ingrediente, onChange,
   
         {/* Campo de medição */}
         <select
-          value={medicao}
+          value={ingrediente.medicao}
           onChange={(e) => handleChange(e, 'medicao')}
           className={styles.input_medicao}
           required
