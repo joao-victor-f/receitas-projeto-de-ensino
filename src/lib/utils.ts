@@ -1,3 +1,4 @@
+import { IngredienteReceita } from "./types";
 
 export function formatarTempo(tempo: string): string {
   // Divide a string de tempo em horas, minutos e segundos
@@ -41,10 +42,33 @@ export const pluralizeMedicao = (medicao: string, quantidade: number): string =>
   }
 };
 
+export const decimalParaFracao = (decimal: number): string => {
+  const tolerancia = 1.0e-6; // Precisão da aproximação
+  let numerador = 1;
+  let denominador = 1;
+  let erro = Math.abs(numerador / denominador - decimal);
+
+  while (erro > tolerancia) {
+    if (numerador / denominador < decimal) {
+      numerador++;
+    } else {
+      denominador++;
+      numerador = Math.round(decimal * denominador);
+    }
+    erro = Math.abs(numerador / denominador - decimal);
+  }
+
+  return `${numerador}/${denominador}`;
+};
+
 export const formatarIngrediente = (ingrediente: IngredienteReceita): string => {
   const { quantidade, medicao, ingrediente: { nome } } = ingrediente;
   const medicaoPlural = pluralizeMedicao(medicao, quantidade);
-  return `${quantidade} ${medicaoPlural} de ${nome}`;
+  const quantidadeFormatada = Number.isInteger(quantidade)
+    ? quantidade.toString()
+    : decimalParaFracao(quantidade);
+
+  return `${quantidadeFormatada} ${medicaoPlural} de ${nome}`;
 };
 
 export const generatePath = (section: string, name: string): string  => {
