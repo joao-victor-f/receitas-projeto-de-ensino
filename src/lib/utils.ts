@@ -69,3 +69,17 @@ export const formatarHorario = (hora, minuto) => {
   // Retorna a hora no formato desejado
   return `${horaFormatada}:${minutoFormatado}:00`;
 }
+
+export const extrairHorasMinutos = (horaString) => {
+  // Verifica se a string está no formato esperado
+  const regex = /^(\d{2}):(\d{2}):00$/;
+  const resultado = horaString.match(regex);
+
+  if (resultado) {
+    const horas = parseInt(resultado[1], 10);  // Extrai as horas
+    const minutos = parseInt(resultado[2], 10);  // Extrai os minutos
+    return { horas, minutos };
+  } else {
+    throw new Error('Formato de hora inválido. Use o formato {hh}:{mm}:00');
+  }
+}
