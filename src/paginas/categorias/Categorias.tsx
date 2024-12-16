@@ -1,10 +1,22 @@
 import { data } from '../../lib/data';
-import React from 'react';
+import React, { useEffect, useState} from 'react';
 import styles from './categorias.module.css';
 import ListagemDeCategorias from '../../components/listagemdereceitas/ListagemDeCategorias';
 import Receita from '../../components/receita/Receita';
+import { Receitas } from '../../lib/types';
+import { Link } from 'react-router-dom';
 
 export default function Categorias() {
+    const [receitas, setReceitas] = useState<Receitas[] | undefined>();
+    useEffect(() => {
+        const storedData = localStorage.getItem('data');
+        if (!storedData)
+            return;
+
+        const parsedData = JSON.parse(storedData);
+
+        setReceitas(parsedData.receitas);
+    }, [setReceitas])
     return (
         <>
             <section className={styles.intro_receitas}> 
@@ -29,9 +41,34 @@ export default function Categorias() {
             <section className={styles.recomendacao_receitas}>
                 <h1>Recomendacion de recetas</h1>
                 <div className={styles.receitas_container}>
-                    <Receita receita={data.receitas[0]} />
-                    <Receita receita={data.receitas[1]} />
-                    <Receita receita={data.receitas[2]} />
+                    {receitas ? (
+                        <>
+                            <Link to={receitas[0].path}>
+                                <Receita receita={receitas[0]} />
+                            </Link>
+
+                            <Link to={receitas[1].path}>
+                                <Receita receita={receitas[1]} />
+                            </Link>
+
+                            <Link to={receitas[2].path}>
+                                <Receita receita={receitas[2]} />
+                            </Link>
+                        </>
+
+                    ) : (
+                        <>
+                            <Link to={data.receitas[0].path}>
+                                <Receita receita={data.receitas[0]} />
+                            </Link>
+                            <Link to={data.receitas[1].path}>
+                                <Receita receita={data.receitas[1]} />
+                            </Link>
+                            <Link to={data.receitas[2].path}>
+                                <Receita receita={data.receitas[2]} />
+                            </Link>
+                        </>
+                    )}
                 </div>
             </section>
         </>
