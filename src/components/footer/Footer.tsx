@@ -13,10 +13,10 @@ export default function Footer() {
                             <img src={logo} />
                         </Link>
                         <div className={styles.social_container}>
-                            <a href="">
-                                <img src="/icons/facebook-icon.svg" alt="ícone do facebook" />
+                            <a href="https://youtube.com/@delacocinaoficial">
+                                <img src="/icons/youtube-circle-svgrepo-com.svg" width={24} height={24} alt="ícone do Youtube"/>
                             </a>
-                            <a href="">
+                            <a href="https://www.instagram.com/delacocina.oficial/">
                                 <img src="/icons/instagram-icon.png" alt="ícone do instagram" />
                             </a>
                             <a href="">
