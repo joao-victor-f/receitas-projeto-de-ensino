@@ -137,7 +137,7 @@ export default function Receita() {
         )}
         <section className={styles.instrucoes_container}>
             <h1>Instruciones</h1>
-            <div>
+            <div className={styles.instrucoes_list}>
                 {receita.passos.map((passo, i) => (
                     <div className={styles.instrucao_container}>
                         <div>

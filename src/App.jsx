@@ -18,8 +18,11 @@ import EditarReceita from './paginas/EditarReceitas/EditarReceita.tsx';
 export default function App() {
   useEffect(() => {
     const storedData = localStorage.getItem('data');
-    if (!storedData) localStorage.setItem('data', JSON.stringify(data));
-  })
+    if (!storedData) {
+      localStorage.setItem('data', JSON.stringify(data))
+      window.location.reload();
+    }
+  });
   return (
     <Router>
       <Header></Header> 

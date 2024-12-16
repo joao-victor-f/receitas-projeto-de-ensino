@@ -80,7 +80,7 @@ export const data = {
         { "ingrediente": { "id": 1, "nome": "Maíz blanco", "imagemURL": "/ingredientes/maiz_blanco.jpeg" }, "quantidade": 1, "medicao": "taza" },
         { "ingrediente": { "id": 2, "nome": "Zapallo", "imagemURL": "/ingredientes/zapallo.jpeg" }, "quantidade": 500, "medicao": "gramo" },
         { "ingrediente": { "id": 3, "nome": "Carne de cerdo", "imagemURL": "/ingredientes/carne_de_cerdo.jpeg" }, "quantidade": 300, "medicao": "gramo" },
-        { "ingrediente": { "id": 4,"nome": "Chorizo", "imagemURL": "/ingredientes/chorizo.jpg" }, "quantidade": 2, "medicao": "unidad" },
+        { "ingrediente": { "id": 4, "nome": "Chorizo", "imagemURL": "/ingredientes/chorizo.jpg" }, "quantidade": 2, "medicao": "unidad" },
         { "ingrediente": { "id": 5, "nome": "Cebolla", "imagemURL": "/ingredientes/cebolla.jpg" }, "quantidade": 1, "medicao": "unidad" }
       ],
       "imagensURL": ["/receitas/locro-criollo.png"],
@@ -186,6 +186,59 @@ export const data = {
       "visaoGeral": "La parrilla argentina es una tradición culinaria que se remonta a los primeros pobladores del país. El asado, como es conocido, tiene sus raíces en la cultura gaucha, los trabajadores rurales que comenzaron a cocinar carne en grandes fogatas durante las jornadas de trabajo. A lo largo del tiempo, la parrilla se ha convertido en una de las formas más representativas de la cocina argentina, conocida por sus cortes de carne de alta calidad, cocidos a la perfección sobre brasas. Es una verdadera celebración de la carne, que no solo se disfruta en reuniones familiares, sino también en encuentros sociales.",
       "porcoes": 8,
       "videoId": '0slJ0JckFTg',
+    },
+    {
+      "id": 4,
+      "nome": "Alfajor Saludable",
+      "categoria": {
+        "titulo": "Galletas y Dulces",
+        "imagemURL": "/categorias/doces.png",
+        "descricao": "Postres típicos como alfajores, facturas, churros, pasta frolla y tortas.",
+        "path": "/receitas/doces",
+        "fullImagemURL": "/receitas/doces.jpg",
+      },
+      "descricao": "El alfajor argentino tiene una historia que se remonta a siglos atrás, con raíces probablemente en la tradición musulmana que llevó dulces similares a la Península Ibérica. Durante la colonización de América Latina, los españoles introdujeron el alfajor en la región, donde se popularizó y adaptó a los ingredientes locales. En el caso de Argentina, el alfajor fue perfeccionado con sabores y técnicas únicas, especialmente en la región de Córdoba, donde se convirtió en un símbolo de la cultura culinaria del país. Hoy en día, es un dulce icónico de Argentina, tradicionalmente hecho con dos galletas suaves rellenas de dulce de leche y cubiertas con chocolate o azúcar glas. Es un verdadero tesoro de la gastronomía argentina, consumido en diversas ocasiones, desde festividades tradicionales hasta como un sabroso tentempié.",
+      "ingredientes": [
+        { "ingrediente": { "id": 17, "nome": "Harina de avena", "imagemURL": "/ingredientes/farinha-aveia.png", "path": "/ingrediente/farinha_aveia9012391" }, "quantidade": 1, "medicao": "taza" },
+        { "ingrediente": { "id": 15, "nome": "Harina de arroz", "imagemURL": "/ingredientes/farinha-arroz.png", "path": "/ingrediente/harina_arroz" }, "quantidade": 0.5, "medicao": "taza" },
+        { "ingrediente": { "id": 13, "nome": "Cacao en polvo 100%", "imagemURL": "/ingredientes/cacao-en-polvo-100.jpg", "path": "/ingrediente/cacao_en_polvo" }, "quantidade": 3, "medicao": "cucharada" },
+        { "ingrediente": { "id": 18, "nome": "Miel", "imagemURL": "/ingredientes/mel.jpg", "path": "/ingrediente/miel912031" }, "quantidade": 0.25, "medicao": "taza" },
+        { "ingrediente": { "id": 14, "nome": "Huevo", "imagemURL": "/ingredientes/huevos.jpeg", "path": "/ingrediente/huevo19201" }, "quantidade": 2, "medicao": "unidade" },
+        { "ingrediente": { "id": 16, "nome": "Esencia de vainilla", "imagemURL": "/ingredientes/esencia-vainilla.png", "path": "/ingrediente/esencia_vainilla91029" }, "quantidade": 1, "medicao": "cucharadita" },
+        { "ingrediente": { "id": 19, "nome": "Polvo de hornear", "imagemURL": "/ingredientes/polvo-de-hornear.jpeg", "path": "/ingrediente/polvo_de_hornear190239120" }, "quantidade": 1, "medicao": "cucharadita" },
+        { "ingrediente": { "id": 21, "nome": "Dulce de leche fit", "imagemURL": "/ingredientes/dulce-de-leche-fit.jpeg", "path": "/ingrediente/dulce_de_leche_fit" }, "quantidade": 120, "medicao": "gramo" },
+        { "ingrediente": { "id": 20, "nome": "Tablete de choco 70%", "imagemURL": "/ingredientes/tablete70.png", "path": "/ingrediente/tablete70" }, "quantidade": 100, "medicao": "gramo" }
+      ],
+      "passos": [
+        "Mezcla la harina de avena, la harina de arroz, el cacao en polvo y el polvo de hornear en un bol grande. En un recipiente separado, bate el huevo, añade la miel y la esencia de vainilla, mezclando bien. Agrega los ingredientes líquidos a la mezcla de harinas y mezcla hasta obtener una masa homogénea. Si la masa está muy seca, añade un poco de agua para ajustarla. Refrigera la masa por 20 minutos.",
+        "Precalienta el horno a 180°C. Usa un cortador o un vaso pequeño para cortar los círculos de masa y colócalos en una bandeja de horno forrada con papel manteca o engrasada. Hornea por 8 a 10 minutos o hasta que los bordes estén ligeramente dorados. Deja que las galletas se enfríen completamente.",
+        "Coloca una porción del dulce de leche fit sobre una galleta y cubre con otra, presionando ligeramente para que queden unidas. Repite este proceso hasta montar todos los alfajores.",
+        "Derrite el chocolate 70% cacao en baño maría o en el microondas en intervalos de 30 segundos, revolviendo cada vez para evitar que se queme. Sumerge cada alfajor en el chocolate derretido y colócalos en una rejilla o en una hoja de papel manteca para que se enfríen y se endurezcan.",
+        "Deja que el chocolate se solidifique completamente antes de guardar los alfajores en un recipiente hermético o de servir."
+      ],
+      "imagensURL": [
+        "/paginaprincipal/alfajor.png",
+        "/receitas/informacaonutricional.png",
+        "/receitas/folder-1-portugues.jpg",
+        "/receitas/folder-2-portugues.jpg",
+        "/receitas/folder-1-espanhol.jpg",
+        "/receitas/folder-2-espanhol.jpg",
+      ],
+      "tempoDePreparacao": "01:00:00",
+      "path": "/receita/alfajor_saludable",
+      "substituicoes": [
+        "Sustituye el dulce de leche por mermelada, si lo prefieres.",
+        "Para un relleno diferente e igualmente saludable, puedes usar pasta de maní o almendras mezcladas con endulzante.",
+        "El chocolate puede ser blanco o amargo, según tu preferencia.",
+      ],
+      "conselhos": [
+        "Utiliza un dulce de leche de alta calidad para asegurar el sabor auténtico.",
+        "Deja reposar los alfajores antes de servirlos para que queden más tiernos.",
+        "Prueba añadir coco rallado en los bordes para un toque especial.",
+      ],
+      "visaoGeral": "El alfajor argentino tiene una historia que se remonta a siglos atrás, con raíces probablemente en la tradición musulmana que llevó dulces similares a la Península Ibérica. Durante la colonización de América Latina, los españoles introdujeron el alfajor en la región, donde se popularizó y adaptó a los ingredientes locales. En el caso de Argentina, el alfajor fue perfeccionado con sabores y técnicas únicas, especialmente en la región de Córdoba, donde se convirtió en un símbolo de la cultura culinaria del país. Hoy en día, es un dulce icónico de Argentina, tradicionalmente hecho con dos galletas suaves rellenas de dulce de leche y cubiertas con chocolate o azúcar glas. Es un verdadero tesoro de la gastronomía argentina, consumido en diversas ocasiones, desde festividades tradicionales hasta como un sabroso tentempié.",
+      "porcoes": 12,
+      "videoId": 'ldw_YCjtMfo',
     }
   ],
   "ingredientes": [
@@ -260,6 +313,60 @@ export const data = {
       "nome": "Sal gruesa",
       "imagemURL": "/ingredientes/sal_gruesa.jpeg",
       "path": "/ingrediente/sal_gruesa776192"
-    }
+    },
+    {
+      "id": 13,
+      "nome": "Cacao en polvo 100%",
+      "imagemURL": "/ingredientes/cacao-en-polvo-100.jpg",
+      "path": "/ingrediente/cacao_en_polvo",
+    },
+    {
+      "id": 14,
+      "nome": "Huevo",
+      "imagemURL": "/ingredientes/huevos.jpeg",
+      "path": "/ingrediente/huevo19201",
+    },
+    {
+      "id": 15,
+      "nome": "Harina de arroz",
+      "imagemURL": "/ingredientes/farinha-arroz.png",
+      "path": "/ingrediente/harina_arroz",
+    },
+    {
+      "id": 16,
+      "nome": "Esencia de vainilla",
+      "imagemURL": "/ingredientes/esencia-vainilla.png",
+      "path": "/ingrediente/esencia_vainilla91029",
+    },
+    {
+      "id": 17,
+      "nome": "Harina de avena",
+      "imagemURL": "/ingredientes/farinha-aveia.png",
+      "path": "/ingrediente/farinha_aveia9012391",
+    },
+    {
+      "id": 18,
+      "nome": "Miel",
+      "imagemURL": "/ingredientes/mel.jpg",
+      "path": "/ingrediente/miel912031",
+    },
+    {
+      "id": 19,
+      "nome": "Polvo de hornear",
+      "imagemURL": "/ingredientes/polvo-de-hornear.jpeg",
+      "path": "/ingrediente/polvo_de_hornear190239120",
+    },
+    {
+      "id": 20,
+      "nome": "Tablete de choco 70%",
+      "imagemURL": "/ingredientes/tablete70.png",
+      "path": "/ingrediente/tablete70",
+    },
+    {
+      "id": 21,
+      "nome": "Dulce de leche fit",
+      "imagemURL": "/ingredientes/dulce-de-leche-fit.jpeg",
+      "path": "/ingrediente/dulce_de_leche_fit",
+    },
   ]
 }

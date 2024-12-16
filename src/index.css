@@ -17,3 +17,8 @@ a {
 main {
   margin: 56px;
 }
+
+input {
+  pointer-events: auto;
+  user-select: text;
+}

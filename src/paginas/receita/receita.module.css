@@ -115,6 +115,12 @@
     line-height: 38px; /* 158.333% */
 }
 
+.instrucoes_container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
 .instrucoes_container h1 {
     color: #1D1D1D;
     font-family: Poppins;
@@ -183,9 +189,11 @@
     line-height: normal;
 }
 
+
 .instrucao_container {
     display: flex;
-    gap: 16px;
+    gap: 24px;
+    margin-bottom: 16px;
 }
 
 .image_container {
