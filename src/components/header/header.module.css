@@ -22,6 +22,14 @@
   font-size: medium;
   font-weight: 500;
   cursor: pointer;
+  transition: 250ms ease-out;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.li:hover {
+  background-color: black;
+  color: white;
 }
 
 #menu_button {
