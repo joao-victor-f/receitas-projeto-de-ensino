@@ -18,19 +18,19 @@ export default function Sobre() {
                         <h1 className={styles.titulo_contato}>Contáctanos</h1>
                             <div className={styles.campos_de_nome}>
                                 <div className={styles.nome}>
-                                    <label for="nome">Nombre de pila</label>
-                                    <input type="text" id="nome" placeholder="Ana"/>
+                                    <label for={styles.nome}>Nombre de pila</label>
+                                    <input type="text" id={styles.nome} placeholder="Ana"/>
                                 </div>
-                                <div className="apelido">
+                                <div className={styles.apelido}>
                                     <label for="apelido">Apellido</label>
                                     <input type="text" id="apelido" placeholder="Ramírez"/>
                                 </div>
                             </div>
-                            <div className="email">
+                            <div className={styles.email}>
                                 <label for="email">Email</label>
                                 <input type="text" id="email" placeholder="email@delacocina.net"/>
                             </div>
-                            <div className="mensagem">
+                            <div className={styles.mensagem}>
                                 <label for="mensagem">Tu mensaje</label>
                                 <textarea className={styles.textarea} rows="20" id="mensagem" placeholder="Ingresa tu pregunta o mensaje"></textarea>
                             </div>
