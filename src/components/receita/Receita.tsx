@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from "./receita.module.css";
 import { formatarTempo } from '../../lib/utils';
-import Carrossel from '../carrossel/Carrossel';
 
 export default function Receita(props) {
     return (
