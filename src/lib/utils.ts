@@ -64,9 +64,9 @@ export const decimalParaFracao = (decimal: number): string => {
 export const formatarIngrediente = (ingrediente: IngredienteReceita): string => {
   const { quantidade, medicao, ingrediente: { nome } } = ingrediente;
   const medicaoPlural = pluralizeMedicao(medicao, quantidade);
-  const quantidadeFormatada = Number.isInteger(quantidade)
-    ? quantidade.toString()
-    : decimalParaFracao(quantidade);
+  const quantidadeFormatada = (Number.isInteger(quantidade) || quantidade % 1 === 0)
+  ? quantidade.toString()
+  : decimalParaFracao(quantidade);
 
   return `${quantidadeFormatada} ${medicaoPlural} de ${nome}`;
 };
