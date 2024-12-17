@@ -14,6 +14,7 @@ import Receita from './paginas/receita/Receita.tsx';
 import { data } from './lib/data.js';
 import Ingrediente from './paginas/viewIngrediente/Ingrediente.tsx';
 import EditarReceita from './paginas/EditarReceitas/EditarReceita.tsx';
+import EditarIngrediente from './paginas/editarIngrediente/EditarIngrediente.tsx';
 
 export default function App() {
   useEffect(() => {
@@ -38,6 +39,7 @@ export default function App() {
           <Route path="/criar-ingredientes" element={<CriarIngredientes />} />
           <Route path="/ingrediente/:pathIngrediente" element={<Ingrediente />} />
           <Route path="/editar-receita/:idReceita" element={<EditarReceita />} />
+          <Route path="/editar-ingrediente/:idIngrediente" element={<EditarIngrediente />} />
         </Routes>
       </main>
       <Footer></Footer>
