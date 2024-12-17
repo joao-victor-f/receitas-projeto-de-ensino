@@ -49,9 +49,11 @@ export default function Ingrediente() {
                 <section className={styles.top_container}>
                     <h1>{ingrediente.nome}</h1>
                     <div>
-                        <button>
-                            <img src="/icons/edit-icon.svg" />
-                        </button>
+                        <Link to={`/editar-ingrediente/${ingrediente.id}`}>
+                            <button>
+                                <img src="/icons/edit-icon.svg" />
+                            </button>
+                        </Link>
                         <button onClick={handleDelete}>
                             <img src="/icons/trash.svg" />
                         </button>
