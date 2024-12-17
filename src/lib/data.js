@@ -164,7 +164,7 @@ export const data = {
         { "ingrediente": { "id": 11, "nome": "Morcilla", "imagemURL": "/imagens/ingredientes/morcilla.jpg" }, "quantidade": 2, "medicao": "unidad" },
         { "ingrediente": { "id": 12, "nome": "Sal gruesa", "imagemURL": "/imagens/ingredientes/sal_gruesa.jpeg" }, "quantidade": 2, "medicao": "cucharada" }
       ],
-      "imagensURL": ["/receitas/parrila.png"],
+      "imagensURL": ["/imagens/receitas/parrila.png"],
       "tempoDePreparacao": "01:30:00",
       "passos": [
         "Preparar el fuego en la parrilla hasta obtener brasas.",
