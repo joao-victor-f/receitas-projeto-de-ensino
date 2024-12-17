@@ -92,7 +92,7 @@ export default function CriarIngredientes() {
 
     return (
 
-        <form method="POST" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <div className={styles.outer_container}>
                 <section className={styles.main_topic_container}>
                     <h1>Agregar ingrediente</h1>
