@@ -22,7 +22,7 @@ export default function Footer() {
                             <a href="https://tiktok.com/@delacocinaoficial">
                                 <img src="/imagens/icons/tiktok-icon.png" alt="ícone do tiktok" />
                             </a>
-                            <a href="">
+                            <a href="https://x.com/de_la6409">
                                 <img src="/imagens/icons/twitter-icon.png" alt="ícone do X" />
                             </a>
                         </div>

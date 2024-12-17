@@ -49,9 +49,11 @@ export default function Ingrediente() {
                 <section className={styles.top_container}>
                     <h1>{ingrediente.nome}</h1>
                     <div>
-                        <button>
-                            <img src="/imagens/icons/edit-icon.svg" />
-                        </button>
+                        <Link to={`/editar-ingrediente/${ingrediente.id}`}>
+                            <button>
+                                <img src="/imagens/icons/edit-icon.svg" />
+                            </button>
+                        </Link>
                         <button onClick={handleDelete}>
                             <img src="/imagens/icons/trash.svg" />
                         </button>
@@ -76,7 +78,7 @@ export default function Ingrediente() {
         ) : (
             <>
                 <div>
-                    <h1>Ingrediente não encontrado!</h1>
+                    <h1>Ingrediente no existe.</h1>
                 </div>
             </>
         )}

@@ -41,7 +41,7 @@ export default function Receitas() {
                     </div>
                 ) : (
                     <div>
-                        <h1>Categoria não encontrada!</h1>
+                        <h1>Categoria no existe.</h1>
                     </div>
                 )}
             </section>
@@ -63,7 +63,7 @@ export default function Receitas() {
                             )
                         }) : (
                             <div>
-                                <h1>Não há receitas no momento!</h1>
+                                <h1>No hay recetas.</h1>
                             </div>
                         )}
                 </div>

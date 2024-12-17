@@ -1,6 +1,14 @@
 .main_container {
     display: flex;
     flex-direction: column;
+    padding: 8px;
+    transition: 250ms ease-out;
+    border-radius: 8px;
+}
+
+.main_container:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
 }
 
 .main_container img {

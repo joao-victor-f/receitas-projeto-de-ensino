@@ -28,9 +28,15 @@ export default function PaginaPrincipal () {
           </Link>
         </div>
         <div className={styles.categorias_container}>
-          <Categoria categoria={data.categorias[4]} imagem="/paginaprincipal/alfajor.png"/>
-          <Categoria categoria={data.categorias[5]} imagem="/paginaprincipal/pastel.png" />
-          <Categoria categoria={data.categorias[6]} imagem="/paginaprincipal/pratos_principais.png"/>
+          <Link to={data.categorias[4].path}>
+            <Categoria categoria={data.categorias[4]} imagem="/paginaprincipal/alfajor.png"/>
+          </Link>
+          <Link to={data.categorias[5].path}>
+            <Categoria categoria={data.categorias[5]} imagem="/paginaprincipal/pastel.png" />
+          </Link>
+          <Link to={data.categorias[6].path}>
+            <Categoria categoria={data.categorias[6]} imagem="/paginaprincipal/pratos_principais.png"/>
+          </Link>
         </div>
       </section>
       <section className={styles.descricao_container}>

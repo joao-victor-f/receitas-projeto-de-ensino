@@ -19,11 +19,6 @@ export default function Header() {
             </Link>
           </li>
           <li className={styles.li}>
-            <Link to="/sobre">
-              <a>Contacto</a>
-            </Link>
-          </li>
-          <li className={styles.li}>
             <Link to="/ingredientes">
               <a>Ingredientes</a>
             </Link>
@@ -31,6 +26,11 @@ export default function Header() {
           <li className={styles.li}>
             <Link to="/categorias">
               <a>Categorias</a>
+            </Link>
+          </li>
+          <li className={styles.li}>
+            <Link to="/sobre">
+              <a>Contacto</a>
             </Link>
           </li>
           <li id={styles.menu_mobile}>

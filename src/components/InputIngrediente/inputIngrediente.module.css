@@ -71,7 +71,3 @@ button {
     border: 1px solid rgba(130, 130, 130, 0.70);
     background: #FBFBFB;
 }
-
-input:focus, input::selection {
-    border: none;
-}
