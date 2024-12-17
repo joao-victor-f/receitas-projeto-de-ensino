@@ -1,130 +1,191 @@
-#moduloExternoCriarIngredientes {
-    width: 1272px;
-    height: 864px;
-    margin: 150px auto 80px auto;
-    box-shadow: 0px 0px 10px #00000038;
+.outer_container {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    background: var(--Brand-Colors-White, #FFF);
+    box-shadow: 0px 0px 10px 0px rgba(29, 29, 29, 0.25);
+    padding: 66px;
+    gap: 48px;
 }
 
-#moduloInternoCriarIngredientes {
-    width: 1140px;
-    margin: 66px auto 0 auto;
+.linha_divisoria {
+    width: 100%;
+    height: 2px;
+    background-color: rgba(111, 111, 111, 0.3);
 }
 
-#tituloCriarIngrediente {
-    font-size: 48px;
+.main_topic_container {
     text-align: center;
-    padding-top: 70px;
-    font-family: 'Inter';
+}
+
+.main_topic_container h1 {
+    color: var(--Brand-Colors-Light-Black, #1D1D1D);
+    text-align: center;
+    font-family: Inter;
+    font-size: 48px;
+    font-style: normal;
     font-weight: 600;
+    line-height: normal;
 }
 
-#descricaoCriarIngredientes {
-    margin-top: 58px;
-    color: #444444;
-    font-size: 21.7px;
-    font-family: "Poppins";
+.paragrafo {
+    color: var(--Shadow-Grey, #444);
+    /* Mainly used Text Styles/Body w line height */
+    font-family: Poppins;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 38px;
+    /* 172.727% */
 }
 
-#linhaDivisoria {
-    background-color: #00000011;
-    width: 1140px;
-    height: 3px;
-    margin-top: 40px;
+.images {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    padding: 16px;
 }
 
-#areaAdicionarImagem {
-    margin-top: 40px;
-    border-radius: 6px;
-    width: 1140px;
+.image_preview_container {
+    position: relative;
+    display: inline-block;
+    object-fit: cover;
+    transition: all 1s ease;
+    overflow: hidden;
+}
+
+.image_preview {
+    max-width: 300px;
+    height: auto;
+}
+
+.image_preview_container:hover .image_preview {
+    filter: brightness(80%);
+}
+
+.delete_image_preview {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.5s ease;
+}
+
+.image_preview_container:hover .delete_image_preview {
+    display: block;
+    opacity: 1; /* Torna visível */
+}
+
+.adicionar_img_container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 200px;
-    background-color: #D9D9D9;
-    border: 4px dotted #828282;
-    display: flex;
-    padding: 10px 10px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+    border-radius: 8px;
+    border: 3px dashed #828282;
+    background: #D9D9D9;
 }
 
-#botaoAdicionarImagem {
-    background: #454545;
-    border: 1px solid #000000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 60px;
-    width: 192px;
-    height: 50px;
+.button_adicionar_img {
     display: flex;
-    padding: 10px 10px;
+    padding: 10px 20px;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    color: #EEEEEE;
-    font-family: 'Poppins';
+    border-radius: 60px;
+    border: 1px solid #000;
+    background: #454545;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.adicionar_img_container span {
+    color: #EEE;
+    font-family: Poppins;
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
 }
 
-#inputNomeIngrediente {
-    width: 1140px;
-    height: 74px;
-    border: 1px solid #45454536;
-    background-color: #82828211;
-    font-family: 'Poppins';
-    border-radius: 10px;
-    margin-top: 10px;
-    padding-left: 17px;
+.input_container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
 }
 
-#inputNomeIngrediente::placeholder {
-    color: #ACACAC;
-    font-family: 'Poppins';
-}
-
-#moduloInputNomeIngrediente {
-    margin-top: 40px;
-}
-
-#labelNomeIngrediente {
-    font-family: "Poppins";
-}
-
-#botoes {
-    float: right;
-    margin-top: 100px;
-}
-
-#botaoCancelar {
-    width: 152px;
-    height: 56px;
-    background-color: white;
-    border: 2px solid #454545;
-    border-radius: 30px;
-    color: #454545;
-    font-size: 23px;
-    font-weight: 450;
-    margin-right: 20px;
-    font-family: "Poppins";
-}
-
-#botaoAgregarIngredientes {
-    width: 284px;
-    height: 56px;
-    background-color: #454545;
-    color: white;
-    border-radius: 30px;
-    font-size: 23px;
-    font-weight: 400;
-    font-family: "Poppins";
-}
-
-#labelNomeIngrediente {
+.label_input {
+    color: var(--Brand-Colors-Light-Black, #1D1D1D);
+    font-family: Poppins;
     font-size: 24px;
+    font-style: normal;
     font-weight: 500;
+    line-height: normal;
 }
 
-.required:after {
-    content: " *";
-    color: #DB0F0F;
+.input_titulo {
+    display: flex;
+    padding: 24px 26px 20px 26px;
+    justify-content: center;
+    align-items: center;
+    flex: 1 0 0;
+    align-self: stretch;
+    border-radius: 10px;
+    border: 1px solid rgba(130, 130, 130, 0.70);
+    background: #FBFBFB;
+    color:black;
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.input_titulo::placeholder {
+    color: var(--Light-Grey, #ACACAC);
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.end_container {
+    display: flex;
+    align-self: flex-end;
+    gap: 24px;
+}
+
+.cancel_button {
+    color: #454545;
+    font-family: Poppins;
+}
+
+.save_button {
+    color: white;
+    background: #454545;
+}
+
+.button {
+    display: flex;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 60px;
+    border: 2px solid #454545;
+    cursor: pointer;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }

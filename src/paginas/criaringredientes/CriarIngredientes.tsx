@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import styles from "./criar-ingredientes.module.css";
 import botaoAdicionar from "../../assets/botao-adicionar.svg";
 import { useNavigate } from "react-router-dom";
+import botaoRemover from "../../assets/remove-button.svg";
+import { generatePath, gerarIdNumerico } from "../../lib/utils";
 
 
 export default function CriarIngredientes() {
@@ -13,6 +15,11 @@ export default function CriarIngredientes() {
     const handleChange = (e) => {
         setNome(e.target.value);
     };
+
+    const handleRemove = (e) => {
+        e.preventDefault();
+        setImagePreview('');
+    }
 
     const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
@@ -33,25 +40,31 @@ export default function CriarIngredientes() {
           return;
         }
 
-        // Cria o FormData para enviar a imagem
-        const formData = new FormData();
-        formData.append("file", image);  // 'image' é o arquivo selecionado pelo usuário
 
         try {
+            // Cria o FormData para enviar a imagem
+            if (!image)
+                throw new Error('uma imagem precisa ser enviada');
+
+            const formData = new FormData();
+            formData.append("images", image);  // 'image' é o arquivo selecionado pelo usuário
             // Faz o upload da imagem para o backend
             const response = await fetch("http://localhost:3000/upload", {
                 method: "POST",
                 body: formData
             });
 
+
             // Se o upload for bem-sucedido, captura a URL da imagem
             if (response.ok) {
                 const dadosAPI = await response.json();
-                const imageURL = dadosAPI.imageURL;  // A URL que você recebe do backend
+                const imageURL = dadosAPI.files;  // A URL que você recebe do backend
 
                 const ingrediente = {
+                    id: gerarIdNumerico(),
                     nome: nome,
-                    imagemURL: imageURL
+                    imagemURL: imageURL[0].url,
+                    path: generatePath('ingrediente', nome),
                 };
 
                 const dados = JSON.parse(localStorage.getItem('data'));
@@ -74,48 +87,60 @@ export default function CriarIngredientes() {
     }
 
     const handleCancel = () => {
-        navigate("/");
+        navigate("/ingredientes");
     }
 
     return (
 
         <form method="POST" onSubmit={handleSubmit}>
-            <div id={styles.moduloExternoCriarIngredientes}>
-                <div id={styles.moduloInternoCriarIngredientes}>
-                    <h1 id={styles.tituloCriarIngrediente}>Agregar ingrediente</h1>
-                    <p id={styles.descricaoCriarIngredientes}>¡Súmale los ingredientes que no pueden faltar en la cocina argentina!</p>
-                    <div id={styles.linhaDivisoria}></div>
-                    <div id={styles.areaAdicionarImagem}>
-                        {/* Label estilizado que simula o botão */}
-                        <label htmlFor="botaoAdicionarImagem" id={styles.botaoAdicionarImagem}>
-                            <img src={botaoAdicionar} alt="botão adicionar" />
-                            <span>Añadir foto</span>
-                        </label>
+            <div className={styles.outer_container}>
+                <section className={styles.main_topic_container}>
+                    <h1>Agregar ingrediente</h1>
+                    <p className={styles.paragrafo}>¡Súmale los ingredientes que no pueden faltar en la cocina argentina!</p>
+                </section>
+                <div className={styles.linha_divisoria}></div>
+                <section className={styles.adicionar_img_container}>
+                    <label className={styles.button_adicionar_img} htmlFor="botaoAdicionarImagem">
+                        <img src={botaoAdicionar} />
+                        <span>Añadir foto</span>
                         <input
                             id="botaoAdicionarImagem"
                             type="file"
                             accept="image/*"
                             onChange={handleFileChange}
-                            style={{ display: "none" }} // Esconde o input
+                            style={{ display: "none" }}
                             required
                         />
-                        {/* Pré-visualização da imagem */}
-                        {imagePreview && (
-                            <div>
-                                <h3>Pré-visualização:</h3>
-                                <img src={imagePreview} alt="Pré-visualização" style={{ maxWidth: "300px" }} />
+                    </label>
+                </section>
+                <div className={styles.linha_divisoria}></div>
+                <div className={styles.images}>
+                    {imagePreview && (
+                        <div className={styles.image_preview_container}>
+                            <img src={imagePreview} alt={`preview-${imagePreview}}`} className={styles.image_preview} />
+                                <button
+                                    className={styles.delete_image_preview}
+                                    onClick={(e) => handleRemove(e)}
+                                >
+                                    <img src={botaoRemover} />
+                                </button>
                             </div>
                         )}
-                    </div>
-                    <div id={styles.moduloInputNomeIngrediente}>
-                        <label id={styles.labelNomeIngrediente} className={styles.required}>Nombre del Ingrediente</label>
-                        <input type="text" id={styles.inputNomeIngrediente} placeholder="Introduce el título de tu receta" onChange={(e) => handleChange(e)}value={nome} required/>
-                    </div>
-                    <div id={styles.botoes}>
-                        <button id={styles.botaoCancelar} onClick={handleCancel}>Cancelar</button>
-                        <button id={styles.botaoAgregarIngredientes} type="submit">Agregar Ingrediente</button>
-                    </div>
                 </div>
+                <section className={styles.input_container}>
+                    <label className={styles.label_input}>Nome del ingrediente</label>
+                    <input
+                        type="text"
+                        value={nome}
+                        placeholder="Introduce el nome del"
+                        onChange={(e) => handleChange(e)}
+                        className={styles.input_titulo}
+                    />
+                </section>
+                <section className={styles.end_container}>
+                    <button className={`${styles.cancel_button} ${styles.button}`} onClick={handleCancel}>Cancelar</button>
+                    <button className={`${styles.save_button} ${styles.button}`}>Enviar receta</button>
+                </section>
             </div>
         </form>
     )
