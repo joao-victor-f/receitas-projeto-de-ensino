@@ -41,34 +41,15 @@ export default function Categorias() {
             <section className={styles.recomendacao_receitas}>
                 <h1>Recomendacion de recetas</h1>
                 <div className={styles.receitas_container}>
-                    {receitas ? (
-                        <>
-                            <Link to={receitas[0].path}>
-                                <Receita receita={receitas[0]} />
-                            </Link>
-
-                            <Link to={receitas[1].path}>
-                                <Receita receita={receitas[1]} />
-                            </Link>
-
-                            <Link to={receitas[2].path}>
-                                <Receita receita={receitas[2]} />
-                            </Link>
-                        </>
-
-                    ) : (
-                        <>
-                            <Link to={data.receitas[0].path}>
-                                <Receita receita={data.receitas[0]} />
-                            </Link>
-                            <Link to={data.receitas[1].path}>
-                                <Receita receita={data.receitas[1]} />
-                            </Link>
-                            <Link to={data.receitas[2].path}>
-                                <Receita receita={data.receitas[2]} />
-                            </Link>
-                        </>
-                    )}
+                    <Link to={data.receitas[0].path}>
+                        <Receita receita={data.receitas[0]} />
+                    </Link>
+                    <Link to={data.receitas[1].path}>
+                        <Receita receita={data.receitas[1]} />
+                    </Link>
+                    <Link to={data.receitas[2].path}>
+                        <Receita receita={data.receitas[2]} />
+                    </Link>
                 </div>
             </section>
         </>
