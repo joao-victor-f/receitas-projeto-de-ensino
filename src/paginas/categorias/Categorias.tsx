@@ -28,8 +28,8 @@ export default function Categorias() {
             <ListagemDeCategorias></ListagemDeCategorias>
             <section id="historia_cozinha" className={styles.historia_cozinha}>
                 <div className={styles.images_container}>
-                    <img src="/categorias/img-suporte-2.png" alt="" />
-                    <img src="/categorias/img-suporte-1.png" alt="" />
+                    <img src="/imagens/categorias/img-suporte-2.png" alt="" />
+                    <img src="/imagens/categorias/img-suporte-1.png" alt="" />
                 </div>
                 <div className={styles.historia_container}>
                     <h1>Historia de la cocina argentina</h1>

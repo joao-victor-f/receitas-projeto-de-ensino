@@ -14,16 +14,16 @@ export default function Footer() {
                         </Link>
                         <div className={styles.social_container}>
                             <a href="https://youtube.com/@delacocinaoficial">
-                                <img src="/icons/youtube-circle-svgrepo-com.svg" width={24} height={24} alt="ícone do Youtube"/>
+                                <img src="/imagens/icons/youtube-circle-svgrepo-com.svg" width={24} height={24} alt="ícone do Youtube"/>
                             </a>
                             <a href="https://www.instagram.com/delacocina.oficial/">
-                                <img src="/icons/instagram-icon.png" alt="ícone do instagram" />
+                                <img src="/imagens/icons/instagram-icon.png" alt="ícone do instagram" />
                             </a>
                             <a href="https://tiktok.com/@delacocinaoficial">
-                                <img src="/icons/tiktok-icon.png" alt="ícone do tiktok" />
+                                <img src="/imagens/icons/tiktok-icon.png" alt="ícone do tiktok" />
                             </a>
                             <a href="">
-                                <img src="/icons/twitter-icon.png" alt="ícone do X" />
+                                <img src="/imagens/icons/twitter-icon.png" alt="ícone do X" />
                             </a>
                         </div>
                     </div>

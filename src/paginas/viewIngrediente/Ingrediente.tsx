@@ -50,10 +50,10 @@ export default function Ingrediente() {
                     <h1>{ingrediente.nome}</h1>
                     <div>
                         <button>
-                            <img src="/icons/edit-icon.svg" />
+                            <img src="/imagens/icons/edit-icon.svg" />
                         </button>
                         <button onClick={handleDelete}>
-                            <img src="/icons/trash.svg" />
+                            <img src="/imagens/icons/trash.svg" />
                         </button>
                     </div>
                 </section>

@@ -58,11 +58,11 @@ export default function Receita() {
             <div>
                 <Link to={`/editar-receita/${receita.id}`}>
                     <button>
-                        <img src="/icons/edit-icon.svg" />
+                        <img src="/imagens/icons/edit-icon.svg" />
                     </button>
                 </Link>
                 <button onClick={handleDelete}>
-                    <img src="/icons/trash.svg" />
+                    <img src="/imagens/icons/trash.svg" />
                 </button>
             </div>
         </section>
@@ -96,13 +96,13 @@ export default function Receita() {
         <section className={styles.info_container}>
             <div className={styles.info_main_container}>
                 <div>
-                    <img src="/icons/tray.png" />
+                    <img src="/imagens/icons/tray.png" />
                     <h3>Tiempo de Preparación</h3>
                     <span>{formatarTempo(receita.tempoDePreparacao)}</span>
                 </div>
                 <div className={styles.divider}></div>
                 <div>
-                    <img src="/icons/serving-dish.png" />
+                    <img src="/imagens/icons/serving-dish.png" />
                     <h3>Raciones</h3>
                     <span>{receita.porcoes}</span>
                 </div>
