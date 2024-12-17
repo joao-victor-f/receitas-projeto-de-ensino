@@ -121,7 +121,8 @@ export default function EditarIngrediente() {
         setImagePreview('');
     }
 
-    const handleCancel = () => {
+    const handleCancel = (e) => {
+        e.preventDefault();
         navigate('/ingredientes');
     }
 
@@ -183,7 +184,7 @@ export default function EditarIngrediente() {
                             />
                         </section>
                         <section className={styles.end_container}>
-                            <button className={`${styles.cancel_button} ${styles.button}`} onClick={handleCancel}>Cancelar</button>
+                            <button className={`${styles.cancel_button} ${styles.button}`} onClick={(e) => handleCancel(e)}>Cancelar</button>
                             <button className={`${styles.save_button} ${styles.button}`}>Enviar receta</button>
                         </section>
                     </div>

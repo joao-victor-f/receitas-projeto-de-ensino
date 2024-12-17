@@ -242,6 +242,11 @@ export default function CriarReceitas() {
         }
     }
 
+    const handleCancel = (e) => {
+        e.preventDefault();
+        navigate('/categorias');
+    }
+
     return (
         <form method="post" onSubmit={handleSubmit}>
             <div className={styles.outer_container}>
@@ -514,7 +519,7 @@ export default function CriarReceitas() {
                     </select>
                 </section>
                 <section className={styles.end_container}>
-                    <button className={`${styles.cancel_button} ${styles.button}`}>Cancelar</button>
+                    <button className={`${styles.cancel_button} ${styles.button}`} onClick={(e)=> handleCancel(e)}>Cancelar</button>
                     <button className={`${styles.save_button} ${styles.button}`}>Enviar receta</button>
                 </section>
                 <div className={styles.linha_divisoria}></div>
