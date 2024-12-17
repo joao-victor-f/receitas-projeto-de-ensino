@@ -29,7 +29,7 @@ export default function Receita() {
   if (!receita) {
     return (
         <section>
-            <h1>Receita não encontrada!</h1>
+            <h1>Receta no existe.</h1>
         </section>
     )
   }

@@ -78,7 +78,7 @@ export default function Ingrediente() {
         ) : (
             <>
                 <div>
-                    <h1>Ingrediente não encontrado!</h1>
+                    <h1>Ingrediente no existe.</h1>
                 </div>
             </>
         )}
