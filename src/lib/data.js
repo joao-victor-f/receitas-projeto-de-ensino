@@ -2,66 +2,66 @@ export const data = {
   "categorias": [
     {
       "titulo": "Acompañamiento",
-      "imagemURL": "/categorias/acompanhamento.png",
+      "imagemURL": "/imagens/categorias/acompanhamento.png",
       "descricao": "Opciones como puré de papas, papas el horno, ensaladas mixtas, arroz pilaf y verduras grilladas.",
       "path": "/receitas/acompanhamento",
-      "fullImagemURL": "/receitas/acompanhamentos.jpg",
+      "fullImagemURL": "/imagens/receitas/acompanhamentos.jpg",
     },
     {
       "titulo": "Bebidas",
-      "imagemURL": "/categorias/bebidas.png",
+      "imagemURL": "/imagens/categorias/bebidas.png",
       "descricao": "Clásicos como el mate, tereré, clericó y licuados de frutas frescas.",
       "path": "/receitas/bebidas",
-      "fullImagemURL": "/receitas/bebidas.jpg",
+      "fullImagemURL": "/imagens/receitas/bebidas.jpg",
     },
     {
       "titulo": "Carnes",
-      "imagemURL": "/categorias/carnes.png",
+      "imagemURL": "/imagens/categorias/carnes.png",
       "descricao": "Delicias como asado, churrasco, vacío, entraña, bondiola y matambre a la pizza.",
       "path": "/receitas/carnes",
-      "fullImagemURL": "/receitas/carnes.jpg",
+      "fullImagemURL": "/imagens/receitas/carnes.jpg",
     },
     {
       "titulo": "Entradas",
-      "imagemURL": "/categorias/entradas.png",
+      "imagemURL": "/imagens/categorias/entradas.png",
       "descricao": "Picadas y aperitivos tradicionales como provoleta, empanadas, croquetas, bruschettas y fiambre variados.",
       "path": "/receitas/entradas",
-      "fullImagemURL": "/receitas/entradas.jpg",
+      "fullImagemURL": "/imagens/receitas/entradas.jpg",
     },
     {
       "titulo": "Galletas y Dulces",
-      "imagemURL": "/categorias/doces.png",
+      "imagemURL": "/imagens/categorias/doces.png",
       "descricao": "Postres típicos como alfajores, facturas, churros, pasta frolla y tortas.",
       "path": "/receitas/doces",
-      "fullImagemURL": "/receitas/doces.jpg",
+      "fullImagemURL": "/imagens/receitas/doces.jpg",
     },
     {
       "titulo": "Panes y Empanadas",
-      "imagemURL": "/categorias/empanadas.png",
+      "imagemURL": "/imagens/categorias/empanadas.png",
       "descricao": "Una sección dedicada a panes caseros como pan de campo, chipá, medialunas y empanadas de carne, pollo o queso.",
       "path": "/receitas/empanadas",
-      "fullImagemURL": "/receitas/panesyempanadas.jpg",
+      "fullImagemURL": "/imagens/receitas/panesyempanadas.jpg",
     },
     {
       "titulo": "Platos Principales",
-      "imagemURL": "/categorias/pratos_principais.png",
+      "imagemURL": "/imagens/categorias/pratos_principais.png",
       "descricao": "Favoritos como milanesa, locro, guiso de lentejas, carbonada y cazuela de mariscos.",
       "path": "/receitas/pratosprincipais",
-      "fullImagemURL": "/receitas/pratos_principais.jpg",
+      "fullImagemURL": "/imagens/receitas/pratos_principais.jpg",
     },
     {
       "titulo": "Salsas y Aderezos",
-      "imagemURL": "/categorias/molhos.png",
+      "imagemURL": "/imagens/categorias/molhos.png",
       "descricao": "Chimichurri, salsa criolla, alioli, mayonesa casera y vinagretas aromáticas.",
       "path": "/receitas/molhos",
-      "fullImagemURL": "/receitas/molhos.jpg",
+      "fullImagemURL": "/imagens/receitas/molhos.jpg",
     },
     {
       "titulo": "Vegetariano",
-      "imagemURL": "/categorias/vegetariano.png",
+      "imagemURL": "/imagens/categorias/vegetariano.png",
       "descricao": "Platos como empanadas de humita, milanesas de berenjena, guiso de quinoa, tartas de verduras y ensaladas frescas.",
       "path": "/receitas/vegetariano",
-      "fullImagemURL": "/receitas/vegetarianos.jpg",
+      "fullImagemURL": "/imagens/receitas/vegetarianos.jpg",
     }
   ],
   "receitas": [
@@ -70,20 +70,20 @@ export const data = {
       "nome": "Locro Criollo",
       "categoria": {
         "titulo": "Platos Principales",
-        "imagemURL": "/categorias/pratos_principais.png",
+        "imagemURL": "/imagens/categorias/pratos_principais.png",
         "descricao": "Favoritos como milanesa, locro, guiso de lentejas, carbonada y cazuela de mariscos.",
         "path": "/receitas/pratosprincipais",
-        "fullImagemURL": "/receitas/pratos_principais.jpg",
+        "fullImagemURL": "/imagens/receitas/pratos_principais.jpg",
       },
       "descricao": "Un guiso tradicional argentino a base de maíz blanco, zapallo y carne, perfecto para días fríos.",
       "ingredientes": [
-        { "ingrediente": { "id": 1, "nome": "Maíz blanco", "imagemURL": "/ingredientes/maiz_blanco.jpeg" }, "quantidade": 1, "medicao": "taza" },
-        { "ingrediente": { "id": 2, "nome": "Zapallo", "imagemURL": "/ingredientes/zapallo.jpeg" }, "quantidade": 500, "medicao": "gramo" },
-        { "ingrediente": { "id": 3, "nome": "Carne de cerdo", "imagemURL": "/ingredientes/carne_de_cerdo.jpeg" }, "quantidade": 300, "medicao": "gramo" },
-        { "ingrediente": { "id": 4, "nome": "Chorizo", "imagemURL": "/ingredientes/chorizo.jpg" }, "quantidade": 2, "medicao": "unidad" },
-        { "ingrediente": { "id": 5, "nome": "Cebolla", "imagemURL": "/ingredientes/cebolla.jpg" }, "quantidade": 1, "medicao": "unidad" }
+        { "ingrediente": { "id": 1, "nome": "Maíz blanco", "imagemURL": "/imagens/ingredientes/maiz_blanco.jpeg" }, "quantidade": 1, "medicao": "taza" },
+        { "ingrediente": { "id": 2, "nome": "Zapallo", "imagemURL": "/imagens/ingredientes/zapallo.jpeg" }, "quantidade": 500, "medicao": "gramo" },
+        { "ingrediente": { "id": 3, "nome": "Carne de cerdo", "imagemURL": "/imagens/ingredientes/carne_de_cerdo.jpeg" }, "quantidade": 300, "medicao": "gramo" },
+        { "ingrediente": { "id": 4, "nome": "Chorizo", "imagemURL": "/imagens/ingredientes/chorizo.jpg" }, "quantidade": 2, "medicao": "unidad" },
+        { "ingrediente": { "id": 5, "nome": "Cebolla", "imagemURL": "/imagens/ingredientes/cebolla.jpg" }, "quantidade": 1, "medicao": "unidad" }
       ],
-      "imagensURL": ["/receitas/locro-criollo.png"],
+      "imagensURL": ["/imagens/receitas/locro-criollo.png"],
       "tempoDePreparacao": "02:00:00",
       "passos": [
         "Dejar el maíz en remojo durante 12 horas.",
@@ -111,20 +111,20 @@ export const data = {
       "nome": "Empanadas",
       "categoria": {
         "titulo": "Panes y Empanadas",
-        "imagemURL": "/categorias/empanadas.png",
+        "imagemURL": "/imagens/categorias/empanadas.png",
         "descricao": "Una sección dedicada a panes caseros como pan de campo, chipá, medialunas y empanadas de carne, pollo o queso.",
         "path": "/receitas/empanadas",
-        "fullImagemURL": "/receitas/panesyempanadas.jpg",
+        "fullImagemURL": "/imagens/receitas/panesyempanadas.jpg",
       },
       "descricao": "Empanadas argentinas clásicas con relleno de carne y condimentos tradicionales.",
       "ingredientes": [
-        { "ingrediente": { "id": 6, "nome": "Carne molida", "imagemURL": "/ingredientes/carne_molida.jpeg" }, "quantidade": 500, "medicao": "gramo" },
-        { "ingrediente": { "id": 5, "nome": "Cebolla", "imagemURL": "/ingredientes/cebolla.jpg" }, "quantidade": 2, "medicao": "unidad" },
-        { "ingrediente": { "id": 7, "nome": "Aceitunas verdes", "imagemURL": "/ingredientes/aceituna.jpeg" }, "quantidade": 100, "medicao": "gramo" },
-        { "ingrediente": { "id": 8, "nome": "Tapas para empanadas", "imagemURL": "/ingredientes/tapas_para_empanadas.jpeg" }, "quantidade": 12, "medicao": "unidad" },
-        { "ingrediente": { "id": 9, "nome": "Comino", "imagemURL": "/ingredientes/comino.jpeg" }, "quantidade": 1, "medicao": "cucharadita" }
+        { "ingrediente": { "id": 6, "nome": "Carne molida", "imagemURL": "/imagens//ingredientes/carne_molida.jpeg" }, "quantidade": 500, "medicao": "gramo" },
+        { "ingrediente": { "id": 5, "nome": "Cebolla", "imagemURL": "/imagens/ingredientes/cebolla.jpg" }, "quantidade": 2, "medicao": "unidad" },
+        { "ingrediente": { "id": 7, "nome": "Aceitunas verdes", "imagemURL": "/imagens/ingredientes/aceituna.jpeg" }, "quantidade": 100, "medicao": "gramo" },
+        { "ingrediente": { "id": 8, "nome": "Tapas para empanadas", "imagemURL": "/imagens/ingredientes/tapas_para_empanadas.jpeg" }, "quantidade": 12, "medicao": "unidad" },
+        { "ingrediente": { "id": 9, "nome": "Comino", "imagemURL": "/imagens/ingredientes/comino.jpeg" }, "quantidade": 1, "medicao": "cucharadita" }
       ],
-      "imagensURL": ["/receitas/empanadas.png"],
+      "imagensURL": ["/imagens/receitas/empanadas.png"],
       "tempoDePreparacao": "01:00:00",
       "passos": [
         "Cortar la cebolla en cubos pequeños y saltear en aceite.",
@@ -152,17 +152,17 @@ export const data = {
       "nome": "Parrilla",
       "categoria": {
         "titulo": "Carnes",
-        "imagemURL": "/categorias/carnes.png",
+        "imagemURL": "/imagens/categorias/carnes.png",
         "descricao": "Delicias como asado, churrasco, vacío, entraña, bondiola y matambre a la pizza.",
         "path": "/receitas/carnes",
-        "fullImagemURL": "/receitas/carnes.jpg",
+        "fullImagemURL": "/imagens/receitas/carnes.jpg",
       },
       "descricao": "Una selección de cortes de carne asados a la perfección en la parrilla.",
       "ingredientes": [
-        { "ingrediente": { "id": 10, "nome": "Costilla de res", "imagemURL": "/ingredientes/costilla_de_res.jpeg" }, "quantidade": 1, "medicao": "kg" },
-        { "ingrediente": { "id": 4, "nome": "Chorizo", "imagemURL": "/ingredientes/chorizo.jpg" }, "quantidade": 4, "medicao": "unidad" },
-        { "ingrediente": { "id": 11, "nome": "Morcilla", "imagemURL": "/ingredientes/morcilla.jpg" }, "quantidade": 2, "medicao": "unidad" },
-        { "ingrediente": { "id": 12, "nome": "Sal gruesa", "imagemURL": "/ingredientes/sal_gruesa.jpeg" }, "quantidade": 2, "medicao": "cucharada" }
+        { "ingrediente": { "id": 10, "nome": "Costilla de res", "imagemURL": "/imagens/ingredientes/costilla_de_res.jpeg" }, "quantidade": 1, "medicao": "kg" },
+        { "ingrediente": { "id": 4, "nome": "Chorizo", "imagemURL": "/imagens/ingredientes/chorizo.jpg" }, "quantidade": 4, "medicao": "unidad" },
+        { "ingrediente": { "id": 11, "nome": "Morcilla", "imagemURL": "/imagens/ingredientes/morcilla.jpg" }, "quantidade": 2, "medicao": "unidad" },
+        { "ingrediente": { "id": 12, "nome": "Sal gruesa", "imagemURL": "/imagens/ingredientes/sal_gruesa.jpeg" }, "quantidade": 2, "medicao": "cucharada" }
       ],
       "imagensURL": ["/receitas/parrila.png"],
       "tempoDePreparacao": "01:30:00",
@@ -192,22 +192,22 @@ export const data = {
       "nome": "Alfajor Saludable",
       "categoria": {
         "titulo": "Galletas y Dulces",
-        "imagemURL": "/categorias/doces.png",
+        "imagemURL": "/imagens/categorias/doces.png",
         "descricao": "Postres típicos como alfajores, facturas, churros, pasta frolla y tortas.",
         "path": "/receitas/doces",
-        "fullImagemURL": "/receitas/doces.jpg",
+        "fullImagemURL": "/imagens/receitas/doces.jpg",
       },
       "descricao": "El alfajor argentino tiene una historia que se remonta a siglos atrás, con raíces probablemente en la tradición musulmana que llevó dulces similares a la Península Ibérica. Durante la colonización de América Latina, los españoles introdujeron el alfajor en la región, donde se popularizó y adaptó a los ingredientes locales. En el caso de Argentina, el alfajor fue perfeccionado con sabores y técnicas únicas, especialmente en la región de Córdoba, donde se convirtió en un símbolo de la cultura culinaria del país. Hoy en día, es un dulce icónico de Argentina, tradicionalmente hecho con dos galletas suaves rellenas de dulce de leche y cubiertas con chocolate o azúcar glas. Es un verdadero tesoro de la gastronomía argentina, consumido en diversas ocasiones, desde festividades tradicionales hasta como un sabroso tentempié.",
       "ingredientes": [
-        { "ingrediente": { "id": 17, "nome": "Harina de avena", "imagemURL": "/ingredientes/farinha-aveia.png", "path": "/ingrediente/farinha_aveia9012391" }, "quantidade": 1, "medicao": "taza" },
-        { "ingrediente": { "id": 15, "nome": "Harina de arroz", "imagemURL": "/ingredientes/farinha-arroz.png", "path": "/ingrediente/harina_arroz" }, "quantidade": 0.5, "medicao": "taza" },
-        { "ingrediente": { "id": 13, "nome": "Cacao en polvo 100%", "imagemURL": "/ingredientes/cacao-en-polvo-100.jpg", "path": "/ingrediente/cacao_en_polvo" }, "quantidade": 3, "medicao": "cucharada" },
-        { "ingrediente": { "id": 18, "nome": "Miel", "imagemURL": "/ingredientes/mel.jpg", "path": "/ingrediente/miel912031" }, "quantidade": 0.25, "medicao": "taza" },
-        { "ingrediente": { "id": 14, "nome": "Huevo", "imagemURL": "/ingredientes/huevos.jpeg", "path": "/ingrediente/huevo19201" }, "quantidade": 2, "medicao": "unidade" },
-        { "ingrediente": { "id": 16, "nome": "Esencia de vainilla", "imagemURL": "/ingredientes/esencia-vainilla.png", "path": "/ingrediente/esencia_vainilla91029" }, "quantidade": 1, "medicao": "cucharadita" },
-        { "ingrediente": { "id": 19, "nome": "Polvo de hornear", "imagemURL": "/ingredientes/polvo-de-hornear.jpeg", "path": "/ingrediente/polvo_de_hornear190239120" }, "quantidade": 1, "medicao": "cucharadita" },
-        { "ingrediente": { "id": 21, "nome": "Dulce de leche fit", "imagemURL": "/ingredientes/dulce-de-leche-fit.jpeg", "path": "/ingrediente/dulce_de_leche_fit" }, "quantidade": 120, "medicao": "gramo" },
-        { "ingrediente": { "id": 20, "nome": "Tablete de choco 70%", "imagemURL": "/ingredientes/tablete70.png", "path": "/ingrediente/tablete70" }, "quantidade": 100, "medicao": "gramo" }
+        { "ingrediente": { "id": 17, "nome": "Harina de avena", "imagemURL": "/imagens/ingredientes/farinha-aveia.png", "path": "/ingrediente/farinha_aveia9012391" }, "quantidade": 1, "medicao": "taza" },
+        { "ingrediente": { "id": 15, "nome": "Harina de arroz", "imagemURL": "/imagens/ingredientes/farinha-arroz.png", "path": "/ingrediente/harina_arroz" }, "quantidade": 0.5, "medicao": "taza" },
+        { "ingrediente": { "id": 13, "nome": "Cacao en polvo 100%", "imagemURL": "/imagens/ingredientes/cacao-en-polvo-100.jpg", "path": "/ingrediente/cacao_en_polvo" }, "quantidade": 3, "medicao": "cucharada" },
+        { "ingrediente": { "id": 18, "nome": "Miel", "imagemURL": "/imagens/ingredientes/mel.jpg", "path": "/ingrediente/miel912031" }, "quantidade": 0.25, "medicao": "taza" },
+        { "ingrediente": { "id": 14, "nome": "Huevo", "imagemURL": "/imagens/ingredientes/huevos.jpeg", "path": "/ingrediente/huevo19201" }, "quantidade": 2, "medicao": "unidade" },
+        { "ingrediente": { "id": 16, "nome": "Esencia de vainilla", "imagemURL": "/imagens/ingredientes/esencia-vainilla.png", "path": "/ingrediente/esencia_vainilla91029" }, "quantidade": 1, "medicao": "cucharadita" },
+        { "ingrediente": { "id": 19, "nome": "Polvo de hornear", "imagemURL": "/imagens/ingredientes/polvo-de-hornear.jpeg", "path": "/ingrediente/polvo_de_hornear190239120" }, "quantidade": 1, "medicao": "cucharadita" },
+        { "ingrediente": { "id": 21, "nome": "Dulce de leche fit", "imagemURL": "/imagens/ingredientes/dulce-de-leche-fit.jpeg", "path": "/ingrediente/dulce_de_leche_fit" }, "quantidade": 120, "medicao": "gramo" },
+        { "ingrediente": { "id": 20, "nome": "Tablete de choco 70%", "imagemURL": "/imagens/ingredientes/tablete70.png", "path": "/ingrediente/tablete70" }, "quantidade": 100, "medicao": "gramo" }
       ],
       "passos": [
         "Mezcla la harina de avena, la harina de arroz, el cacao en polvo y el polvo de hornear en un bol grande. En un recipiente separado, bate el huevo, añade la miel y la esencia de vainilla, mezclando bien. Agrega los ingredientes líquidos a la mezcla de harinas y mezcla hasta obtener una masa homogénea. Si la masa está muy seca, añade un poco de agua para ajustarla. Refrigera la masa por 20 minutos.",
@@ -217,12 +217,12 @@ export const data = {
         "Deja que el chocolate se solidifique completamente antes de guardar los alfajores en un recipiente hermético o de servir."
       ],
       "imagensURL": [
-        "/paginaprincipal/alfajor.png",
-        "/receitas/informacaonutricional.png",
-        "/receitas/folder-1-portugues.jpg",
-        "/receitas/folder-2-portugues.jpg",
-        "/receitas/folder-1-espanhol.jpg",
-        "/receitas/folder-2-espanhol.jpg",
+        "/imagens/paginaprincipal/alfajor.png",
+        "/imagens/receitas/informacaonutricional.png",
+        "/imagens/receitas/folder-1-portugues.jpg",
+        "/imagens/receitas/folder-2-portugues.jpg",
+        "/imagens/receitas/folder-1-espanhol.jpg",
+        "/imagens/receitas/folder-2-espanhol.jpg",
       ],
       "tempoDePreparacao": "01:00:00",
       "path": "/receita/alfajor_saludable",
@@ -245,127 +245,127 @@ export const data = {
     {
       "id": 1,
       "nome": "Maíz blanco",
-      "imagemURL": "/ingredientes/maiz_blanco.jpeg",
+      "imagemURL": "/imagens/ingredientes/maiz_blanco.jpeg",
       "path": "/ingrediente/maz_blanco216086"
     },
     {
       "id": 2,
       "nome": "Zapallo",
-      "imagemURL": "/ingredientes/zapallo.jpeg",
+      "imagemURL": "/imagens/ingredientes/zapallo.jpeg",
       "path": "/ingrediente/zapallo574348"
     },
     {
       "id": 3,
       "nome": "Carne de cerdo",
-      "imagemURL": "/ingredientes/carne_de_cerdo.jpeg",
+      "imagemURL": "/imagens/ingredientes/carne_de_cerdo.jpeg",
       "path": "/ingrediente/carne_de_cerdo639480"
     },
     {
       "id": 4,
       "nome": "Chorizo",
-      "imagemURL": "/ingredientes/chorizo.jpg",
+      "imagemURL": "/imagens/ingredientes/chorizo.jpg",
       "path": "/ingrediente/chorizo560526"
     },
     {
       "id": 5,
       "nome": "Cebolla",
-      "imagemURL": "/ingredientes/cebolla.jpg",
+      "imagemURL": "/imagens/ingredientes/cebolla.jpg",
       "path": "/ingrediente/cebolla856410"
     },
     {
       "id": 6,
       "nome": "Carne molida",
-      "imagemURL": "/ingredientes/carne_molida.jpeg",
+      "imagemURL": "/imagens/ingredientes/carne_molida.jpeg",
       "path": "/ingrediente/carne_molida167778"
     },
     {
       "id": 7,
       "nome": "Aceitunas verdes",
-      "imagemURL": "/ingredientes/aceituna.jpeg",
+      "imagemURL": "/imagens/ingredientes/aceituna.jpeg",
       "path": "/ingrediente/aceitunas_verdes574358"
     },
     {
       "id": 8,
       "nome": "Tapas para empanadas",
-      "imagemURL": "/ingredientes/tapas_para_empanadas.jpeg",
+      "imagemURL": "/imagens/ingredientes/tapas_para_empanadas.jpeg",
       "path": "/ingrediente/tapas_para_empanadas309469"
     },
     {
       "id": 9,
       "nome": "Comino",
-      "imagemURL": "/ingredientes/comino.jpeg",
+      "imagemURL": "/imagens/ingredientes/comino.jpeg",
       "path": "/ingrediente/comino195860"
     },
     {
       "id": 10,
       "nome": "Costilla de res",
-      "imagemURL": "/ingredientes/costilla_de_res.jpeg",
+      "imagemURL": "/imagens/ingredientes/costilla_de_res.jpeg",
       "path": "/ingrediente/costilla_de_res810825"
     },
     {
       "id": 11,
       "nome": "Morcilla",
-      "imagemURL": "/ingredientes/morcilla.jpg",
+      "imagemURL": "/imagens/ingredientes/morcilla.jpg",
       "path": "/ingrediente/morcilla968482"
     },
     {
       "id": 12,
       "nome": "Sal gruesa",
-      "imagemURL": "/ingredientes/sal_gruesa.jpeg",
+      "imagemURL": "/imagens/ingredientes/sal_gruesa.jpeg",
       "path": "/ingrediente/sal_gruesa776192"
     },
     {
       "id": 13,
       "nome": "Cacao en polvo 100%",
-      "imagemURL": "/ingredientes/cacao-en-polvo-100.jpg",
+      "imagemURL": "/imagens/ingredientes/cacao-en-polvo-100.jpg",
       "path": "/ingrediente/cacao_en_polvo",
     },
     {
       "id": 14,
       "nome": "Huevo",
-      "imagemURL": "/ingredientes/huevos.jpeg",
+      "imagemURL": "/imagens/ingredientes/huevos.jpeg",
       "path": "/ingrediente/huevo19201",
     },
     {
       "id": 15,
       "nome": "Harina de arroz",
-      "imagemURL": "/ingredientes/farinha-arroz.png",
+      "imagemURL": "/imagens/ingredientes/farinha-arroz.png",
       "path": "/ingrediente/harina_arroz",
     },
     {
       "id": 16,
       "nome": "Esencia de vainilla",
-      "imagemURL": "/ingredientes/esencia-vainilla.png",
+      "imagemURL": "/imagens/ingredientes/esencia-vainilla.png",
       "path": "/ingrediente/esencia_vainilla91029",
     },
     {
       "id": 17,
       "nome": "Harina de avena",
-      "imagemURL": "/ingredientes/farinha-aveia.png",
+      "imagemURL": "/imagens/ingredientes/farinha-aveia.png",
       "path": "/ingrediente/farinha_aveia9012391",
     },
     {
       "id": 18,
       "nome": "Miel",
-      "imagemURL": "/ingredientes/mel.jpg",
+      "imagemURL": "/imagens/ingredientes/mel.jpg",
       "path": "/ingrediente/miel912031",
     },
     {
       "id": 19,
       "nome": "Polvo de hornear",
-      "imagemURL": "/ingredientes/polvo-de-hornear.jpeg",
+      "imagemURL": "/imagens/ingredientes/polvo-de-hornear.jpeg",
       "path": "/ingrediente/polvo_de_hornear190239120",
     },
     {
       "id": 20,
       "nome": "Tablete de choco 70%",
-      "imagemURL": "/ingredientes/tablete70.png",
+      "imagemURL": "/imagens/ingredientes/tablete70.png",
       "path": "/ingrediente/tablete70",
     },
     {
       "id": 21,
       "nome": "Dulce de leche fit",
-      "imagemURL": "/ingredientes/dulce-de-leche-fit.jpeg",
+      "imagemURL": "/imagens/ingredientes/dulce-de-leche-fit.jpeg",
       "path": "/ingrediente/dulce_de_leche_fit",
     },
   ]

@@ -29,13 +29,13 @@ export default function PaginaPrincipal () {
         </div>
         <div className={styles.categorias_container}>
           <Link to={data.categorias[4].path}>
-            <Categoria categoria={data.categorias[4]} imagem="/paginaprincipal/alfajor.png"/>
+            <Categoria categoria={data.categorias[4]} imagem="/imagens/paginaprincipal/alfajor.png"/>
           </Link>
           <Link to={data.categorias[5].path}>
-            <Categoria categoria={data.categorias[5]} imagem="/paginaprincipal/pastel.png" />
+            <Categoria categoria={data.categorias[5]} imagem="/imagens/paginaprincipal/pastel.png" />
           </Link>
           <Link to={data.categorias[6].path}>
-            <Categoria categoria={data.categorias[6]} imagem="/paginaprincipal/pratos_principais.png"/>
+            <Categoria categoria={data.categorias[6]} imagem="/imagens/paginaprincipal/pratos_principais.png"/>
           </Link>
         </div>
       </section>
@@ -61,9 +61,9 @@ export default function PaginaPrincipal () {
       <section className={styles.feedbacks_container}>
         <h1>Feedbacks</h1>
         <div className={styles.feedbacks_listing}>
-          <Feedback comentario={`“Muy buena receta, pero ajusté un poco las especias.”`} usuario={`Luis Martinez`} imagem="/icons/luismartinez.svg" />
-          <Feedback comentario={`“Fácil de seguir y el resultado fue delicioso. ¡Gracias!”`} usuario={`Ana Gutiérrez`} imagem="/icons/anagutierrez.svg" />
-          <Feedback comentario={`“Perfecta para sorprender a los invitados. ¡Me encantó!”`} usuario={`Sofia Ramirez`} imagem="/icons/sofiaramirez.svg" />
+          <Feedback comentario={`“Muy buena receta, pero ajusté un poco las especias.”`} usuario={`Luis Martinez`} imagem="/imagens/icons/luismartinez.svg" />
+          <Feedback comentario={`“Fácil de seguir y el resultado fue delicioso. ¡Gracias!”`} usuario={`Ana Gutiérrez`} imagem="/imagens/icons/anagutierrez.svg" />
+          <Feedback comentario={`“Perfecta para sorprender a los invitados. ¡Me encantó!”`} usuario={`Sofia Ramirez`} imagem="/imagens/icons/sofiaramirez.svg" />
         </div>
       </section>
     </>
