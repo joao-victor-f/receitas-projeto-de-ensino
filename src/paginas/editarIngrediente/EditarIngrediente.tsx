@@ -48,7 +48,7 @@ export default function EditarIngrediente() {
                 const formData = new FormData();
                 formData.append("images", image);  // 'image' é o arquivo selecionado pelo usuário
                 // Faz o upload da imagem para o backend
-                const response = await fetch("http://10.225.6.108/uploads", {
+                const response = await fetch("http://10.225.6.108/api/upload", {
                     method: "POST",
                     body: formData
                 });

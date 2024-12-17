@@ -249,7 +249,7 @@ export default function EditarReceita() {
         if (images.length > 0) {
             images.forEach(image => formData.append('images', image));
             try {
-                const response = await fetch("http://10.225.6.108/upload", {
+                const response = await fetch("http://10.225.6.108/api/upload", {
                     method: "POST",
                     body: formData
                 });

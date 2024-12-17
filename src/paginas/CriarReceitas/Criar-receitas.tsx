@@ -183,7 +183,7 @@ export default function CriarReceitas() {
 
         try {
             // Faz o upload da imagem para o backend
-            const response = await fetch("http://10.225.6.108/uploads", {
+            const response = await fetch("http://10.225.6.108/api/upload", {
                 method: "POST",
                 body: formData
             });
