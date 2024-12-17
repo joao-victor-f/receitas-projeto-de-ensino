@@ -9,7 +9,7 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import { Zoom } from "yet-another-react-lightbox/plugins";
 
-export default function({ imagens }) {
+export default function Carrossel({ imagens }) {
   const [isZoomOpen, setZoomOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
